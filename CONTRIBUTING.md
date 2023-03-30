@@ -1,3 +1,8 @@
-At the moment, we are not accepting contributions. The Visual Blocks team will contribute to this library. 
+# How to contribute
 
-Thank you for your interest!
+This project currently does not accept pull requests/ We are also always happy to get your feedback via issues!
+
+## Community Guidelines
+
+This project follows
+[Google's Open Source Community Guidelines](https://opensource.google/conduct/).
