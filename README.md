@@ -18,10 +18,9 @@ The runner takes a graph json file and a list of nodes. It traverses the graph t
 
 # Contributions
 
-We are not accepting external contributions at this time. The Visual Blocks team will contribute to this library. As this is an experimental release aimed at starting a conversation and gauging community interest, we want to explicitly communicate a lack of guarantee for long term maintenance. 
-
+We are not accepting contributions at this time. The Visual Blocks team will contribute to this library.
 # Copyright and license
 Copyright under the Apache 2.0 license.
 
 # Note
-This is not an officially supported Google product.
+This is not an officially supported Google product. As this is an experimental release aimed at starting a conversation and gauging community interest, we want to explicitly communicate a lack of guarantee for long term maintenance.
