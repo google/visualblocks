@@ -1,0 +1,16 @@
+#!/bin/sh
+# 
+# Turnkey script to build the Python distribution package
+#
+# This requires the Python package `build`. To install this
+# dependency, run:
+#
+#     python3 -m pip install --upgrade build
+
+set -e
+
+builddir="build"
+srcdir="python"
+
+python3 -m build --outdir $builddir $srcdir
+find $builddir -type f
