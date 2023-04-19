@@ -347,7 +347,7 @@ def Server(generic=None, text_to_text=None, text_to_tensors=None, height=900, tm
     const msgEle = document.querySelector('#pipeline-message');
     if (!google.colab.kernel.accessAllowed) {
       msgEle.style.display = 'block';
-      msgEle.textContent = 'ⓘ To start, run the cell above with `visual_blocks.Server` first then run this cell.'
+      msgEle.textContent = 'ⓘ To start, run the cell above with `visualblocks.Server` first then run this cell.'
     } else {
       msgEle.style.display = 'none';
       google.colab.kernel.invokeFunction('showApp', [], {});

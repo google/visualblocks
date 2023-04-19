@@ -9,7 +9,7 @@ notebooks.
 
 ## For Users
 
-`!pip install visual_blocks` and `import visual_blocks` in your Colaboratory
+`!pip install visualblocks` and `import visualblocks` in your Colaboratory
 notebooks. See the example notebooks in the directory [examples/](examples/).
 
 ## For Developers
