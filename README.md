@@ -86,13 +86,34 @@ For references on how to define an inference function, check out the example not
 
 If you would like to view changes made to inference functions in the Visual Blocks UI without needing to re-run the Visual Blocks server, you can use a Visual Blocks decorator.
 
-To do this, import the decorator ```from visualblocks import register_vb_fn```, and decorate the inference function by using ```@register_vb_fn(type='[inference type]')``` and specify the type of inference function: `generic`, `text_to_text`, or `text_to_tensors`. For example, to decorate a *generic* inference function: ```@register_vb_fn(type='generic')```.
+First, import the decorator:
+
+```python
+from visualblocks import register_vb_fn
+```
+
+Then, decorate the inference function:
+
+```python
+# inference_function_type could be `generic`, `text_to_text`, or `text_to_tensors`.
+@register_vb_fn(type='[inference_function_type]')
+def my_fn1(input_tensors):
+  # ...
+```
+
+For example, to decorate a *generic* inference function:
+
+```python
+@register_vb_fn(type='generic')
+def my_generic_inference_function(tensors):
+  # ...
+```
 
 Check out the [Quick Start Style Transfer Example](https://github.com/google/visualblocks/blob/main/examples/quick_start_style_transfer.ipynb) for reference.
 
 ### Step 3: Import Visual Blocks and start server
 
-If you do not use the function decorator ```register_vb_fn```, pass each inference function with its inference type in the ```visualblocks.Server()``` function. For example:
+If you do not use the function decorator `register_vb_fn`, pass each inference function with its inference type in the `visualblocks.Server()` function. For example:
 
 ```python
 # Pass each inference function in the Visual Blocks server
@@ -105,7 +126,7 @@ server = visualblocks.Server(generic=my_fn1)
 # server = visualblocks.Server(generic=(my_fn1, my_fn2), text_to_text=(my_fn3))
 ```
 
-When using the function decorator ```register_vb_fn```, you do not need to pass inference functions in the Visual Blocks server. Example:
+When using the function decorator `register_vb_fn`, you do not need to pass inference functions in the Visual Blocks server. Example:
 
 ```python
 # Do not pass inference functions in the Visual Blocks server
