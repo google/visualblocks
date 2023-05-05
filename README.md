@@ -29,8 +29,9 @@ If you use Visual Blocks in your research, please reference it as:
 
 **Node Graph Editor**
 
-The node graph editor is a custom Angular component. It takes a graph JSON file
-as input.
+The node graph editor is a custom Angular component. It takes a JSON object as the
+specifications of nodes (i.e. their inputs, outputs, properties, etc), and output
+the graph structure on changes (e.g. node added, edge deleted, etc).
 
 **Library of ML Nodes**
 
@@ -45,69 +46,56 @@ component and uses the run function to run it.
 # Visual Blocks in Google Colaboratory
 
 There is a Visual Blocks Python package for use within [Google Colaboratory][]
-notebooks.
+notebooks. It allows you to register python functions defined in the notebook with Visual Blocks, and it provides an interactive UI where you can easily build ML pipelines to execute those functions along with other ML-related nodes.
 
 [Google Colaboratory]: https://colab.research.google.com
 
 ## For Users
 
-Follow the steps below to get started in Colab with Visual Blocks. You can also check out the example notebooks in the directory [examples/](examples/).
+Follow the steps below to get started in Colab with Visual Blocks. You can also check out the example notebooks in the directory [examples/](examples/), or watch the [tutorial](https://www.youtube.com/watch?v=UpJb4Y6wU5o).
 
 ### Step 1: Install Visual Blocks
 
-Add `!pip install visualblocks` at the top of your Colaboratory notebook.
-
-### Step 2: Import Required Packages
-
-* Import numpy with `import numpy as np`. Visual Blocks uses np.ndarrays as input and output tensors in Colab.
-    
-* Import TensorFlow with `import tensorflow as tf`. Visual Blocks works with TensorFlow based models.
-   
 ```
-import numpy as np
-import tensorflow as tf
-
+!pip install visualblocks
 ```
 
-### Step 3: Import Your Model
+### Step 2: Write an inference function
 
-Import TFLite or TFJS model(s) into the notebook. You can find TFLite and TFJS models with the instructions on how to import them to Colab on [TF Hub]. Depending on the source of the model, you may need to import additional packages into the notebook.
+The inference function should perform inference on the model of your chosen. It
+is your responsibility to import required packages that make the function work.
+For TF or TFLite models, you can find instructions on how to import and use them on [TF Hub].
 
 [TF Hub]: https://tfhub.dev
 
-### Step 4: Write an Inference Function
- 
-The inference function should perform inference on the TensorFlow based model. There are two types of inference functions for Visual Blocks:
+There are three types of inference functions supported by Visual Blocks:
 
-1. **generic**: Generic inference functions accept input tensors and output tensors.
-1. **text_to_text**: Text to text inference functions accept strings and output strings.
+1. **generic**: Generic inference functions accept input tensors and return output tensors.
+1. **text_to_text**: Text to text inference functions accept strings and return output strings.
+1. **text_to_tensors**: Text to tensors inference functions accept strings and return output tensors.
 
 When writing your inference function note the following:
 
-*  **Args**: The inference function should accept a list of NumPy arrays as input tensors to your model. 
-*  **Returns**: The inference function should return a list of NumPy arrays as output tensors.
+*  **Args**: The type of input tensors should be a list of NumPy arrays.
+*  **Returns**: The type of output tensors should be a list of NumPy arrays.
 * Ensure the dimensions of the input and output NumPy arrays align with the expected tensor dimensions of your model.
 
 For references on how to define an inference function, check out the example notebooks in the directory [examples/](examples/).
 
-### Step 4b (optional): Register Inference Functions Dynamically
+### Step 2b (optional): Register inference functions dynamically
 
-If you would like to view changes made to inference functions in the Visual Blocks display without needing to re-run the Colab notebook, you can use a Visual Blocks decorator function.
+If you would like to view changes made to inference functions in the Visual Blocks UI without needing to re-run the Visual Blocks server, you can use a Visual Blocks decorator.
 
-To do this, import the following ```from visualblocks import register_vb_fn```.  Above each inference function, include the decorator function ```@register_vb_fn(type='[inference type]')``` and specify the type of inference function: generic or text_to_text. 
+To do this, import the decorator ```from visualblocks import register_vb_fn```, and decorate the inference function by using ```@register_vb_fn(type='[inference type]')``` and specify the type of inference function: `generic`, `text_to_text`, or `text_to_tensors`. For example, to decorate a *generic* inference function: ```@register_vb_fn(type='generic')```.
 
-For example, to add the decorator function to a generic inference function include the following: ```@register_vb_fn(type='generic')```. Check out the [Quick Start Style Transfer Example](https://github.com/google/visualblocks/blob/main/examples/quick_start_style_transfer.ipynb) for reference. 
+Check out the [Quick Start Style Transfer Example](https://github.com/google/visualblocks/blob/main/examples/quick_start_style_transfer.ipynb) for reference.
 
-### Step 5: Import Visual Blocks
-  
-  In a new cell block, include `import visualblocks` to import Visual Blocks.
-  
-  Then include `server = visualblocks.Server()` to start a Visual Blocks server.
+### Step 3: Import Visual Blocks and start server
 
 If you do not use the function decorator ```register_vb_fn```, pass each inference function with its inference type in the ```visualblocks.Server()``` function. For example:
-    
-```
-# Pass each inference function in the Visual Blocks server 
+
+```python
+# Pass each inference function in the Visual Blocks server
 # when not using the decorator function
 
 import visualblocks
@@ -117,22 +105,33 @@ server = visualblocks.Server(generic=my_fn1)
 # server = visualblocks.Server(generic=(my_fn1, my_fn2), text_to_text=(my_fn3))
 ```
 
-When using the function decorator ```register_vb_fn```, do not pass inference functions in the Visual Blocks server. Example:
+When using the function decorator ```register_vb_fn```, you do not need to pass inference functions in the Visual Blocks server. Example:
 
-```
-# Do not pass inference functions in the Visual Blocks server 
+```python
+# Do not pass inference functions in the Visual Blocks server
 # when using the decorator function
 
 import visualblocks
 server = visualblocks.Server()
 ```
 
-### Step 6: Display Visual Blocks
+### Step 4: Display Visual Blocks UI
 
-In a seperate cell, add `server.display()`. Please do not "Run all" in the notebook. The last cell with `server.display()` has to be run manually after all the other cells have finished running.
+In a seperate cell, call the `display` function to view the Visual Blocks graphical development environment in your Colab notebook.
 
+```python
+server.display()
+```
 
-After completing these steps, run the `server.display()` cell to view the Visual Blocks graphical development environment in your Colab notebook.
+### Step 5: Share the notebook
+
+In Visual Blocks UI, you can click the `Save to Colab` button to save the pipeline
+to the notebook. You can then share the notebook with others and they will see the
+exact pipeline.
+
+⚠️ When running a notebook with saved Visual Blocks pipeline, please do not "Run all".
+The cell with `server.display()` has to be run manually after all the other cells have
+finished running.
 
 ## For Developers
 
