@@ -144,6 +144,10 @@ In a seperate cell, call the `display` function to view the Visual Blocks graphi
 server.display()
 ```
 
+The registered functions can then be executed by using the corresponding type of node.
+For example, the registered generic inference functions can be selected in the
+"Colab (generic)" node, located in the "Model" category.
+
 ### Step 5: Share the notebook
 
 In Visual Blocks UI, you can click the `Save to Colab` button to save the pipeline
