@@ -51,8 +51,88 @@ notebooks.
 
 ## For Users
 
-`!pip install visualblocks` and `import visualblocks` in your Colaboratory
-notebooks. See the example notebooks in the directory [examples/](examples/).
+Follow the steps below to get started in Colab with Visual Blocks. You can also check out the example notebooks in the directory [examples/](examples/).
+
+### Step 1: Install Visual Blocks
+
+Add `!pip install visualblocks` at the top of your Colaboratory notebook.
+
+### Step 2: Import Required Packages
+
+* Import numpy with `import numpy as np`. Visual Blocks uses np.ndarrays as input and output tensors in Colab.
+    
+* Import TensorFlow with `import tensorflow as tf`. Visual Blocks works with TensorFlow based models.
+   
+```
+import numpy as np
+import tensorflow as tf
+
+```
+
+### Step 3: Import Your Model
+
+Import TFLite or TFJS model(s) into the notebook. You can find TFLite and TFJS models with the instructions on how to import them to Colab on [TF Hub]. Depending on the source of the model, you may need to import additional packages into the notebook.
+
+[TF Hub]: https://tfhub.dev
+
+### Step 4: Write an Inference Function
+ 
+The inference function should perform inference on the TensorFlow based model. There are two types of inference functions for Visual Blocks:
+
+1. **generic**: Generic inference functions accept input tensors and output tensors.
+1. **text_to_text**: Text to text inference functions accept strings and output strings.
+
+When writing your inference function note the following:
+
+*  **Args**: The inference function should accept a list of NumPy arrays as input tensors to your model. 
+*  **Returns**: The inference function should return a list of NumPy arrays as output tensors.
+* Ensure the dimensions of the input and output NumPy arrays align with the expected tensor dimensions of your model.
+
+For references on how to define an inference function, check out the example notebooks in the directory [examples/](examples/).
+
+### Step 4b (optional): Register Inference Functions Dynamically
+
+If you would like to view changes made to inference functions in the Visual Blocks display without needing to re-run the Colab notebook, you can use a Visual Blocks decorator function.
+
+To do this, import the following ```from visualblocks import register_vb_fn```.  Above each inference function, include the decorator function ```@register_vb_fn(type='[inference type]')``` and specify the type of inference function: generic or text_to_text. 
+
+For example, to add the decorator function to a generic inference function include the following: ```@register_vb_fn(type='generic')```. Check out the [Quick Start Style Transfer Example](https://github.com/google/visualblocks/blob/main/examples/quick_start_style_transfer.ipynb) for reference. 
+
+### Step 5: Import Visual Blocks
+  
+  In a new cell block, include `import visualblocks` to import Visual Blocks.
+  
+  Then include `server = visualblocks.Server()` to start a Visual Blocks server.
+
+If you do not use the function decorator ```register_vb_fn```, pass each inference function with its inference type in the ```visualblocks.Server()``` function. For example:
+    
+```
+# Pass each inference function in the Visual Blocks server 
+# when not using the decorator function
+
+import visualblocks
+server = visualblocks.Server(generic=my_fn1)
+
+# You can also pass multiple functions:
+# server = visualblocks.Server(generic=(my_fn1, my_fn2), text_to_text=(my_fn3))
+```
+
+When using the function decorator ```register_vb_fn```, do not pass inference functions in the Visual Blocks server. Example:
+
+```
+# Do not pass inference functions in the Visual Blocks server 
+# when using the decorator function
+
+import visualblocks
+server = visualblocks.Server()
+```
+
+### Step 6: Display Visual Blocks
+
+In a seperate cell, add `server.display()`. Please do not "Run all" in the notebook. The last cell with `server.display()` has to be run manually after all the other cells have finished running.
+
+
+After completing these steps, run the `server.display()` cell to view the Visual Blocks graphical development environment in your Colab notebook.
 
 ## For Developers
 
