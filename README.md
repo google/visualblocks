@@ -1,6 +1,6 @@
 # Visual Blocks
 
-Visual Blocks is a framework that allows any platform or application to easily
+[Visual Blocks][] is a framework that allows any platform or application to easily
 integrate a visual and user-friendly interface for ML creation. Visual Blocks
 aims to help applications & platforms accelerate many stages of the ML product
 cycle including pipeline authoring, model evaluation, data pipelining, model &
@@ -9,6 +9,8 @@ through a JavaScript front-end library for low/no code editing and a separate JS
 library embedding the newly created experience.
 
 If you use Visual Blocks in your research, please reference it as:
+
+[Visual Blocks]: https://visualblocks.withgoogle.com
 
 ```bibtex
 @inproceedings{Du2023Rapsai,
