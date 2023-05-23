@@ -1,0 +1,159 @@
+ {
+  "project": {
+    "name": "Weather summarizer",
+    "id": "new",
+    "creationTs": 1683652729656,
+    "lastModifiedTs": 1684856975204
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_text_zyhdox",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -688,
+          "posY": -64,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "text": "What is the weather like in San Francisco?",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "palm_textgen_mxrc78",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 336,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": -480,
+          "posY": -64,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "input_text_zyhdox",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_ny5icm",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 800,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -480,
+          "posY": 112,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Summarize it in one sentence:\n",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_4p9bco",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 800,
+          "previewY": 176,
+          "previewWidth": 304,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -272,
+          "posY": -64,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_ny5icm",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "palm_textgen_mxrc78",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_7w4s1d",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 1120,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 368
+        },
+        "uiData": {
+          "posX": -64,
+          "posY": -64,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_4p9bco",
+              "outputId": "text"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

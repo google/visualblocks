@@ -1,0 +1,182 @@
+ {
+  "project": {
+    "name": "3D Photo",
+    "id": "new",
+    "creationTs": 1683652729656,
+    "lastModifiedTs": 1684857844055
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_image_ebur6f",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -688,
+          "posY": -96,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im0.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im2.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im3.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im4.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im5.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im6.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im7.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im8.jpg",
+            "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im9.jpg"
+          ],
+          "gridColumnCount": 3,
+          "allowUserUpload": false,
+          "selectedImageUrl": "https://storage.googleapis.com/tfjs-models/demos/3dphoto/images/im5.jpg",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "image_processor_2yfdym",
+        "nodeSpecId": "image_processor",
+        "customData": {
+          "initialWidth": 480,
+          "initialHeight": 384,
+          "rightOfNode": "input_image_ebur6f",
+          "previewX": 480,
+          "previewY": 16,
+          "previewWidth": 480,
+          "previewHeight": 384
+        },
+        "uiData": {
+          "posX": -448,
+          "posY": -96,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false,
+          "resize": {
+            "width": 192,
+            "height": 256
+          },
+          "resize,,,width": 192,
+          "resize,,,height": 256
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_ebur6f",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "threed_photo_cfrxvg",
+        "nodeSpecId": "threed_photo",
+        "customData": {
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "rightOfNode": "portrait_depth_gj2e8v",
+          "previewX": 1008,
+          "previewY": 32,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": -16,
+          "posY": -96,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "cameraSpeed": 0.5,
+          "cameraRadius": 0.4,
+          "cameraZ": 9.5,
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "image_processor_2yfdym",
+              "outputId": "image"
+            }
+          ],
+          "depthMapTensor": [
+            {
+              "sourceNodeId": "portrait_depth_gj2e8v",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "tensor_to_depthmap_gdejpj",
+        "nodeSpecId": "tensor_to_depthmap",
+        "customData": {
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "rightOfNode": "portrait_depth_gj2e8v",
+          "previewX": 1264,
+          "previewY": 16,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": -16,
+          "posY": 112,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "colormap": "turboplus",
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "portrait_depth_gj2e8v",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "portrait_depth_gj2e8v",
+        "nodeSpecId": "portrait_depth",
+        "customData": {
+          "rightOfNode": "image_processor_2yfdym",
+          "previewX": 976,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -224,
+          "posY": -32,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "minDepth": 0.2,
+          "maxDepth": 0.8
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "image_processor_2yfdym",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
