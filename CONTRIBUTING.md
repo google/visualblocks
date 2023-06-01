@@ -1,6 +1,6 @@
 # How to contribute
 
-This project currently does not accept contributions. We are also always happy to get your feedback via issues!
+This project currently does not accept contributions, except for the `pipelines` directory which holds community-contributed pipelines of Visual Blocks. Please refer to `pipelines/README.md` for instructions. We are also always happy to get your feedback via issues!
 
 ## Sign our Contributor License Agreement
 
