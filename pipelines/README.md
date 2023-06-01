@@ -50,9 +50,9 @@ We highlight a set of community-contributed pipelines of Visual Blocks below:
 
     [![3D Effects with Portrait Depth API](3dphoto_portrait_depth.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2F3dphoto_portrait_depth.json)
 
-*   [Weather Summarizer with](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm_weather_summarizer.json)
+*   [Weather Summarizer](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm_weather_summarizer.json)
     with
-    [PaLM API](https://blog.tensorflow.org/2022/05/portrait-depth-api-turning-single-image.html?linkId=8063793)
+    [PaLM API](https://developers.generativeai.google)
 
     [![Weather Summarizer with PaLM API](palm_weather_summarizer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm_weather_summarizer.json)
 
