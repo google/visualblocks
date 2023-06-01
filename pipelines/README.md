@@ -24,7 +24,7 @@ Finally, copy the downloaded your pipeline to your local repository, commit and
 create a pull request by following
 [the official GitHub guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 We strongly recommend contributors to also upload a GIF or JPG screenshot for
-your pipeline to be featured in this guide.
+your pipeline (width: 320px) to be featured in this guide.
 
 After you have uploaded your pipeline to the `pipelines` folder, you can easily
 share your amazing creation via URL like:
@@ -48,13 +48,13 @@ We highlight a set of community-contributed pipelines of Visual Blocks below:
     with
     [Portrait Depth API](https://blog.tensorflow.org/2022/05/portrait-depth-api-turning-single-image.html?linkId=8063793)
 
-    ![3D Effects with Portrait Depth API](3dphoto_portrait_depth.gif)
+    [![3D Effects with Portrait Depth API](3dphoto_portrait_depth.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2F3dphoto_portrait_depth.json)
 
 *   [Weather Summarizer with](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm_weather_summarizer.json)
     with
     [PaLM API](https://blog.tensorflow.org/2022/05/portrait-depth-api-turning-single-image.html?linkId=8063793)
 
-    ![Weather Summarizer with PaLM API](palm_weather_summarizer.jpg)
+    [![Weather Summarizer with PaLM API](palm_weather_summarizer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm_weather_summarizer.json)
 
 ## Community Guidelines
 
