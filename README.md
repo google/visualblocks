@@ -1,12 +1,15 @@
+
 # Visual Blocks
 
-[Visual Blocks][] is a framework that allows any platform or application to easily
-integrate a visual and user-friendly interface for ML creation. Visual Blocks
-aims to help applications & platforms accelerate many stages of the ML product
-cycle including pipeline authoring, model evaluation, data pipelining, model &
-pipeline experimentation, and more. Visual Blocks enables these behaviors
-through a JavaScript front-end library for low/no code editing and a separate JS
-library embedding the newly created experience.
+[Visual Blocks][] is a framework that allows any platform or application to
+easily integrate a visual and user-friendly interface for ML creation. Visual
+Blocks aims to help applications & platforms accelerate many stages of the ML
+product cycle including pipeline authoring, model evaluation, data pipelining,
+model & pipeline experimentation, and more. Visual Blocks enables these
+behaviors through a JavaScript front-end library for low/no code editing and a
+separate JS library embedding the newly created experience.
+
+[![Visual Blocks Use Case of AR Sticker](examples/visual_blocks_teaser.gif)](https://visualblocks.withgoogle.com)
 
 If you use Visual Blocks in your research, please reference it as:
 
@@ -27,13 +30,13 @@ If you use Visual Blocks in your research, please reference it as:
 }
 ```
 
-# Components
+## Components
 
 **Node Graph Editor**
 
-The node graph editor is a custom Angular component. It takes a JSON object as the
-specifications of nodes (i.e. their inputs, outputs, properties, etc), and output
-the graph structure on changes (e.g. node added, edge deleted, etc).
+The node graph editor is a custom Angular component. It takes a JSON object as
+the specifications of nodes (i.e. their inputs, outputs, properties, etc), and
+output the graph structure on changes (e.g. node added, edge deleted, etc).
 
 **Library of ML Nodes**
 
@@ -45,48 +48,60 @@ The runner takes a graph json file and a list of nodes. It traverses the graph
 to decide the execution order. For each node execution, it loads the Angular
 component and uses the run function to run it.
 
-# Visual Blocks in Google Colaboratory
+## Visual Blocks in Google Colaboratory
 
 There is a Visual Blocks Python package for use within [Google Colaboratory][]
-notebooks. It allows you to register python functions defined in the notebook with Visual Blocks, and it provides an interactive UI where you can easily build ML pipelines to execute those functions along with other ML-related nodes.
+notebooks. It allows you to register python functions defined in the notebook
+with Visual Blocks, and it provides an interactive UI where you can easily build
+ML pipelines to execute those functions along with other ML-related nodes.
 
 [Google Colaboratory]: https://colab.research.google.com
 
-## For Users
+### For Users
 
-Follow the steps below to get started in Colab with Visual Blocks. You can also check out the example notebooks in the directory [examples/](examples/), or watch the [tutorial](https://www.youtube.com/watch?v=UpJb4Y6wU5o).
+Follow the steps below to get started in Colab with Visual Blocks. You can also
+check out the example notebooks in the directory [examples/](examples/), or
+watch the [tutorial](https://www.youtube.com/watch?v=UpJb4Y6wU5o).
 
-### Step 1: Install Visual Blocks
+#### Step 1: Install Visual Blocks
 
 ```
 !pip install visualblocks
 ```
 
-### Step 2: Write an inference function
+#### Step 2: Write an inference function
 
 The inference function should perform inference on the model of your chosen. It
 is your responsibility to import required packages that make the function work.
-For TF or TFLite models, you can find instructions on how to import and use them on [TF Hub].
+For TF or TFLite models, you can find instructions on how to import and use them
+on [TF Hub].
 
 [TF Hub]: https://tfhub.dev
 
 There are three types of inference functions supported by Visual Blocks:
 
-1. **generic**: Generic inference functions accept input tensors and return output tensors.
-1. **text_to_text**: Text to text inference functions accept strings and return output strings.
-1. **text_to_tensors**: Text to tensors inference functions accept strings and return output tensors.
+1.  **generic**: Generic inference functions accept input tensors and return
+    output tensors.
+1.  **text_to_text**: Text to text inference functions accept strings and return
+    output strings.
+1.  **text_to_tensors**: Text to tensors inference functions accept strings and
+    return output tensors.
 
 When writing your inference function note the following:
 
-*  **Args**: The type of input tensors should be a list of NumPy arrays.
-*  **Returns**: The type of output tensors should be a list of NumPy arrays.
-* Ensure the dimensions of the input and output NumPy arrays align with the expected tensor dimensions of your model.
+*   **Args**: The type of input tensors should be a list of NumPy arrays.
+*   **Returns**: The type of output tensors should be a list of NumPy arrays.
+*   Ensure the dimensions of the input and output NumPy arrays align with the
+    expected tensor dimensions of your model.
 
-For references on how to define an inference function, check out the example notebooks in the directory [examples/](examples/).
+For references on how to define an inference function, check out the example
+notebooks in the directory [examples/](examples/).
 
-### Step 2b (optional): Register inference functions dynamically
+#### Step 2b (optional): Register inference functions dynamically
 
-If you would like to view changes made to inference functions in the Visual Blocks UI without needing to re-run the Visual Blocks server, you can use a Visual Blocks decorator.
+If you would like to view changes made to inference functions in the Visual
+Blocks UI without needing to re-run the Visual Blocks server, you can use a
+Visual Blocks decorator.
 
 First, import the decorator:
 
@@ -111,11 +126,15 @@ def my_generic_inference_function(tensors):
   # ...
 ```
 
-Check out the [Quick Start Style Transfer Example](https://github.com/google/visualblocks/blob/main/examples/quick_start_style_transfer.ipynb) for reference.
+Check out the
+[Quick Start Style Transfer Example](https://github.com/google/visualblocks/blob/main/examples/quick_start_style_transfer.ipynb)
+for reference.
 
-### Step 3: Import Visual Blocks and start server
+#### Step 3: Import Visual Blocks and start server
 
-If you do not use the function decorator `register_vb_fn`, pass each inference function with its inference type in the `visualblocks.Server()` function. For example:
+If you do not use the function decorator `register_vb_fn`, pass each inference
+function with its inference type in the `visualblocks.Server()` function. For
+example:
 
 ```python
 # Pass each inference function in the Visual Blocks server
@@ -128,7 +147,8 @@ server = visualblocks.Server(generic=my_fn1)
 # server = visualblocks.Server(generic=(my_fn1, my_fn2), text_to_text=(my_fn3))
 ```
 
-When using the function decorator `register_vb_fn`, you do not need to pass inference functions in the Visual Blocks server. Example:
+When using the function decorator `register_vb_fn`, you do not need to pass
+inference functions in the Visual Blocks server. Example:
 
 ```python
 # Do not pass inference functions in the Visual Blocks server
@@ -138,29 +158,30 @@ import visualblocks
 server = visualblocks.Server()
 ```
 
-### Step 4: Display Visual Blocks UI
+#### Step 4: Display Visual Blocks UI
 
-In a seperate cell, call the `display` function to view the Visual Blocks graphical development environment in your Colab notebook.
+In a separate cell, call the `display` function to view the Visual Blocks
+graphical development environment in your Colab notebook.
 
 ```python
 server.display()
 ```
 
-The registered functions can then be executed by using the corresponding type of node.
-For example, the registered generic inference functions can be selected in the
-"Colab (generic)" node, located in the "Model" category.
+The registered functions can then be executed by using the corresponding type of
+node. For example, the registered generic inference functions can be selected in
+the "Colab (generic)" node, located in the "Model" category.
 
-### Step 5: Share the notebook
+#### Step 5: Share the notebook
 
-In Visual Blocks UI, you can click the `Save to Colab` button to save the pipeline
-to the notebook. You can then share the notebook with others and they will see the
-exact pipeline.
+In Visual Blocks UI, you can click the `Save to Colab` button to save the
+pipeline to the notebook. You can then share the notebook with others and they
+will see the exact pipeline.
 
-⚠️ When running a notebook with saved Visual Blocks pipeline, please do not "Run all".
-The cell with `server.display()` has to be run manually after all the other cells have
-finished running.
+⚠️ When running a notebook with saved Visual Blocks pipeline, please do not "Run
+all". The cell with `server.display()` has to be run manually after all the
+other cells have finished running.
 
-## For Developers
+### For Developers
 
 `!pip install git+https://...` in a notebook will install the package straight
 from the latest, unreleased source in Github. The notebooks in the
@@ -169,7 +190,7 @@ from the latest, unreleased source in Github. The notebooks in the
 The directory [scripts/](scripts/) contains turnkey scripts for common developer
 tasks such as building and uploading the Python distribution package.
 
-### Build and upload package to TestPyPI
+#### Build and upload package to TestPyPI
 
 One time setup:
 
@@ -184,21 +205,21 @@ $ python3 -m pip install twine
 Steps:
 
 1.  Update the version number in [pyproject.toml](python/pyproject.toml).
-1.  Run `rm -rf build` to clean up previous builds.
-1.  Run `scripts/package` to build the package.
-1.  Run `scripts/upload` to upload the package. You need to have the username
+2.  Run `rm -rf build` to clean up previous builds.
+3.  Run `scripts/package` to build the package.
+4.  Run `scripts/upload` to upload the package. You need to have the username
     and password ready.
 
-# Contributions
+## Contributions
 
-We are not accepting contributions at this time. The Visual Blocks team will
-contribute to this library.
+We are not accepting contributions to the core library at this time. The Visual
+Blocks team will contribute to this library.
 
-# Copyright and license
+However, we welcome community contributions of pipelines made with Visual
+Blocks. Please refer to [examples/README.md](examples/README.md) to contribute
+your masterpiece!
 
-Copyright under the Apache 2.0 license.
-
-# Note
+## Note
 
 This is not an officially supported Google product. As this is an experimental
 release aimed at starting a conversation and gauging community interest, we want
