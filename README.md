@@ -216,7 +216,7 @@ We are not accepting contributions to the core library at this time. The Visual
 Blocks team will contribute to this library.
 
 However, we welcome community contributions of pipelines made with Visual
-Blocks. Please refer to [examples/README.md](examples/README.md) to contribute
+Blocks. Please refer to [pipelines/README.md](pipelines/README.md) to contribute
 your masterpiece!
 
 ## Note
