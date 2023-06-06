@@ -1,0 +1,101 @@
+ {
+  "project": {
+    "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
+    "id": "new",
+    "creationTs": 1686084152526,
+    "lastModifiedTs": 1686084414722
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "text_processor_s72kmc",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 672,
+          "previewY": 0,
+          "previewWidth": 512,
+          "previewHeight": 336
+        },
+        "uiData": {
+          "posX": 624,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "palm_textgen_44fc4l",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_44fc4l",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 336,
+          "previewY": -16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 368,
+          "posY": 16,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "input_text_ohpgep",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_ohpgep",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 112,
+          "posY": 32,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "text": "Write code for a figure in LaTeX containing four sub-figures, with captions for each and also an overall caption.",
+          "hidePreview": false
+        }
+      }
+    ]
+  }
+}
