@@ -1,9 +1,9 @@
  {
   "project": {
     "name": "PaLM 2 email generation and review",
-    "id": "m4qy4c",
+    "id": "3irlat",
     "creationTs": 1685487890322,
-    "lastModifiedTs": 1686010930487
+    "lastModifiedTs": 1686011448835
   },
   "graph": {
     "nodes": [
@@ -257,29 +257,6 @@
         }
       },
       {
-        "id": "input_text_4vte5t",
-        "nodeSpecId": "input_text",
-        "customData": {
-          "initialWidth": 304,
-          "initialHeight": 144,
-          "previewX": 16,
-          "previewY": 304,
-          "previewWidth": 304,
-          "previewHeight": 112
-        },
-        "uiData": {
-          "posX": 0,
-          "posY": 224,
-          "width": 176,
-          "selected": false
-        },
-        "propValues": {
-          "text": "Company Customer Service",
-          "passwordMode": false,
-          "hidePreview": false
-        }
-      },
-      {
         "id": "text_processor_glztii",
         "nodeSpecId": "text_processor",
         "customData": {
@@ -424,6 +401,29 @@
         }
       },
       {
+        "id": "input_text_4vte5t",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 16,
+          "previewY": 304,
+          "previewWidth": 304,
+          "previewHeight": 112
+        },
+        "uiData": {
+          "posX": 0,
+          "posY": 208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Company Customer Service",
+          "passwordMode": false,
+          "hidePreview": false
+        }
+      },
+      {
         "id": "input_text_fu0myq",
         "displayLabel": "API Key",
         "nodeSpecId": "input_text",
@@ -437,7 +437,7 @@
         },
         "uiData": {
           "posX": 448,
-          "posY": 288,
+          "posY": 272,
           "width": 176,
           "selected": false
         },
