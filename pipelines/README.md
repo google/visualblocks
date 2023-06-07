@@ -28,11 +28,11 @@ your pipeline (width: 320px) to be featured in this guide.
 
 After you have uploaded your pipeline to the `pipelines` folder, you can easily
 share your amazing creation via URL like:
-https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2F3dphoto_portrait_depth.json
+https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json
 
 ## Example Pipelines
 
-Please refer to `3dphoto_portrait_depth.json` and `palm2_weather_summarizer.json`
+Please refer to `graphics%2F3dphoto_portrait_depth.json` and `palm2_weather_summarizer.json`
 for two example pipelines. Note that API keys and locally uploaded images are
 not exported for privacy and security.
 
@@ -46,56 +46,61 @@ We highlight a set of community-contributed pipelines of Visual Blocks below:
 
 ### Interactive Graphics
 
-*   [3D Photo](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2F3dphoto_portrait_depth.json)
+*   [3D Photo](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json)
     with
     [Portrait Depth API](https://blog.tensorflow.org/2022/05/portrait-depth-api-turning-single-image.html?linkId=8063793)
 
-    [![3D Effects with Portrait Depth API in Visual Blocks](3dphoto_portrait_depth.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2F3dphoto_portrait_depth.json)
+    [![3D Effects with Portrait Depth API in Visual Blocks](graphics/3dphoto_portrait_depth.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json)
 
 
 *   [AR Sticker Effect](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Far_sticker_effect.json)
     with
     [Mediapipe Face Landmark Detection](https://developers.google.com/mediapipe/solutions/vision/face_landmarker)
 
-    [![AR Sticker Effect in Visual Blocks](ar_sticker_effect.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Far_sticker_effect.json)
+    [![AR Sticker Effect in Visual Blocks](webcam/ar_sticker_effect.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Far_sticker_effect.json)
 
 ### Natural Language Understanding
 
-*   [Weather Summarizer](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm2_weather_summarizer.json)
+*   [Weather Summarizer](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_weather_summarizer.json)
     with
     [PaLM API](https://developers.generativeai.google)
 
-    [![Weather Summarizer with PaLM API](palm2_weather_summarizer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm2_weather_summarizer.json)
+    [![Weather Summarizer with PaLM API](llm/palm2_weather_summarizer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_weather_summarizer.json)
 
 
-*   [LaTeX Manuscript Helper](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm2_manuscript_helper.json)
+*   [LaTeX Manuscript Helper](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_manuscript_helper.json)
     with
     [PaLM API](https://developers.generativeai.google)
 
-    [![LaTeX Manuscript Helper](palm2_manuscript_helper.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm2_manuscript_helper.json)
+    [![LaTeX Manuscript Helper](llm/palm2_manuscript_helper.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_manuscript_helper.json)
 
 
-*   [Werewolf Game](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm2_werewolf.json)
+*   [Werewolf Game](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_werewolf.json)
     with
     [PaLM API](https://developers.generativeai.google)
 
-    [![Werewolf Game](palm2_werewolf.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fpalm2_werewolf.json)
+    [![Werewolf Game](llm/palm2_werewolf.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_werewolf.json)
 
-*   [Review Generation and Rating](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Freview_generation_and_rating.json) with GPT3.5
+*   [Review Generation and Rating](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Freview_generation_and_rating.json) with GPT3.5
 
-    [![Review Generation and Rating](review_generation_and_rating.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Freview_generation_and_rating.json)
+    [![Review Generation and Rating](llm/review_generation_and_rating.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Freview_generation_and_rating.json)
 
 
+*   [Email tones explorer](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_email_tones_explorer.json)
+    with
+    [PaLM API](https://developers.generativeai.google)
+
+    [![Email tones explorer](llm/palm2_email_tones_explorer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_email_tones_explorer.json)
 
 ### Image Processing
 
-*   [Low Light Enhancement](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Flow_light_enhancement.json)
+*   [Low Light Enhancement](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fvision%2Flow_light_enhancement.json)
 
-    [![Low Light Enhancement in Visual Blocks](low_light_enhancement.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Flow_light_enhancement.json)
+    [![Low Light Enhancement in Visual Blocks](vision/low_light_enhancement.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fvision%2Flow_light_enhancement.json)
 
-*   [CartoonGAN](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fcartoongan.json)
+*   [CartoonGAN](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2Fcartoongan.json)
 
-    [![CartoonGAN in Visual Blocks](cartoongan.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fcartoongan.json)
+    [![CartoonGAN in Visual Blocks](graphics/cartoongan.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2Fcartoongan.json)
 
 
 ## Community Guidelines
