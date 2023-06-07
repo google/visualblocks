@@ -22,7 +22,7 @@ pipeline.
 
 Finally, copy the downloaded your pipeline to your local repository, commit and
 create a pull request by following
-[the official GitHub guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+[the official GitHub guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request). Make sure to add your pipeline to the corresponding subfolder within the pipeline folder (i.e. audio, vision, multi-modal, etc.).
 We strongly recommend contributors to also upload a GIF or JPG screenshot for
 your pipeline (width: 320px) to be featured in this guide.
 
