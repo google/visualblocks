@@ -1,0 +1,326 @@
+{
+  "project": {
+    "id": "jqoi4m",
+    "name": "AR Sticker Effect",
+    "instruction": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
+    "creationTs": 1681940242239,
+    "lastModifiedTs": 1682018151462
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "virtual_sticker_nh4r88",
+        "nodeSpecId": "virtual_sticker",
+        "customData": {
+          "previewX": 1088,
+          "previewY": 288,
+          "previewWidth": 240,
+          "previewHeight": 192
+        },
+        "uiData": {
+          "posX": 1120,
+          "posY": 16,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "anchor": "faceTop",
+          "scale": 0.5352564102564102,
+          "offsetX": 5.12820512820511,
+          "offsetY": -33.333333333333314,
+          "hidePreview": true
+        },
+        "incomingEdges": {
+          "landmarkResult": [
+            {
+              "sourceNodeId": "face_landmark_stkat5",
+              "outputId": "landmarkResult"
+            }
+          ],
+          "stickerImage": [
+            {
+              "sourceNodeId": "shader_processing_jbhc6h",
+              "outputId": "image"
+            }
+          ],
+          "originalImage": [
+            {
+              "sourceNodeId": "mask_visualizer_qq0eyp",
+              "outputId": "maskedImage"
+            }
+          ]
+        }
+      },
+      {
+        "id": "live_camera_di0avl",
+        "nodeSpecId": "live_camera",
+        "customData": {
+          "runContinuously": true,
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 1088,
+          "previewY": 32,
+          "previewWidth": 240,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 32,
+          "posY": 224,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": true
+        }
+      },
+      {
+        "id": "shader_processing_jbhc6h",
+        "nodeSpecId": "shader_processing",
+        "customData": {
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "runContinuously": true,
+          "previewX": 1680,
+          "previewY": 32,
+          "previewWidth": 208,
+          "previewHeight": 272
+        },
+        "uiData": {
+          "posX": 800,
+          "posY": 256,
+          "width": 208,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": true
+        },
+        "inputValues": {
+          "shader": "basic-ripple"
+        },
+        "incomingEdges": {
+          "shader": [
+            {
+              "sourceNodeId": "code_editor_2qktkw",
+              "outputId": "code"
+            }
+          ],
+          "channel0": [
+            {
+              "sourceNodeId": "input_image_4r9zvb",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "code_editor_2qktkw",
+        "nodeSpecId": "code_editor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 368,
+          "previewX": 1344,
+          "previewY": 288,
+          "previewWidth": 304,
+          "previewHeight": 368
+        },
+        "uiData": {
+          "posX": 576,
+          "posY": 256,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "curCode": "void mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n  vec2 uv = fragCoord.xy / iResolution.xy;\n  float zoom = (0.9 + 0.1 * sin(iTime * 20.));\n    \n  vec2 scaleCenter = vec2(0.5);\n  uv = (uv - scaleCenter) * zoom + scaleCenter;\n    \n  vec4 texel = texture(iChannel0, uv);\n  fragColor = texel;\n}",
+          "hidePreview": true
+        },
+        "inputValues": {
+          "initialCode": ""
+        }
+      },
+      {
+        "id": "mask_visualizer_qq0eyp",
+        "nodeSpecId": "mask_visualizer",
+        "customData": {
+          "previewX": 1344,
+          "previewY": 32,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 560,
+          "posY": 16,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "fg-image",
+          "hidePreview": true
+        },
+        "inputValues": {
+          "color": "#22e8dd"
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "live_camera_di0avl",
+              "outputId": "image"
+            }
+          ],
+          "segmentationResult": [
+            {
+              "sourceNodeId": "body_segmentation_vbr8mk",
+              "outputId": "segmentationResult"
+            }
+          ]
+        }
+      },
+      {
+        "id": "body_segmentation_vbr8mk",
+        "nodeSpecId": "body_segmentation",
+        "customData": {
+          "previewX": 384,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 272,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "modelOption": "MediaPipeSelfieSegmentation"
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "live_camera_di0avl",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_image_4r9zvb",
+        "displayLabel": "sticker",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 32,
+          "previewWidth": 352,
+          "previewHeight": 160
+        },
+        "uiData": {
+          "posX": 272,
+          "posY": 240,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/testpics/strawberry2.jpeg",
+            "https://storage.googleapis.com/tfweb/testpics/bulb.png"
+          ],
+          "gridColumnCount": 2,
+          "allowUserUpload": true,
+          "selectedImageUrl": "https://storage.googleapis.com/tfweb/testpics/bulb.png",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "input_image_1b0il9",
+        "displayLabel": "Background",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 208,
+          "previewWidth": 352,
+          "previewHeight": 176
+        },
+        "uiData": {
+          "posX": 1120,
+          "posY": 288,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/testpics/beach.jpg"
+          ],
+          "gridColumnCount": 2,
+          "allowUserUpload": true,
+          "selectedImageUrl": "https://storage.googleapis.com/tfweb/testpics/beach.jpg",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "face_landmark_stkat5",
+        "nodeSpecId": "face_landmark",
+        "customData": {
+          "previewX": 720,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 800,
+          "posY": 112,
+          "width": 176,
+          "selected": false
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "mask_visualizer_qq0eyp",
+              "outputId": "maskedImage"
+            }
+          ]
+        }
+      },
+      {
+        "id": "image_mixer_yefgp9",
+        "nodeSpecId": "image_mixer",
+        "customData": {
+          "previewX": 384,
+          "previewY": 32,
+          "previewWidth": 480,
+          "previewHeight": 352
+        },
+        "uiData": {
+          "posX": 1392,
+          "posY": 112,
+          "width": 224,
+          "selected": true
+        },
+        "propValues": {
+          "mode": "source-over",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "topText": "I have an idea!",
+          "midText": "",
+          "bottomText": ""
+        },
+        "incomingEdges": {
+          "image1": [
+            {
+              "sourceNodeId": "input_image_1b0il9",
+              "outputId": "image"
+            }
+          ],
+          "image2": [
+            {
+              "sourceNodeId": "virtual_sticker_nh4r88",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
