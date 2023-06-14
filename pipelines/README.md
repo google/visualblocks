@@ -4,7 +4,7 @@
 
 Thank you creators for contributing to Visual Blocks for ML! We firmly believe
 that: with your contribution, we can inspire more hackers, designers, and
-practitioners unleash their creativity!
+practitioners to unleash their creativity!
 
 ## Contributing a New Pipeline
 
@@ -52,12 +52,17 @@ We highlight a set of community-contributed pipelines of Visual Blocks below:
 
     [![3D Effects with Portrait Depth API in Visual Blocks](graphics/3dphoto_portrait_depth.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json)
 
-
 *   [AR Sticker Effect](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Far_sticker_effect.json)
     with
     [Mediapipe Face Landmark Detection](https://developers.google.com/mediapipe/solutions/vision/face_landmarker)
 
     [![AR Sticker Effect in Visual Blocks](webcam/ar_sticker_effect.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Far_sticker_effect.json)
+
+*   [Laser Hands](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Flaser_hands_rough.json)
+    with
+    [Mediapipe Hand Landmark Detection](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker)
+
+    [![Laser Hands in Visual Blocks](webcam/laser_hands_rough.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Flaser_hands_rough.json)
 
 ### Natural Language Understanding
 
@@ -67,13 +72,11 @@ We highlight a set of community-contributed pipelines of Visual Blocks below:
 
     [![Weather Summarizer with PaLM API](llm/palm2_weather_summarizer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_weather_summarizer.json)
 
-
 *   [LaTeX Manuscript Helper](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_manuscript_helper.json)
     with
     [PaLM API](https://developers.generativeai.google)
 
     [![LaTeX Manuscript Helper](llm/palm2_manuscript_helper.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_manuscript_helper.json)
-
 
 *   [Werewolf Game](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_werewolf.json)
     with
