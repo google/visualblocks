@@ -31,7 +31,7 @@ pipeline folder (i.e. audio, vision, multi-modal, etc.). We strongly recommend
 contributors to also upload a GIF or JPG screenshot for your pipeline (width:
 320px) to be featured in this guide.
 
-### Step 4: Describing Your Pipeline
+### Step 4: Describing Your Pipeline (Optional)
 
 Write a `.txt` file that describes your pipeline. The description should be as
 **clear and concise** as possible. We encourage contributors to follow the two guidelines below:
