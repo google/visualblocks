@@ -1,0 +1,12 @@
+name: Test Script
+
+on:
+  push: {branches: main}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: run python script
+    steps:
+      - uses: actions/checkout@v3
+      - run: python testrun.py
