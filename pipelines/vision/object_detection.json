@@ -1,0 +1,184 @@
+ {
+  "project": {
+    "name": "Object Detection with Interactive Data Augmentation",
+    "id": "mgl1nj",
+    "creationTs": 1689050831536,
+    "lastModifiedTs": 1689051147730
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_image_qlz7jb",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 256,
+          "posY": 96,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic4.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic5.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic6.jpg"
+          ],
+          "gridColumnCount": 3,
+          "allowUserUpload": false,
+          "selectedImageUrl": "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic4.jpeg",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "image_processor_4bshdj",
+        "displayLabel": "Image processor",
+        "nodeSpecId": "image_processor",
+        "customData": {
+          "initialWidth": 480,
+          "initialHeight": 384,
+          "rightOfNode": "input_image_qlz7jb",
+          "previewX": 496,
+          "previewY": 16,
+          "previewWidth": 480,
+          "previewHeight": 384
+        },
+        "uiData": {
+          "posX": 496,
+          "posY": 160,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false,
+          "resize": {
+            "width": -1,
+            "height": -1
+          },
+          "resize,,,width": -1,
+          "resize,,,height": -1
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_qlz7jb",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "bounding_box_visualizer_ltgoqf",
+        "nodeSpecId": "bounding_box_visualizer",
+        "customData": {
+          "rightOfNode": "object_detection_6uo5zv",
+          "previewX": 1040,
+          "previewY": 32,
+          "previewWidth": 464,
+          "previewHeight": 416
+        },
+        "uiData": {
+          "posX": 1008,
+          "posY": 96,
+          "width": 230,
+          "selected": false
+        },
+        "propValues": {
+          "keypointScale": 1,
+          "color": "#00f8ff",
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "boundingBoxResult": [
+            {
+              "sourceNodeId": "object_detection_6uo5zv",
+              "outputId": "objectDetectionResult"
+            }
+          ],
+          "image": [
+            {
+              "sourceNodeId": "image_processor_4bshdj",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "object_detection_6uo5zv",
+        "nodeSpecId": "object_detection",
+        "customData": {
+          "previewX": 480,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 736,
+          "posY": 240,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "score": 0.5,
+          "boxesCount": 20
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "image_processor_4bshdj",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "image_comparison_0ky5js",
+        "nodeSpecId": "image_comparison",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 336,
+          "rightOfNode": "bounding_box_visualizer_ltgoqf",
+          "previewX": 1536,
+          "previewY": 16,
+          "previewWidth": 640,
+          "previewHeight": 480
+        },
+        "uiData": {
+          "posX": 1312,
+          "posY": 144,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "columnLabels": "input image, post processed image, result",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "images": []
+        },
+        "incomingEdges": {
+          "images": [
+            {
+              "sourceNodeId": "input_image_qlz7jb",
+              "outputId": "image"
+            },
+            {
+              "sourceNodeId": "image_processor_4bshdj",
+              "outputId": "image"
+            },
+            {
+              "sourceNodeId": "bounding_box_visualizer_ltgoqf",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

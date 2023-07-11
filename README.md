@@ -63,6 +63,11 @@ Follow the steps below to get started in Colab with Visual Blocks. You can also
 check out the example notebooks in the directory [examples/](examples/), or
 watch the [tutorial](https://www.youtube.com/watch?v=UpJb4Y6wU5o).
 
+For users who are interested in creating ML pipelines through the web interface,
+check out [pipelines/](pipelines/) for a comrehensive gallery of end-to-end
+applications including 3D photos, manuscript helper with large language models,
+and cartoonization.
+
 #### Step 1: Install Visual Blocks
 
 ```
@@ -80,18 +85,18 @@ on [TF Hub].
 
 There are three types of inference functions supported by Visual Blocks:
 
-1.  **generic**: Generic inference functions accept input tensors and return
+1. **generic**: Generic inference functions accept input tensors and return
     output tensors.
-1.  **text_to_text**: Text to text inference functions accept strings and return
+1. **text_to_text**: Text to text inference functions accept strings and return
     output strings.
-1.  **text_to_tensors**: Text to tensors inference functions accept strings and
+1. **text_to_tensors**: Text to tensors inference functions accept strings and
     return output tensors.
 
 When writing your inference function note the following:
 
-*   **Args**: The type of input tensors should be a list of NumPy arrays.
-*   **Returns**: The type of output tensors should be a list of NumPy arrays.
-*   Ensure the dimensions of the input and output NumPy arrays align with the
+* **Args**: The type of input tensors should be a list of NumPy arrays.
+* **Returns**: The type of output tensors should be a list of NumPy arrays.
+* Ensure the dimensions of the input and output NumPy arrays align with the
     expected tensor dimensions of your model.
 
 For references on how to define an inference function, check out the example
@@ -204,10 +209,10 @@ $ python3 -m pip install twine
 
 Steps:
 
-1.  Update the version number in [pyproject.toml](python/pyproject.toml).
-2.  Run `rm -rf build` to clean up previous builds.
-3.  Run `scripts/package` to build the package.
-4.  Run `scripts/upload` to upload the package. You need to have the username
+1. Update the version number in [pyproject.toml](python/pyproject.toml).
+2. Run `rm -rf build` to clean up previous builds.
+3. Run `scripts/package` to build the package.
+4. Run `scripts/upload` to upload the package. You need to have the username
     and password ready.
 
 ## Contributions

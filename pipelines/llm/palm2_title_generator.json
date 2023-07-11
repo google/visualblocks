@@ -1,0 +1,168 @@
+ {
+  "project": {
+    "name": "Awesome title generator",
+    "id": "mgl1nj",
+    "creationTs": 1689050831536,
+    "lastModifiedTs": 1689050879030
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_text_kqre1b",
+        "displayLabel": "Input Paragraph",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 32,
+          "previewY": 272,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 240,
+          "posY": 224,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "In recent years, there has been a proliferation of multimedia applications that leverage machine learning (ML) for interactive experiences. Prototyping ML-based applications is, however, still challenging, given complex workflows that are not ideal for design and experimentation. To better understand these challenges, we conducted a formative study with seven ML practitioners to gather insights about common ML evaluation workflows. The study helped us derive six design goals, which informed Rapsai, a visual programming platform for rapid and iterative development of end-to-end ML-based multimedia applications. Rapsai features a node-graph editor to facilitate interactive characterization and visualization of ML model performance. Rapsai streamlines end-to-end prototyping with interactive data augmentation and model comparison capabilities in its no-coding environment. Our evaluation of Rapsai in four real-world case studies (N=15) suggests that practitioners can accelerate their workflow, make more informed decisions, analyze strengths and weaknesses, and holistically evaluate model behavior with real-world input.",
+          "passwordMode": false,
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_yq6dko",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 368,
+          "previewY": 32,
+          "previewWidth": 304,
+          "previewHeight": 384
+        },
+        "uiData": {
+          "posX": 464,
+          "posY": 80,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_awa2wz",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_kqre1b",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_awa2wz",
+        "displayLabel": "Initial Prompt",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 32,
+          "previewY": 32,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 240,
+          "posY": 80,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Generate ten awesome titles for the following paragraph:",
+          "passwordMode": false,
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "palm_textgen_clgwr9",
+        "displayLabel": "PaLM Text Generator",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 720,
+          "previewY": 32,
+          "previewWidth": 320,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": 672,
+          "posY": 80,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": "",
+          "apiKey": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_yq6dko",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_6n3jis",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 1056,
+          "previewY": 32,
+          "previewWidth": 528,
+          "previewHeight": 368
+        },
+        "uiData": {
+          "posX": 912,
+          "posY": 80,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "palm_textgen_clgwr9",
+              "outputId": "answer"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
