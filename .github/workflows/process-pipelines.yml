@@ -1,0 +1,20 @@
+name: Process Pipelines
+
+on:
+  push: {branches: main, paths: pipelines/**}
+
+jobs:
+  pipeprocess:
+    runs-on: ubuntu-latest
+    name: Run script
+    steps:
+      - uses: actions/checkout@v3
+      
+      - run: python .github/workflows/process.py
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git status
+          git add .
+          git commit -m "Update pipelines_index.json"
+          git push
