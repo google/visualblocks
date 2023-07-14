@@ -52,7 +52,13 @@ pipeline:
 &#9746; "Get the weather in San Francisco first, and then use PaLM to summarize
 the generated content into one sentence." - a description that includes too many unnecessary technical details [violating P2]
 
-### Step 5: Uploading
+### Step 5: Naming your files
+
+Please name your files in the following way:
+- `.txt` files should have the same name as the `.json` file. Example: `pipeline_name.json` can have a txt file with the name `pipeline_name.txt`. 
+- Image files should either have the same name as the `.json` file, or have the same name with `_highres` appended to the end. Example: `pipeline_name.json` can have image files with the names `pipeline_name.[image format]` or `pipeline_name_highres.[image format]`.
+
+### Step 6: Uploading
 
 After you have uploaded your pipeline to the `pipelines` folder, you can easily
 share your amazing creation via URL like:
