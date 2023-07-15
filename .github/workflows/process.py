@@ -36,21 +36,22 @@ def check_dir(root_path):
             data[pipeline]['json'] = get_direct_url(path)
             with open(path, 'r') as pipeline_json:
                 pipeline_data = json.load(pipeline_json)
-                old_metadata = data.get(pipeline).get('metadata')
-                data[pipeline]['metadata'] = pipeline_data.get('project')
+                old_metadata = data[pipeline]['metadata']
+                data[pipeline]['metadata'] = pipeline_data['project']
 
                 # Set userSetData if it does not exist in the json file
                 if not 'userSetData' in data[pipeline]['metadata']:
-                    data[pipeline]['metadata']['userSetData'] = old_metadata.get('userSetData')
+                    data[pipeline]['metadata']['userSetData'] = old_metadata['userSetData']
 
+                userSetData = data[pipeline]['metadata']['userSetData']
                 # If no description already exists
-                if (not 'description' in data[pipeline]['metadata']['userSetData']) or data[pipeline]['metadata']['userSetData']['description'] == '':
-                    if 'description' in old_metadata.get('userSetData'):
+                if (not 'description' in userSetData) or userSetData['description'] == '':
+                    if 'description' in old_metadata['userSetData']:
                         # Set description if txt file had a description 
-                        data[pipeline]['metadata']['userSetData']['description'] = old_metadata.get('userSetData')
+                        userSetData['description'] = old_metadata['userSetData']
                     elif 'instruction' in data[pipeline]['metadata']:
                         # Set description from 'instruction' metadata
-                        data[pipeline]['metadata']['userSetData']['description'] = data.get(pipeline).get('metadata').get('instruction')
+                        userSetData['description'] = data[pipeline]['metadata']['instruction']
         elif ext == 'txt':
             # If there is no description set for the project
             # the contents of the txt file will be the description
