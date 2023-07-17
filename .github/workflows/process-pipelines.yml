@@ -1,0 +1,31 @@
+name: Process Pipelines
+
+on:
+  push: {branches: main, paths: pipelines/**}
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  pipeprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create new branch and run script
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - run: |
+          git branch generate-file-branch-${{ github.run_id }}-${{ github.run_attempt }}
+          git push --set-upstream origin generate-file-branch-${{ github.run_id }}-${{ github.run_attempt }}
+          git checkout generate-file-branch-${{ github.run_id }}-${{ github.run_attempt }}
+          python .github/workflows/process.py
+          if [[ "$(git diff --exit-code ./pipelines/pipelines_index.json)" =~ 'diff' ]]; then echo "IS_VALID=true" >> $GITHUB_ENV; else echo "IS_VALID=false" >> $GITHUB_ENV ;fi
+      - if: ${{ env.IS_VALID == 'true' }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update pipelines_index.json"
+          git push
+          gh pr create -B main --title 'Update pipelines_index.json' --body 'Update pipelines index'
+      
