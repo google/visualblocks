@@ -3,9 +3,6 @@ name: Process Pipelines
 on:
   push: {branches: main, paths: pipelines/**}
 
-env:
-  GH_TOKEN: ${{ github.token }}
-
 jobs:
   pipeprocess:
     runs-on: ubuntu-latest
