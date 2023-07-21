@@ -3,9 +3,6 @@ name: Process Pipelines
 on:
   push: {branches: main, paths: pipelines/**}
 
-env:
-  GH_TOKEN: ${{ github.token }}
-
 jobs:
   pipeprocess:
     runs-on: ubuntu-latest
@@ -22,10 +19,12 @@ jobs:
           if [[ "$(git diff --exit-code ./pipelines/pipelines_index.json)" =~ 'diff' ]]; then echo "IS_VALID=true" >> $GITHUB_ENV; else echo "IS_VALID=false" >> $GITHUB_ENV ;fi
       - if: ${{ env.IS_VALID == 'true' }}
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --global user.email "vb-bot@google.com"
+          git config --global user.name "vb-bot"
           git add .
           git commit -m "Update pipelines_index.json"
           git push
           gh pr create -B main --title 'Update pipelines_index.json' --body 'Update pipelines index'
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
       
