@@ -4,7 +4,10 @@
     "name": "Low-light enhancement",
     "instruction": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
     "creationTs": 1681966311839,
-    "lastModifiedTs": 1681966327277
+    "lastModifiedTs": 1681966327277,
+    "userSetData": {
+      "tags": ["vision"]
+    }
   },
   "graph": {
     "nodes": [

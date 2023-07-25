@@ -7,7 +7,7 @@ data = {}
 def main():
     with open("pipelines/pipelines_index.json", 'w') as json_file:
         check_dir('pipelines')
-        json.dump(data, json_file, ensure_ascii=False)
+        json.dump(data, json_file, ensure_ascii=False, indent=2)
 
 def check_dir(root_path):
     for name in os.listdir(root_path):

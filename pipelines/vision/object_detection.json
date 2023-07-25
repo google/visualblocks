@@ -3,7 +3,10 @@
     "name": "Object Detection with Interactive Data Augmentation",
     "id": "mgl1nj",
     "creationTs": 1689050831536,
-    "lastModifiedTs": 1689051147730
+    "lastModifiedTs": 1689051147730,
+    "userSetData": {
+      "tags": ["vision"]
+    }
   },
   "graph": {
     "nodes": [
