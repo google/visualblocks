@@ -1,43 +1,30 @@
 {
-  "image_to_story_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.json",
+  "ar_sticker_effect": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/ar_sticker_effect.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/ar_sticker_effect.gif"
     ],
     "metadata": {
-      "name": "Image-to-Story Generator",
-      "id": "new",
-      "creationTs": 1685937637546,
-      "lastModifiedTs": 1688761505533,
+      "id": "jqoi4m",
+      "name": "AR Sticker Effect",
+      "instruction": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
+      "creationTs": 1681940242239,
+      "lastModifiedTs": 1682018151462,
       "userSetData": {
-        "description": "Generate a story based on a given image."
+        "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image."
       }
     }
   },
-  "silhouette_style_photo_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.json",
+  "laser_hands_rough": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.jpg"
     ],
     "metadata": {
-      "name": "Silhouette Style Photo Generator",
-      "id": "silgen",
-      "creationTs": 1685937637546,
-      "lastModifiedTs": 1686037063250,
-      "userSetData": {}
-    }
-  },
-  "cartoongan": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan_highres.jpg"
-    ],
-    "metadata": {
-      "name": "CartoonGAN",
+      "name": "laser hands rough",
       "id": "new",
-      "creationTs": 1685639486812,
-      "lastModifiedTs": 1685714912433,
+      "creationTs": 1686288323314,
+      "lastModifiedTs": 1686376772927,
       "userSetData": {}
     }
   },
@@ -71,6 +58,51 @@
       }
     }
   },
+  "silhouette_style_photo_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.jpg"
+    ],
+    "metadata": {
+      "name": "Silhouette Style Photo Generator",
+      "id": "silgen",
+      "creationTs": 1685937637546,
+      "lastModifiedTs": 1686037063250,
+      "userSetData": {}
+    }
+  },
+  "cartoongan": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan_highres.jpg"
+    ],
+    "metadata": {
+      "name": "CartoonGAN",
+      "id": "new",
+      "creationTs": 1685639486812,
+      "lastModifiedTs": 1685714912433,
+      "userSetData": {}
+    }
+  },
+  "object_detection": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/object_detection.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/object_detection.jpg"
+    ],
+    "metadata": {
+      "name": "Object Detection with Interactive Data Augmentation",
+      "id": "mgl1nj",
+      "creationTs": 1689050831536,
+      "lastModifiedTs": 1689051147730,
+      "userSetData": {
+        "tags": [
+          "vision"
+        ],
+        "description": "Recognize the objects in the picture and visualize the results with interactive comparison.\n"
+      }
+    }
+  },
   "low_light_enhancement": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/low_light_enhancement.json",
     "screenshots": [
@@ -90,52 +122,33 @@
       }
     }
   },
-  "object_detection": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/object_detection.json",
+  "review_generation_and_rating": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/object_detection.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating_highres.jpg"
     ],
     "metadata": {
-      "name": "Object Detection with Interactive Data Augmentation",
-      "id": "mgl1nj",
-      "creationTs": 1689050831536,
-      "lastModifiedTs": 1689051147730,
-      "userSetData": {
-        "tags": [
-          "vision"
-        ],
-        "description": {
-          "description": "Recognize the objects in the picture and visualize the results with interactive comparison.\n"
-        }
-      }
-    }
-  },
-  "laser_hands_rough": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.jpg"
-    ],
-    "metadata": {
-      "name": "laser hands rough",
-      "id": "new",
-      "creationTs": 1686288323314,
-      "lastModifiedTs": 1686376772927,
+      "name": "Review generation and rating",
+      "id": "9ecqwo",
+      "creationTs": 1685838402089,
+      "lastModifiedTs": 1685839043971,
       "userSetData": {}
     }
   },
-  "ar_sticker_effect": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/ar_sticker_effect.json",
+  "palm2_weather_summarizer": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/ar_sticker_effect.gif"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.gif",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.jpg"
     ],
     "metadata": {
-      "id": "jqoi4m",
-      "name": "AR Sticker Effect",
-      "instruction": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
-      "creationTs": 1681940242239,
-      "lastModifiedTs": 1682018151462,
+      "name": "Weather summarizer",
+      "id": "new",
+      "creationTs": 1683652729656,
+      "lastModifiedTs": 1684856975204,
       "userSetData": {
-        "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image."
+        "description": "Summarize the weather in San Francisco into in one sentence.\n"
       }
     }
   },
@@ -154,27 +167,11 @@
       }
     }
   },
-  "palm2_weather_summarizer": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.gif"
-    ],
-    "metadata": {
-      "name": "Weather summarizer",
-      "id": "new",
-      "creationTs": 1683652729656,
-      "lastModifiedTs": 1684856975204,
-      "userSetData": {
-        "description": "Summarize the weather in San Francisco into in one sentence.\n"
-      }
-    }
-  },
   "palm2_manuscript_helper": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.png"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.png",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.jpg"
     ],
     "metadata": {
       "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
@@ -184,39 +181,11 @@
       "userSetData": {}
     }
   },
-  "palm2_email_generation_review": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review_highres.jpg"
-    ],
-    "metadata": {
-      "name": "PaLM 2 email generation and review",
-      "id": "3irlat",
-      "creationTs": 1685487890322,
-      "lastModifiedTs": 1686011448835,
-      "userSetData": {}
-    }
-  },
-  "review_generation_and_rating": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating_highres.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.jpg"
-    ],
-    "metadata": {
-      "name": "Review generation and rating",
-      "id": "9ecqwo",
-      "creationTs": 1685838402089,
-      "lastModifiedTs": 1685839043971,
-      "userSetData": {}
-    }
-  },
   "palm2_werewolf": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf_highres.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf_highres.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.jpg"
     ],
     "metadata": {
       "name": "Werewolf",
@@ -238,6 +207,35 @@
       "creationTs": 1684866947213,
       "lastModifiedTs": 1685773777862,
       "userSetData": {}
+    }
+  },
+  "palm2_email_generation_review": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review_highres.jpg"
+    ],
+    "metadata": {
+      "name": "PaLM 2 email generation and review",
+      "id": "3irlat",
+      "creationTs": 1685487890322,
+      "lastModifiedTs": 1686011448835,
+      "userSetData": {}
+    }
+  },
+  "image_to_story_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.jpg"
+    ],
+    "metadata": {
+      "name": "Image-to-Story Generator",
+      "id": "new",
+      "creationTs": 1685937637546,
+      "lastModifiedTs": 1688761505533,
+      "userSetData": {
+        "description": "Generate a story based on a given image."
+      }
     }
   }
 }

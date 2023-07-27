@@ -48,7 +48,7 @@ def check_dir(root_path):
                 if (not 'description' in userSetData) or userSetData['description'] == '':
                     if 'description' in old_metadata['userSetData']:
                         # Set description if txt file had a description 
-                        userSetData['description'] = old_metadata['userSetData']
+                        userSetData['description'] = old_metadata['userSetData']['description']
                     elif 'instruction' in data[pipeline]['metadata']:
                         # Set description from 'instruction' metadata
                         userSetData['description'] = data[pipeline]['metadata']['instruction']
