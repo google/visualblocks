@@ -1,0 +1,200 @@
+ {
+  "project": {
+    "name": "Image-to-Story Generator",
+    "id": "new",
+    "creationTs": 1685937637546,
+    "lastModifiedTs": 1688761505533
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_image_myyy7o",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -864,
+          "posY": 208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic1.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic2.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic3.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic4.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic5.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic6.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic7.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic8.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic9.jpg"
+          ],
+          "gridColumnCount": 4,
+          "allowUserUpload": true,
+          "selectedImageUrl": "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic3.jpg",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "mobilenet_p25tsn",
+        "nodeSpecId": "mobilenet",
+        "customData": {
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -656,
+          "posY": 208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "version": "2"
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_myyy7o",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "classification_visualizer_unwgkf",
+        "nodeSpecId": "classification_visualizer",
+        "customData": {
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 480,
+          "previewY": 16,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": -416,
+          "posY": 208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "result": [
+            {
+              "sourceNodeId": "mobilenet_p25tsn",
+              "outputId": "classificationResult"
+            }
+          ]
+        }
+      },
+      {
+        "id": "logger-node_2martj",
+        "nodeSpecId": "logger-node",
+        "customData": {
+          "rightOfNode": "mobilenet_p25tsn",
+          "previewX": 736,
+          "previewY": 16,
+          "previewWidth": 288,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -416,
+          "posY": 352,
+          "width": 176,
+          "selected": false
+        },
+        "inputValues": {
+          "data": []
+        },
+        "incomingEdges": {
+          "data": [
+            {
+              "sourceNodeId": "mobilenet_p25tsn",
+              "outputId": "classificationResult"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_2yulfn",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "rightOfNode": "logger-node_2martj",
+          "previewX": 1056,
+          "previewY": 16,
+          "previewWidth": 272,
+          "previewHeight": 336
+        },
+        "uiData": {
+          "posX": -192,
+          "posY": 352,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "mustache",
+          "separator": "\\n",
+          "formatString": "tell a 100-word vivid and cinematic story with the following elements: \"{{0.classes.0.className}}\" with {{0.classes.0.probability}} weight, {{0.classes.1.className}}\" with {{0.classes.1.probability}} weight, {{0.classes.2.className}}\" with {{0.classes.2.probability}} weight",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "logger-node_2martj",
+              "outputId": "json"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_sw6kcj",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 1376,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": 16,
+          "posY": 352,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.7,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": "",
+          "apiKey": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_2yulfn",
+              "outputId": "text"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
