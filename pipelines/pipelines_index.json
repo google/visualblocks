@@ -1,4 +1,19 @@
 {
+  "image_to_story_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.jpg"
+    ],
+    "metadata": {
+      "name": "Image-to-Story Generator",
+      "id": "new",
+      "creationTs": 1685937637546,
+      "lastModifiedTs": 1688761505533,
+      "userSetData": {
+        "description": "Generate a story based on a given image."
+      }
+    }
+  },
   "silhouette_style_photo_generator": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.json",
     "screenshots": [
