@@ -10,7 +10,7 @@ def main():
         json.dump(data, json_file, ensure_ascii=False, indent=2)
 
 def check_dir(root_path):
-    for name in os.listdir(root_path):
+    for name in sorted(os.listdir(root_path)):
         if name == 'README.md' or name == 'pipelines_index.json' or name.startswith('.'):
             continue
 
