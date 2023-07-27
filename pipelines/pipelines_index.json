@@ -1,30 +1,17 @@
 {
-  "image_to_story_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.json",
+  "3dphoto_portrait_depth": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/3dphoto_portrait_depth.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/3dphoto_portrait_depth.gif"
     ],
     "metadata": {
-      "name": "Image-to-Story Generator",
+      "name": "3D Photo",
       "id": "new",
-      "creationTs": 1685937637546,
-      "lastModifiedTs": 1688761505533,
+      "creationTs": 1683652729656,
+      "lastModifiedTs": 1684857844055,
       "userSetData": {
-        "description": "Generate a story based on a given image."
+        "description": "Create a 3D photo for a given picture.\n"
       }
-    }
-  },
-  "silhouette_style_photo_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.jpg"
-    ],
-    "metadata": {
-      "name": "Silhouette Style Photo Generator",
-      "id": "silgen",
-      "creationTs": 1685937637546,
-      "lastModifiedTs": 1686037063250,
-      "userSetData": {}
     }
   },
   "cartoongan": {
@@ -56,18 +43,132 @@
       }
     }
   },
-  "3dphoto_portrait_depth": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/3dphoto_portrait_depth.json",
+  "silhouette_style_photo_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/3dphoto_portrait_depth.gif"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.jpg"
     ],
     "metadata": {
-      "name": "3D Photo",
+      "name": "Silhouette Style Photo Generator",
+      "id": "silgen",
+      "creationTs": 1685937637546,
+      "lastModifiedTs": 1686037063250,
+      "userSetData": {}
+    }
+  },
+  "palm2_email_generation_review": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review_highres.jpg"
+    ],
+    "metadata": {
+      "name": "PaLM 2 email generation and review",
+      "id": "3irlat",
+      "creationTs": 1685487890322,
+      "lastModifiedTs": 1686011448835,
+      "userSetData": {}
+    }
+  },
+  "palm2_email_tones_explorer": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.png"
+    ],
+    "metadata": {
+      "id": "emtoex",
+      "name": "Email Tones Explorer",
+      "creationTs": 1684866947213,
+      "lastModifiedTs": 1685773777862,
+      "userSetData": {}
+    }
+  },
+  "palm2_manuscript_helper": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.png"
+    ],
+    "metadata": {
+      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
+      "id": "new",
+      "creationTs": 1686084152526,
+      "lastModifiedTs": 1686084414722,
+      "userSetData": {}
+    }
+  },
+  "palm2_title_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_title_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_title_generator.jpg"
+    ],
+    "metadata": {
+      "name": "Awesome title generator",
+      "id": "mgl1nj",
+      "creationTs": 1689050831536,
+      "lastModifiedTs": 1689050879030,
+      "userSetData": {
+        "description": "Create a pipeline to generate 10 awesome titles for user-customizable paragraph.\n"
+      }
+    }
+  },
+  "palm2_weather_summarizer": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.gif",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.jpg"
+    ],
+    "metadata": {
+      "name": "Weather summarizer",
       "id": "new",
       "creationTs": 1683652729656,
-      "lastModifiedTs": 1684857844055,
+      "lastModifiedTs": 1684856975204,
       "userSetData": {
-        "description": "Create a 3D photo for a given picture.\n"
+        "description": "Summarize the weather in San Francisco into in one sentence.\n"
+      }
+    }
+  },
+  "palm2_werewolf": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf_highres.jpg"
+    ],
+    "metadata": {
+      "name": "Werewolf",
+      "id": "sb209q",
+      "creationTs": 1685652104764,
+      "lastModifiedTs": 1685654460679,
+      "userSetData": {}
+    }
+  },
+  "review_generation_and_rating": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating_highres.jpg"
+    ],
+    "metadata": {
+      "name": "Review generation and rating",
+      "id": "9ecqwo",
+      "creationTs": 1685838402089,
+      "lastModifiedTs": 1685839043971,
+      "userSetData": {}
+    }
+  },
+  "image_to_story_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.jpg"
+    ],
+    "metadata": {
+      "name": "Image-to-Story Generator",
+      "id": "new",
+      "creationTs": 1685937637546,
+      "lastModifiedTs": 1688761505533,
+      "userSetData": {
+        "description": "Generate a story based on a given image."
       }
     }
   },
@@ -104,23 +205,8 @@
         "tags": [
           "vision"
         ],
-        "description": {
-          "description": "Recognize the objects in the picture and visualize the results with interactive comparison.\n"
-        }
+        "description": "Recognize the objects in the picture and visualize the results with interactive comparison.\n"
       }
-    }
-  },
-  "laser_hands_rough": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.jpg"
-    ],
-    "metadata": {
-      "name": "laser hands rough",
-      "id": "new",
-      "creationTs": 1686288323314,
-      "lastModifiedTs": 1686376772927,
-      "userSetData": {}
     }
   },
   "ar_sticker_effect": {
@@ -139,104 +225,16 @@
       }
     }
   },
-  "palm2_title_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_title_generator.json",
+  "laser_hands_rough": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_title_generator.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.jpg"
     ],
     "metadata": {
-      "name": "Awesome title generator",
-      "id": "mgl1nj",
-      "creationTs": 1689050831536,
-      "lastModifiedTs": 1689050879030,
-      "userSetData": {
-        "description": "Create a pipeline to generate 10 awesome titles for user-customizable paragraph.\n"
-      }
-    }
-  },
-  "palm2_weather_summarizer": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.gif"
-    ],
-    "metadata": {
-      "name": "Weather summarizer",
+      "name": "laser hands rough",
       "id": "new",
-      "creationTs": 1683652729656,
-      "lastModifiedTs": 1684856975204,
-      "userSetData": {
-        "description": "Summarize the weather in San Francisco into in one sentence.\n"
-      }
-    }
-  },
-  "palm2_manuscript_helper": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.png"
-    ],
-    "metadata": {
-      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
-      "id": "new",
-      "creationTs": 1686084152526,
-      "lastModifiedTs": 1686084414722,
-      "userSetData": {}
-    }
-  },
-  "palm2_email_generation_review": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review_highres.jpg"
-    ],
-    "metadata": {
-      "name": "PaLM 2 email generation and review",
-      "id": "3irlat",
-      "creationTs": 1685487890322,
-      "lastModifiedTs": 1686011448835,
-      "userSetData": {}
-    }
-  },
-  "review_generation_and_rating": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating_highres.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.jpg"
-    ],
-    "metadata": {
-      "name": "Review generation and rating",
-      "id": "9ecqwo",
-      "creationTs": 1685838402089,
-      "lastModifiedTs": 1685839043971,
-      "userSetData": {}
-    }
-  },
-  "palm2_werewolf": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf_highres.jpg"
-    ],
-    "metadata": {
-      "name": "Werewolf",
-      "id": "sb209q",
-      "creationTs": 1685652104764,
-      "lastModifiedTs": 1685654460679,
-      "userSetData": {}
-    }
-  },
-  "palm2_email_tones_explorer": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.png"
-    ],
-    "metadata": {
-      "id": "emtoex",
-      "name": "Email Tones Explorer",
-      "creationTs": 1684866947213,
-      "lastModifiedTs": 1685773777862,
+      "creationTs": 1686288323314,
+      "lastModifiedTs": 1686376772927,
       "userSetData": {}
     }
   }
