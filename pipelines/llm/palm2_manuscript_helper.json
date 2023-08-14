@@ -3,7 +3,10 @@
     "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
     "id": "new",
     "creationTs": 1686084152526,
-    "lastModifiedTs": 1686084414722
+    "lastModifiedTs": 1686084414722,
+    "userSetData": {
+      "tags": ["Language"]
+    }
   },
   "graph": {
     "nodes": [

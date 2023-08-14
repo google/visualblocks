@@ -3,7 +3,10 @@
     "name": "Silhouette Style Photo Generator",
     "id": "silgen",
     "creationTs": 1685937637546,
-    "lastModifiedTs": 1686037063250
+    "lastModifiedTs": 1686037063250,
+    "userSetData": {
+      "tags": ["Vision"]
+    }
   },
   "graph": {
     "nodes": [

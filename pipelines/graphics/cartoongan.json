@@ -3,7 +3,10 @@
     "name": "CartoonGAN",
     "id": "new",
     "creationTs": 1685639486812,
-    "lastModifiedTs": 1685714912433
+    "lastModifiedTs": 1685714912433,
+    "userSetData": {
+      "tags": ["Vision"]
+    }
   },
   "graph": {
     "nodes": [

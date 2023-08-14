@@ -3,7 +3,10 @@
     "name": "3D Photo",
     "id": "new",
     "creationTs": 1683652729656,
-    "lastModifiedTs": 1684857844055
+    "lastModifiedTs": 1684857844055,
+    "userSetData": {
+      "tags": ["Vision"]
+    }
   },
   "graph": {
     "nodes": [
