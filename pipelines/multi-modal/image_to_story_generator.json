@@ -3,7 +3,10 @@
     "name": "Image-to-Story Generator",
     "id": "new",
     "creationTs": 1685937637546,
-    "lastModifiedTs": 1688761505533
+    "lastModifiedTs": 1688761505533,
+    "userSetData": {
+      "tags": ["Multimodal"]
+    }
   },
   "graph": {
     "nodes": [

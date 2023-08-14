@@ -3,7 +3,10 @@
     "name": "Werewolf",
     "id": "sb209q",
     "creationTs": 1685652104764,
-    "lastModifiedTs": 1685654460679
+    "lastModifiedTs": 1685654460679,
+    "userSetData": {
+      "tags": ["Language"]
+    }
   },
   "graph": {
     "nodes": [

@@ -10,6 +10,9 @@
       "creationTs": 1683652729656,
       "lastModifiedTs": 1684857844055,
       "userSetData": {
+        "tags": [
+          "Vision"
+        ],
         "description": "Create a 3D photo for a given picture.\n"
       }
     }
@@ -25,7 +28,11 @@
       "id": "new",
       "creationTs": 1685639486812,
       "lastModifiedTs": 1685714912433,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Vision"
+        ]
+      }
     }
   },
   "colorpop": {
@@ -39,6 +46,9 @@
       "creationTs": 1689048012481,
       "lastModifiedTs": 1689048990889,
       "userSetData": {
+        "tags": [
+          "Vision"
+        ],
         "description": "Create a color pop for pictures.\n"
       }
     }
@@ -53,7 +63,11 @@
       "id": "silgen",
       "creationTs": 1685937637546,
       "lastModifiedTs": 1686037063250,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Vision"
+        ]
+      }
     }
   },
   "palm2_email_generation_review": {
@@ -67,7 +81,11 @@
       "id": "3irlat",
       "creationTs": 1685487890322,
       "lastModifiedTs": 1686011448835,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Language"
+        ]
+      }
     }
   },
   "palm2_email_tones_explorer": {
@@ -81,7 +99,11 @@
       "name": "Email Tones Explorer",
       "creationTs": 1684866947213,
       "lastModifiedTs": 1685773777862,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Language"
+        ]
+      }
     }
   },
   "palm2_manuscript_helper": {
@@ -95,7 +117,11 @@
       "id": "new",
       "creationTs": 1686084152526,
       "lastModifiedTs": 1686084414722,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Language"
+        ]
+      }
     }
   },
   "palm2_title_generator": {
@@ -109,6 +135,9 @@
       "creationTs": 1689050831536,
       "lastModifiedTs": 1689050879030,
       "userSetData": {
+        "tags": [
+          "Language"
+        ],
         "description": "Create a pipeline to generate 10 awesome titles for user-customizable paragraph.\n"
       }
     }
@@ -125,6 +154,9 @@
       "creationTs": 1683652729656,
       "lastModifiedTs": 1684856975204,
       "userSetData": {
+        "tags": [
+          "Language"
+        ],
         "description": "Summarize the weather in San Francisco into in one sentence.\n"
       }
     }
@@ -140,7 +172,11 @@
       "id": "sb209q",
       "creationTs": 1685652104764,
       "lastModifiedTs": 1685654460679,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Language"
+        ]
+      }
     }
   },
   "review_generation_and_rating": {
@@ -154,7 +190,11 @@
       "id": "9ecqwo",
       "creationTs": 1685838402089,
       "lastModifiedTs": 1685839043971,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Language"
+        ]
+      }
     }
   },
   "image_to_story_generator": {
@@ -168,6 +208,9 @@
       "creationTs": 1685937637546,
       "lastModifiedTs": 1688761505533,
       "userSetData": {
+        "tags": [
+          "Multimodal"
+        ],
         "description": "Generate a story based on a given image."
       }
     }
@@ -185,7 +228,7 @@
       "lastModifiedTs": 1681966327277,
       "userSetData": {
         "tags": [
-          "vision"
+          "Vision"
         ],
         "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image."
       }
@@ -203,7 +246,7 @@
       "lastModifiedTs": 1689051147730,
       "userSetData": {
         "tags": [
-          "vision"
+          "Vision"
         ],
         "description": "Recognize the objects in the picture and visualize the results with interactive comparison.\n"
       }
@@ -221,6 +264,10 @@
       "creationTs": 1681940242239,
       "lastModifiedTs": 1682018151462,
       "userSetData": {
+        "tags": [
+          "Vision",
+          "Real-time"
+        ],
         "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image."
       }
     }
@@ -235,7 +282,12 @@
       "id": "new",
       "creationTs": 1686288323314,
       "lastModifiedTs": 1686376772927,
-      "userSetData": {}
+      "userSetData": {
+        "tags": [
+          "Vision",
+          "Real-time"
+        ]
+      }
     }
   }
 }

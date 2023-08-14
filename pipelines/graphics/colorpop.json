@@ -3,7 +3,10 @@
     "name": "Colorpop",
     "id": "new",
     "creationTs": 1689048012481,
-    "lastModifiedTs": 1689048990889
+    "lastModifiedTs": 1689048990889,
+    "userSetData": {
+      "tags": ["Vision"]
+    }
   },
   "graph": {
     "nodes": [

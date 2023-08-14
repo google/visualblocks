@@ -3,7 +3,10 @@
     "name": "laser hands rough",
     "id": "new",
     "creationTs": 1686288323314,
-    "lastModifiedTs": 1686376772927
+    "lastModifiedTs": 1686376772927,
+    "userSetData": {
+      "tags": ["Vision", "Real-time"]
+    }
   },
   "graph": {
     "nodes": [

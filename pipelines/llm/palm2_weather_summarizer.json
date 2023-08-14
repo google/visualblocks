@@ -3,7 +3,10 @@
     "name": "Weather summarizer",
     "id": "new",
     "creationTs": 1683652729656,
-    "lastModifiedTs": 1684856975204
+    "lastModifiedTs": 1684856975204,
+    "userSetData": {
+      "tags": ["Language"]
+    }
   },
   "graph": {
     "nodes": [

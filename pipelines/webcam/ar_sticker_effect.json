@@ -4,7 +4,10 @@
     "name": "AR Sticker Effect",
     "instruction": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
     "creationTs": 1681940242239,
-    "lastModifiedTs": 1682018151462
+    "lastModifiedTs": 1682018151462,
+    "userSetData": {
+      "tags": ["Vision", "Real-time"]
+    }
   },
   "graph": {
     "nodes": [
