@@ -64,7 +64,7 @@ After you have uploaded your pipeline to the `pipelines` folder, you can easily
 share your amazing creation via URL like:
 https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json
 
-### Step 7. Reviews
+### Step 7: Reviews
 Submissions will be reviewed by repo managers to ensure compliance with [Google’s Generative AI Prohibited Use Policy](https://policies.google.com/terms/generative-ai/use-policy?hl=en-US). Please do not submit any pipelines that contain sensitive or personal information.
 
 ## Example Pipelines
