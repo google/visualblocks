@@ -1,163 +1,129 @@
-# Creator Guide for Visual Blocks
+# Visual Blocks Pipelines Submission
 
 Thank you creators for contributing to Visual Blocks for ML! We firmly believe
-that: with your contribution, we can inspire more hackers, designers, and
-practitioners to unleash their creativity!
+that with your contribution, we can inspire more hackers, designers, and
+practitioners to unleash their creativity! Let's make AI/ML accessible to 
+everyone so they may bring their ideas to life faster.
 
 ## Contributing a New Pipeline
 
-### Step 1: CLA
+### Step 1: Clone this repository and sign contributor agreement
 
 Fork this repository and clone the forked repo to your laptop or workstation.
 Review and sign the
-[Contributor License Agreement](https://cla.developers.google.com/about) (CLA).
+[Contributor Licence Agreement](https://cla.developers.google.com/about) (CLA).
 Now you are ready to create a pull request :)
 
-### Step 2: Creating Your Pipeline
+
+### Step 2: Create Your Pipeline
 
 Visit https://visualblocks.withgoogle.com, click the `Demo` button. Next, click
-the `Demo: Create Your Own` tab and start dragging and dropping nodes from the
-node gallery and make your own pipelines. After you complete, come up with a
-descriptive title, and click the `Export` button on the top right corner to
-download. You may also click the `Import` button to load an existing pipeline.
+the `Demo: Create Your Own` tab at the top right and start dragging and dropping 
+nodes from the node panel on the bottom left to make your own pipelines that
+solve some problem or idea you have in mind.
 
-### Step 3: Exporting the Pipeline
+Note: You may also click the `Import` button to load an existing pipeline to 
+iterate on what someone else has already created to make something new.
 
-Copy the exported pipeline to your local repository, commit and create a
-pull request by following
+Once you have a working pipeline, click the `Export` button on the top right 
+corner to download as json file containing your pipeline configuration.
+Fill out any other metadata if asked. 
+
+**Note:** API keys and locally uploaded images are not exported for privacy and security.
+If you make use of such items you may want to create a tutorial video and share that with
+your submission in step 4, part 4.
+
+
+### Step 3: Preparing your pipeline for submission to the community
+
+In order for your pipeline to be accepted you must follow these rules:
+
+1. Create a new folder for your custom pipeline within this repositories'
+   `pipelines` folder
+
+2. Ensure the name of this new folder is the name of your pipeline. For example
+   if you decide to call your pipeline "Cat on table detector" then name your
+   folder  `cat_on_table_detector` all lowercase, with underscores between words.
+
+3. Inside this folder you have created ensure you add the following files:
+
+   a) **name_of_pipeline.json** (*required*) The JSON file you downloaded when you
+   exported your pipeline from visual blocks. Be sure to name it in the same
+   way as the folder, for our example above it would be `cat_on_table_detector.json`.
+   
+   b) **name_of_pipeline.jpg** (*required*) A high resolution JPG image that is 1280x720
+   pixels in size (16:9 ratio) showing a key snapshot of the Visual Blocks pipeline
+   you created in action. This will be shown in search results on the visual blocks
+   community pipelines page.
+   
+   c) **name_of_pipeline.mp4** (*optional*) If you are feeling creative, you can make a
+   short up to 15 seconds max, MP4 video (with no sound) showing the pipeline in action. If
+   you do this, we shall use this once we support it, to enhance your search result with a looped video of   
+   your pipeline in action, which may encourage more users to try your pipeline out. Video
+   Must be 640x480 pixels in size and no greater than 4MB in filesize.
+   
+
+### Step 4: Add metadata to the JSON file
+
+Next, edit the pipeline JSON file in your favourite text editor.
+
+There will be a lot of data about your pipeline in this file, however you will notice that
+near the top there will be an object named `project`. Inside of this object there will be a field called `name`:
+
+1. **name** (*required*) - the public human readable title of your pipeline. For example "Cat on table detector"
+
+Next, further down, you will find an object named `userSetData` within which the following fields have been created that you must fill out:
+
+1. **description** (*required*) - maximum 200 words to describe what your pipeline does. The description should be as **clear and concise** as possible. We encourage contributors to follow the two guidelines below:
+
+  * G1: The description should **explicitly** explain **what** the pipeline does.
+  * G2: The description should NOT explain **how** the pipeline does it.
+
+    For instance, for the [weather summarizer](https://visualblocks.withgoogle.com/#/edit/_project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_weather_summarizer.json) pipeline:
+
+    &#9745; "Summarize the weather in a specified city into in one sentence." - a good example
+
+    &#9746; "Weather summarizer" - a description that is too general and ambiguous [violating P1]
+
+    &#9746; "Get the weather in specified city first, and then use PaLM to summarize the generated content into one sentence." - a description that includes too many unnecessary technical details [violating P2]
+
+2. **tags** (*required*) - An array of strings containing one or more of the following possible tags:
+     * text
+     * vision
+     * other
+
+   For example, if your pipeline was solely around vision, you would just enter `[“vision"]` for this field.
+   If your pipeline covered multiple areas, for example a speech to text pipeline's categories might be `["audio”, “text"]` as the string array for this field.
+
+3. **contactURL** (*required*) - Your pipeline's Github URL so people can submit a bug if your pipeline stops working or suggest features.
+   
+4. **tutorialYouTube** (*optional*) The URL to a YouTube video you have created that shows in more detail how to use your created pipeline. Should be in the form of “https://www.youtube.com/watch?v=YTVideoID”
+
+
+### Step 5: Create a pull request to submit your pipeline files
+
+Now that your files are created and configured correctly, commit and create a pull request by following
 [the official GitHub guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
-Make sure to add your pipeline to the corresponding subfolder within the
-pipeline folder (i.e. audio, vision, multi-modal, etc.). We strongly recommend
-contributors to also upload a GIF or JPG screenshot for your pipeline (width:
-320px) to be featured in this guide.
 
-### Step 4: Describing Your Pipeline (Optional)
 
-Write a `.txt` file that describes your pipeline. The description should be as
-**clear and concise** as possible. We encourage contributors to follow the two guidelines below:
+### Reviews
+Submissions will be reviewed by repo managers to ensure compliance with [Google’s Generative AI Prohibited Use Policy](https://policies.google.com/terms/generative-ai/use-policy?hl=en-US). Please do not submit any pipelines that contain sensitive or personal information.
 
-* D1: The description should **explicitly** explain **what** the
-pipeline does.
-* D2: The description should NOT explain **how** the pipeline does
-it.
 
-For instance, for the
-[weather summarizer](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_weather_summarizer.json)
-pipeline:
-
-&#9745; "Summarize the weather in San Francisco into in one sentence." - a good example
-
-&#9746; "Weather summarizer" - a description that is too general and ambiguous [violating P1]
-
-&#9746; "Get the weather in San Francisco first, and then use PaLM to summarize
-the generated content into one sentence." - a description that includes too many unnecessary technical details [violating P2]
-
-### Step 5: Naming your files
-
-Please name your files in the following way:
-- `.txt` files should have the same name as the `.json` file. Example: `pipeline_name.json` can have a txt file with the name `pipeline_name.txt`. 
-- Image files should either have the same name as the `.json` file, or have the same name with `_highres` appended to the end. Example: `pipeline_name.json` can have image files with the names `pipeline_name.[image format]` or `pipeline_name_highres.[image format]`.
-
-### Step 6: Uploading
+### Share your creation
 
 After you have uploaded your pipeline to the `pipelines` folder, you can easily
 share your amazing creation via URL like:
 https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json
 
-### Step 7: Reviews
-Submissions will be reviewed by repo managers to ensure compliance with [Google’s Generative AI Prohibited Use Policy](https://policies.google.com/terms/generative-ai/use-policy?hl=en-US). Please do not submit any pipelines that contain sensitive or personal information.
-
-## Example Pipelines
-
-Please refer to `graphics/3dphoto_portrait_depth.json` and
-`llm/palm2_weather_summarizer.json` for two example pipelines and refer to the gallery below for interactive demos. Note that API keys
-and locally uploaded images are not exported for privacy and security.
-
-Before you get started on the PaLM example, you need to obtain an API key first.
-Head to makersuite.google.com, sign up with your Google account, and click "Get
-an API key". Once you have the key, you can start using the API.
 
 ## Visual Blocks Gallery
 
-We highlight a set of community-contributed pipelines of Visual Blocks below:
+Succesfully merged pull requests shall be viewable and searchable on the main Visual Blocks website under the community tab typically within 1 week of being merged.
 
-### Interactive Graphics
-
-*   [3D Photo](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json)
-    with
-    [Portrait Depth API](https://blog.tensorflow.org/2022/05/portrait-depth-api-turning-single-image.html?linkId=8063793)
-
-    [![3D Effects with Portrait Depth API in Visual Blocks](graphics/3dphoto_portrait_depth.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2F3dphoto_portrait_depth.json)
-
-*   [AR Sticker Effect](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Far_sticker_effect.json)
-    with
-    [Mediapipe Face Landmark Detection](https://developers.google.com/mediapipe/solutions/vision/face_landmarker)
-
-    [![AR Sticker Effect in Visual Blocks](webcam/ar_sticker_effect.gif)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Far_sticker_effect.json)
-
-*   [Laser Hands](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Flaser_hands_rough.json)
-    with
-    [Mediapipe Hand Landmark Detection](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker)
-
-    [![Laser Hands in Visual Blocks](webcam/laser_hands_rough.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fwebcam%2Flaser_hands_rough.json)
-
-*   [ColorPop](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2Fcolorpop.json) with
-    [Mediapipe Body Segmentation](https://blog.tensorflow.org/2022/01/body-segmentation.html)
-
-    [![ColorPop in Visual Blocks](graphics/colorpop.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2Fcolorpop.json)
-
-### Natural Language Understanding
-
-*   [Weather Summarizer](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_weather_summarizer.json)
-    with [PaLM API](https://developers.generativeai.google)
-
-    [![Weather Summarizer with PaLM API](llm/palm2_weather_summarizer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_weather_summarizer.json)
-
-*   [LaTeX Manuscript Helper](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_manuscript_helper.json)
-    with [PaLM API](https://developers.generativeai.google)
-
-    [![LaTeX Manuscript Helper](llm/palm2_manuscript_helper.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_manuscript_helper.json)
-
-*   [Werewolf Game](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_werewolf.json)
-    with [PaLM API](https://developers.generativeai.google)
-
-    [![Werewolf Game](llm/palm2_werewolf.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_werewolf.json)
-
-*   [Review Generation and Rating](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Freview_generation_and_rating.json)
-    with GPT3.5
-
-    [![Review Generation and Rating](llm/review_generation_and_rating.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Freview_generation_and_rating.json)
-
-*   [Email tones explorer](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_email_tones_explorer.json)
-    with [PaLM API](https://developers.generativeai.google)
-
-    [![Email tones explorer](llm/palm2_email_tones_explorer.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_email_tones_explorer.json)
-
-*   [Email genereation review](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_email_generation_review.json)
-    with [PaLM API](https://developers.generativeai.google)
-
-    [![palm2_email_generation_review](llm/palm2_email_generation_review.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_email_generation_review.json)
-
-*   [Title Generator](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_title_generator.json)
-    with [PaLM API](https://developers.generativeai.google)
-
-    [![palm2_title_generator](llm/palm2_title_generator.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fllm%2Fpalm2_title_generator.json)
-
-### Image Processing
-
-*   [Low Light Enhancement](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fvision%2Flow_light_enhancement.json)
-
-    [![Low Light Enhancement in Visual Blocks](vision/low_light_enhancement.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fvision%2Flow_light_enhancement.json)
-
-*   [CartoonGAN](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2Fcartoongan.json)
-
-    [![CartoonGAN in Visual Blocks](graphics/cartoongan.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fgraphics%2Fcartoongan.json)
-
-*   [Object Detection](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fvision%2Fobject_detection.json)
-
-    [![Object Detection in Visual Blocks](vision/object_detection.jpg)](https://visualblocks.withgoogle.com/#/edit/_?project_json=https:%2F%2Fraw.githubusercontent.com%2Fgoogle%2Fvisualblocks%2Fmain%2Fpipelines%2Fvision%2Fobject_detection.json)
 
 ## Community Guidelines
 
-This project follows
-[Google's Open Source Community Guidelines](https://opensource.google/conduct/).
+This project follows [Google's Open Source Community Guidelines](https://opensource.google/conduct/).
+
+If you have any questions or suggestions for Visual Blocks submissions contact [Jason Mayes](https://linkedin.com/in/WebAI).
