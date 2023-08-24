@@ -93,7 +93,7 @@ Next, further down, you will find an object named `userSetData` within which the
      * other
 
    For example, if your pipeline was solely around vision, you would just enter `[“vision"]` for this field.
-   If your pipeline covered multiple areas, for example a speech to text pipeline's categories might be `["audio”, “text"]` as the string array for this field.
+   If your pipeline covered multiple areas, for example a Gen AI text to image pipeline's categories might be `["image”, “text"]` as the string array for this field.
 
 3. **contactURL** (*required*) - Your pipeline's Github URL so people can submit a bug if your pipeline stops working or suggest features.
    
