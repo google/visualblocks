@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "Weather summarizer",
+    "name": "Weather Summarizer",
     "id": "new",
     "creationTs": 1683652729656,
     "lastModifiedTs": 1684856975204,
     "userSetData": {
-      "tags": ["Language"]
+      "description": "Summarize the weather in San Francisco into in one sentence.",
+      "tags": ["text"]
     }
   },
   "graph": {

@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "laser hands rough",
+    "name": "Laser Hands (rough)",
     "id": "new",
     "creationTs": 1686288323314,
     "lastModifiedTs": 1686376772927,
     "userSetData": {
-      "tags": ["Vision", "Real-time"]
+      "description": "Generate laser rays from users' hands from a webcam stream.",
+      "tags": ["vision"]
     }
   },
   "graph": {

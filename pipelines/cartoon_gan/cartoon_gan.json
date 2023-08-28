@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "CartoonGAN",
+    "name": "Cartoon GAN",
     "id": "new",
     "creationTs": 1685639486812,
     "lastModifiedTs": 1685714912433,
     "userSetData": {
-      "tags": ["Vision"]
+      "description": "Use a machine learning model to cartoonize an input image.",
+      "tags": ["vision"]
     }
   },
   "graph": {

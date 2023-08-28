@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "3D Photo",
+    "name": "3D Photo Portrait Depth",
     "id": "new",
     "creationTs": 1683652729656,
     "lastModifiedTs": 1684857844055,
     "userSetData": {
-      "tags": ["Vision"]
+      "description": "Generate a 3D photo from a given image.",
+      "tags": ["vision"]
     }
   },
   "graph": {

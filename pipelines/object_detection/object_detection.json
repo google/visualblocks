@@ -5,7 +5,8 @@
     "creationTs": 1689050831536,
     "lastModifiedTs": 1689051147730,
     "userSetData": {
-      "tags": ["Vision"]
+      "description": "Detect and recognize objects in an image.",
+      "tags": ["vision"]
     }
   },
   "graph": {

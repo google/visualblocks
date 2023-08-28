@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "Awesome title generator",
+    "name": "Awesome Title Generator",
     "id": "mgl1nj",
     "creationTs": 1689050831536,
     "lastModifiedTs": 1689050879030,
     "userSetData": {
-      "tags": ["Language"]
+      "description": "Generate 10 awesome titles for user-customizable paragraph.",
+      "tags": ["text"]
     }
   },
   "graph": {

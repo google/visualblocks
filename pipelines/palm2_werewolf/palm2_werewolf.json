@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "Werewolf",
+    "name": "Werewolf Game Generator",
     "id": "sb209q",
     "creationTs": 1685652104764,
     "lastModifiedTs": 1685654460679,
     "userSetData": {
-      "tags": ["Language"]
+      "description": "Generate a werewolf game conversation with 6 people.",
+      "tags": ["text"]
     }
   },
   "graph": {

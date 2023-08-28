@@ -5,7 +5,8 @@
     "creationTs": 1685937637546,
     "lastModifiedTs": 1686037063250,
     "userSetData": {
-      "tags": ["Vision"]
+      "description": "Generate a photo in a Silhouette style from a given image.",
+      "tags": ["vision"]
     }
   },
   "graph": {

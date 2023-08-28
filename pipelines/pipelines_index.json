@@ -1,243 +1,117 @@
 {
   "3dphoto_portrait_depth": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/3dphoto_portrait_depth.json",
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/3dphoto_portrait_depth/3dphoto_portrait_depth.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/3dphoto_portrait_depth.gif"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/3dphoto_portrait_depth/3dphoto_portrait_depth.gif"
     ],
     "metadata": {
-      "name": "3D Photo",
+      "name": "3D Photo Portrait Depth",
       "id": "new",
       "creationTs": 1683652729656,
       "lastModifiedTs": 1684857844055,
       "userSetData": {
+        "description": "Generate a 3D photo from a given image.",
         "tags": [
-          "Vision"
-        ],
-        "description": "Create a 3D photo for a given picture.\n"
+          "vision"
+        ]
       }
     }
   },
-  "cartoongan": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan.json",
+  "ar_sticker_effect": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/ar_sticker_effect/ar_sticker_effect.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/cartoongan_highres.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/ar_sticker_effect/ar_sticker_effect.gif"
     ],
     "metadata": {
-      "name": "CartoonGAN",
+      "id": "jqoi4m",
+      "name": "AR Sticker Effect",
+      "creationTs": 1681940242239,
+      "lastModifiedTs": 1682018151462,
+      "userSetData": {
+        "description": "Apply a background filter to my live camera and add a sticker on top of my head.",
+        "tags": [
+          "vision"
+        ]
+      }
+    }
+  },
+  "cartoon_gan": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/cartoon_gan/cartoon_gan.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/cartoon_gan/cartoon_gan.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/cartoon_gan/cartoon_gan_highres.jpg"
+    ],
+    "metadata": {
+      "name": "Cartoon GAN",
       "id": "new",
       "creationTs": 1685639486812,
       "lastModifiedTs": 1685714912433,
       "userSetData": {
+        "description": "Use a machine learning model to cartoonize an input image.",
         "tags": [
-          "Vision"
+          "vision"
         ]
       }
     }
   },
-  "colorpop": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/colorpop.json",
+  "color_pop": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/color_pop/color_pop.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/colorpop.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/color_pop/color_pop.jpg"
     ],
     "metadata": {
-      "name": "Colorpop",
+      "name": "Color Pop",
       "id": "new",
       "creationTs": 1689048012481,
       "lastModifiedTs": 1689048990889,
       "userSetData": {
+        "description": "Given a color image, modify the image so that only the person has color and the background is black and white",
         "tags": [
-          "Vision"
-        ],
-        "description": "Create a color pop for pictures.\n"
-      }
-    }
-  },
-  "silhouette_style_photo_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/graphics/silhouette_style_photo_generator.jpg"
-    ],
-    "metadata": {
-      "name": "Silhouette Style Photo Generator",
-      "id": "silgen",
-      "creationTs": 1685937637546,
-      "lastModifiedTs": 1686037063250,
-      "userSetData": {
-        "tags": [
-          "Vision"
+          "vision"
         ]
       }
     }
   },
-  "palm2_email_generation_review": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.json",
+  "laser_hands_rough": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/laser_hands_rough/laser_hands_rough.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_generation_review_highres.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/laser_hands_rough/laser_hands_rough.jpg"
     ],
     "metadata": {
-      "name": "PaLM 2 email generation and review",
-      "id": "3irlat",
-      "creationTs": 1685487890322,
-      "lastModifiedTs": 1686011448835,
-      "userSetData": {
-        "tags": [
-          "Language"
-        ]
-      }
-    }
-  },
-  "palm2_email_tones_explorer": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_email_tones_explorer.png"
-    ],
-    "metadata": {
-      "id": "emtoex",
-      "name": "Email Tones Explorer",
-      "creationTs": 1684866947213,
-      "lastModifiedTs": 1685773777862,
-      "userSetData": {
-        "tags": [
-          "Language"
-        ]
-      }
-    }
-  },
-  "palm2_manuscript_helper": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_manuscript_helper.png"
-    ],
-    "metadata": {
-      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
+      "name": "Laser Hands (rough)",
       "id": "new",
-      "creationTs": 1686084152526,
-      "lastModifiedTs": 1686084414722,
+      "creationTs": 1686288323314,
+      "lastModifiedTs": 1686376772927,
       "userSetData": {
+        "description": "Generate laser rays from users' hands from a webcam stream.",
         "tags": [
-          "Language"
+          "vision"
         ]
-      }
-    }
-  },
-  "palm2_title_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_title_generator.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_title_generator.jpg"
-    ],
-    "metadata": {
-      "name": "Awesome title generator",
-      "id": "mgl1nj",
-      "creationTs": 1689050831536,
-      "lastModifiedTs": 1689050879030,
-      "userSetData": {
-        "tags": [
-          "Language"
-        ],
-        "description": "Create a pipeline to generate 10 awesome titles for user-customizable paragraph.\n"
-      }
-    }
-  },
-  "palm2_weather_summarizer": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.gif",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_weather_summarizer.jpg"
-    ],
-    "metadata": {
-      "name": "Weather summarizer",
-      "id": "new",
-      "creationTs": 1683652729656,
-      "lastModifiedTs": 1684856975204,
-      "userSetData": {
-        "tags": [
-          "Language"
-        ],
-        "description": "Summarize the weather in San Francisco into in one sentence.\n"
-      }
-    }
-  },
-  "palm2_werewolf": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/palm2_werewolf_highres.jpg"
-    ],
-    "metadata": {
-      "name": "Werewolf",
-      "id": "sb209q",
-      "creationTs": 1685652104764,
-      "lastModifiedTs": 1685654460679,
-      "userSetData": {
-        "tags": [
-          "Language"
-        ]
-      }
-    }
-  },
-  "review_generation_and_rating": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/llm/review_generation_and_rating_highres.jpg"
-    ],
-    "metadata": {
-      "name": "Review generation and rating",
-      "id": "9ecqwo",
-      "creationTs": 1685838402089,
-      "lastModifiedTs": 1685839043971,
-      "userSetData": {
-        "tags": [
-          "Language"
-        ]
-      }
-    }
-  },
-  "image_to_story_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/multi-modal/image_to_story_generator.jpg"
-    ],
-    "metadata": {
-      "name": "Image-to-Story Generator",
-      "id": "new",
-      "creationTs": 1685937637546,
-      "lastModifiedTs": 1688761505533,
-      "userSetData": {
-        "tags": [
-          "Multimodal"
-        ],
-        "description": "Generate a story based on a given image."
       }
     }
   },
   "low_light_enhancement": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/low_light_enhancement.json",
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/low_light_enhancement/low_light_enhancement.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/low_light_enhancement.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/low_light_enhancement/low_light_enhancement.jpg"
     ],
     "metadata": {
       "id": "oc33nd",
-      "name": "Low-light enhancement",
-      "instruction": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
+      "name": "Low-light Enhancement",
       "creationTs": 1681966311839,
       "lastModifiedTs": 1681966327277,
       "userSetData": {
+        "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
         "tags": [
-          "Vision"
-        ],
-        "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image."
+          "vision"
+        ]
       }
     }
   },
   "object_detection": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/object_detection.json",
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/object_detection/object_detection.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/vision/object_detection.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/object_detection/object_detection.jpg"
     ],
     "metadata": {
       "name": "Object Detection with Interactive Data Augmentation",
@@ -245,47 +119,159 @@
       "creationTs": 1689050831536,
       "lastModifiedTs": 1689051147730,
       "userSetData": {
+        "description": "Detect and recognize objects in an image.",
         "tags": [
-          "Vision"
-        ],
-        "description": "Recognize the objects in the picture and visualize the results with interactive comparison.\n"
+          "vision"
+        ]
       }
     }
   },
-  "ar_sticker_effect": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/ar_sticker_effect.json",
+  "palm2_email_generation_review": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/ar_sticker_effect.gif"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review_highres.jpg"
     ],
     "metadata": {
-      "id": "jqoi4m",
-      "name": "AR Sticker Effect",
-      "instruction": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
-      "creationTs": 1681940242239,
-      "lastModifiedTs": 1682018151462,
+      "name": "PaLM 2 Email Generation and Review",
+      "id": "3irlat",
+      "creationTs": 1685487890322,
+      "lastModifiedTs": 1686011448835,
       "userSetData": {
+        "description": "Generate three emails according to user specifications then choose the best out of the three.",
         "tags": [
-          "Vision",
-          "Real-time"
-        ],
-        "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image."
+          "text"
+        ]
       }
     }
   },
-  "laser_hands_rough": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.json",
+  "palm2_email_tones_explorer": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/webcam/laser_hands_rough.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.png"
     ],
     "metadata": {
-      "name": "laser hands rough",
+      "id": "emtoex",
+      "name": "Email Tones Explorer",
+      "creationTs": 1684866947213,
+      "lastModifiedTs": 1685773777862,
+      "userSetData": {
+        "description": "Write an appropriate, professional email in three ways: regular way, use strong words, and use short sentences.",
+        "tags": [
+          "text"
+        ]
+      }
+    }
+  },
+  "palm2_manuscript_helper": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.png"
+    ],
+    "metadata": {
+      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
       "id": "new",
-      "creationTs": 1686288323314,
-      "lastModifiedTs": 1686376772927,
+      "creationTs": 1686084152526,
+      "lastModifiedTs": 1686084414722,
       "userSetData": {
+        "description": "Write code for a figure in LaTeX containing four sub-figures, with captions for each and also an overall caption.",
         "tags": [
-          "Vision",
-          "Real-time"
+          "text"
+        ]
+      }
+    }
+  },
+  "palm2_title_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_title_generator/palm2_title_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_title_generator/palm2_title_generator.jpg"
+    ],
+    "metadata": {
+      "name": "Awesome Title Generator",
+      "id": "mgl1nj",
+      "creationTs": 1689050831536,
+      "lastModifiedTs": 1689050879030,
+      "userSetData": {
+        "description": "Generate 10 awesome titles for user-customizable paragraph.",
+        "tags": [
+          "text"
+        ]
+      }
+    }
+  },
+  "palm2_weather_summarizer": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_weather_summarizer/palm2_weather_summarizer.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_weather_summarizer/palm2_weather_summarizer.gif",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_weather_summarizer/palm2_weather_summarizer.jpg"
+    ],
+    "metadata": {
+      "name": "Weather Summarizer",
+      "id": "new",
+      "creationTs": 1683652729656,
+      "lastModifiedTs": 1684856975204,
+      "userSetData": {
+        "description": "Summarize the weather in San Francisco into in one sentence.",
+        "tags": [
+          "text"
+        ]
+      }
+    }
+  },
+  "palm2_werewolf": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_werewolf/palm2_werewolf.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_werewolf/palm2_werewolf.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_werewolf/palm2_werewolf_highres.jpg"
+    ],
+    "metadata": {
+      "name": "Werewolf Game Generator",
+      "id": "sb209q",
+      "creationTs": 1685652104764,
+      "lastModifiedTs": 1685654460679,
+      "userSetData": {
+        "description": "Generate a werewolf game conversation with 6 people.",
+        "tags": [
+          "text"
+        ]
+      }
+    }
+  },
+  "review_generation_and_rating": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/review_generation_and_rating/review_generation_and_rating.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/review_generation_and_rating/review_generation_and_rating.jpg",
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/review_generation_and_rating/review_generation_and_rating_highres.jpg"
+    ],
+    "metadata": {
+      "name": "Review Generation and Rating",
+      "id": "9ecqwo",
+      "creationTs": 1685838402089,
+      "lastModifiedTs": 1685839043971,
+      "userSetData": {
+        "description": "Generate a review and rate it out of 100",
+        "tags": [
+          "text"
+        ]
+      }
+    }
+  },
+  "silhouette_style_photo_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/silhouette_style_photo_generator/silhouette_style_photo_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/silhouette_style_photo_generator/silhouette_style_photo_generator.jpg"
+    ],
+    "metadata": {
+      "name": "Silhouette Style Photo Generator",
+      "id": "silgen",
+      "creationTs": 1685937637546,
+      "lastModifiedTs": 1686037063250,
+      "userSetData": {
+        "description": "Generate a photo in a Silhouette style from a given image.",
+        "tags": [
+          "vision"
         ]
       }
     }

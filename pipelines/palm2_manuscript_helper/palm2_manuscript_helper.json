@@ -5,7 +5,8 @@
     "creationTs": 1686084152526,
     "lastModifiedTs": 1686084414722,
     "userSetData": {
-      "tags": ["Language"]
+      "description": "Write code for a figure in LaTeX containing four sub-figures, with captions for each and also an overall caption.",
+      "tags": ["text"]
     }
   },
   "graph": {

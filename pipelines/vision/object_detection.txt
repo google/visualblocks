@@ -1,1 +1,0 @@
-Recognize the objects in the picture and visualize the results with interactive comparison.

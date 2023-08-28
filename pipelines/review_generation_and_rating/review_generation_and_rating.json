@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "Review generation and rating",
+    "name": "Review Generation and Rating",
     "id": "9ecqwo",
     "creationTs": 1685838402089,
     "lastModifiedTs": 1685839043971,
     "userSetData": {
-      "tags": ["Language"]
+      "description": "Generate a review and rate it out of 100",
+      "tags": ["text"]
     }
   },
   "graph": {

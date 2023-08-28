@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "PaLM 2 email generation and review",
+    "name": "PaLM 2 Email Generation and Review",
     "id": "3irlat",
     "creationTs": 1685487890322,
     "lastModifiedTs": 1686011448835,
     "userSetData": {
-      "tags": ["Language"]
+      "description": "Generate three emails according to user specifications then choose the best out of the three.",
+      "tags": ["text"]
     }
   },
   "graph": {

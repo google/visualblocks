@@ -1,11 +1,12 @@
  {
   "project": {
-    "name": "Colorpop",
+    "name": "Color Pop",
     "id": "new",
     "creationTs": 1689048012481,
     "lastModifiedTs": 1689048990889,
     "userSetData": {
-      "tags": ["Vision"]
+      "description": "Given a color image, modify the image so that only the person has color and the background is black and white",
+      "tags": ["vision"]
     }
   },
   "graph": {
