@@ -38,8 +38,7 @@
   "cartoon_gan": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/cartoon_gan/cartoon_gan.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/cartoon_gan/cartoon_gan.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/cartoon_gan/cartoon_gan_highres.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/cartoon_gan/cartoon_gan.jpg"
     ],
     "metadata": {
       "name": "Cartoon GAN",
@@ -129,8 +128,7 @@
   "palm2_email_generation_review": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review_highres.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review.jpg"
     ],
     "metadata": {
       "name": "PaLM 2 Email Generation and Review",
@@ -148,7 +146,6 @@
   "palm2_email_tones_explorer": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.jpg",
       "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.png"
     ],
     "metadata": {
@@ -167,7 +164,6 @@
   "palm2_manuscript_helper": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.jpg",
       "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.png"
     ],
     "metadata": {
@@ -223,8 +219,7 @@
   "palm2_werewolf": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_werewolf/palm2_werewolf.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_werewolf/palm2_werewolf.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_werewolf/palm2_werewolf_highres.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_werewolf/palm2_werewolf.jpg"
     ],
     "metadata": {
       "name": "Werewolf Game Generator",
@@ -242,8 +237,7 @@
   "review_generation_and_rating": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/review_generation_and_rating/review_generation_and_rating.json",
     "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/review_generation_and_rating/review_generation_and_rating.jpg",
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/review_generation_and_rating/review_generation_and_rating_highres.jpg"
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/review_generation_and_rating/review_generation_and_rating.jpg"
     ],
     "metadata": {
       "name": "Review Generation and Rating",
