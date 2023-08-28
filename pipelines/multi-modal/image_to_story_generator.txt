@@ -1,1 +1,0 @@
-Generate a story based on a given image.

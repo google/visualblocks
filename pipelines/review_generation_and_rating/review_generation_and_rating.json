@@ -1,0 +1,246 @@
+ {
+  "project": {
+    "name": "Review Generation and Rating",
+    "id": "9ecqwo",
+    "creationTs": 1685838402089,
+    "lastModifiedTs": 1685839043971,
+    "userSetData": {
+      "description": "Generate a review and rate it out of 100",
+      "tags": ["text"]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "custom_api_a62zcc",
+        "nodeSpecId": "custom_api",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 368,
+          "previewX": 432,
+          "previewY": 32,
+          "previewWidth": 304,
+          "previewHeight": 368
+        },
+        "uiData": {
+          "posX": -64,
+          "posY": 32,
+          "width": 240,
+          "selected": false
+        },
+        "propValues": {
+          "type": "post",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "endpointUrl": "https://api.openai.com/v1/chat/completions\n",
+          "payloadJson": ""
+        },
+        "incomingEdges": {
+          "payloadJson": [
+            {
+              "sourceNodeId": "text_processor_0eoh6m",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_583jjh",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 112,
+          "previewY": 112,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -464,
+          "posY": 153,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Write a one-paragraph highly scathing review about the Symbian phone disguised as a positive review",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_vzu7gi",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 768,
+          "previewY": 64,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 272,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "mustache",
+          "separator": "\\n",
+          "formatString": "{{choices.0.message.content}}",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "custom_api_a62zcc",
+              "outputId": "responseJson"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_0eoh6m",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 384,
+          "previewY": 96,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": -256,
+          "posY": 128,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "format",
+          "separator": "",
+          "formatString": "{\"model\": \"gpt-3.5-turbo\",\n\"messages\": [{\"role\": \"user\", \"content\": \"{1}\"}],\n\"temperature\": 0.7}",
+          "hidePreview": true
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_583jjh",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_id4jn3",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 768,
+          "previewY": 400,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 304,
+          "posY": 304,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "format",
+          "separator": "",
+          "formatString": "{\"model\": \"gpt-3.5-turbo\",\n\"messages\": [{\"role\": \"user\", \"content\": \" Just provide a number with no text in your response. On a scale of 1 (bad) to 100 (good), how would you rate the item based on the following review? {1}\"}],\n\"temperature\": 0.7}",
+          "hidePreview": true
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "text_processor_vzu7gi",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "custom_api_vv7dxf",
+        "nodeSpecId": "custom_api",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 368,
+          "previewX": 1104,
+          "previewY": 32,
+          "previewWidth": 304,
+          "previewHeight": 368
+        },
+        "uiData": {
+          "posX": 576,
+          "posY": 128,
+          "width": 240,
+          "selected": false
+        },
+        "propValues": {
+          "type": "post",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "endpointUrl": "https://api.openai.com/v1/chat/completions\n",
+          "payloadJson": ""
+        },
+        "incomingEdges": {
+          "payloadJson": [
+            {
+              "sourceNodeId": "text_processor_id4jn3",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_yybh1j",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 1440,
+          "previewY": 48,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 880,
+          "posY": 144,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "mustache",
+          "separator": "\\n",
+          "formatString": "Rating: {{choices.0.message.content}} / 100",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "custom_api_vv7dxf",
+              "outputId": "responseJson"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,261 @@
+ {
+  "project": {
+    "name": "Cartoon GAN",
+    "id": "new",
+    "creationTs": 1685639486812,
+    "lastModifiedTs": 1685714912433,
+    "userSetData": {
+      "description": "Use a machine learning model to cartoonize an input image.",
+      "tags": ["vision"]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "preprocess_image_g6c14d",
+        "nodeSpecId": "preprocess_image",
+        "customData": {
+          "previewX": 816,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -880,
+          "posY": 16,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "expandDim": true,
+          "resize": {
+            "width": 512,
+            "height": 512
+          },
+          "resize,,,width": 512,
+          "resize,,,height": 512,
+          "normalize": {
+            "fromMin": 0,
+            "fromMax": 255,
+            "toMin": -1,
+            "toMax": 1
+          },
+          "normalize,,,fromMin": 0,
+          "normalize,,,fromMax": 255,
+          "normalize,,,toMin": -1,
+          "normalize,,,toMax": 1
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_r3u24h",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "tflite_model_runner_d6u38s",
+        "nodeSpecId": "tflite_model_runner",
+        "customData": {
+          "previewX": 480,
+          "previewY": 272,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -688,
+          "posY": 32,
+          "width": 250,
+          "selected": false
+        },
+        "inputValues": {
+          "tensors": [],
+          "modelUrl": "https://tfhub.dev/sayakpaul/lite-model/cartoongan/int8/1"
+        },
+        "incomingEdges": {
+          "tensors": [
+            {
+              "sourceNodeId": "preprocess_image_g6c14d",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "remap_value_range_ss1lxo",
+        "nodeSpecId": "remap_value_range",
+        "customData": {
+          "previewX": 816,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -400,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "autoFromRange": true,
+          "fromRange": {
+            "min": 0,
+            "max": 1
+          },
+          "fromRange,,,min": 0,
+          "fromRange,,,max": 1,
+          "toRange": {
+            "min": 0,
+            "max": 255
+          },
+          "toRange,,,min": 0,
+          "toRange,,,max": 255
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "tflite_model_runner_d6u38s",
+              "outputId": "firstTensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "tensor_to_image_3kcl1i",
+        "displayLabel": "Cartoonized Output",
+        "nodeSpecId": "tensor_to_image",
+        "customData": {
+          "previewX": 752,
+          "previewY": 64,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 16,
+          "posY": 128,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "crop_and_resize_lco9wy",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "crop_and_resize_lco9wy",
+        "nodeSpecId": "crop_and_resize",
+        "customData": {
+          "previewX": 816,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -192,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "inputValues": {
+          "cropRect": {
+            "x1": -1,
+            "y1": -1,
+            "x2": -1,
+            "y2": -1
+          },
+          "cropRect,,,x1": -1,
+          "cropRect,,,y1": -1,
+          "cropRect,,,x2": -1,
+          "cropRect,,,y2": -1,
+          "resize": {
+            "width": -1,
+            "height": -1
+          },
+          "resize,,,width": -1,
+          "resize,,,height": -1
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "remap_value_range_ss1lxo",
+              "outputId": "tensor"
+            }
+          ],
+          "resize": [
+            {
+              "sourceNodeId": "get_image_size_1qbqoc",
+              "outputId": "size"
+            }
+          ]
+        }
+      },
+      {
+        "id": "get_image_size_1qbqoc",
+        "nodeSpecId": "get_image_size",
+        "customData": {
+          "previewX": 816,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -830,
+          "posY": 356.5,
+          "width": 176,
+          "selected": false
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_r3u24h",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_image_r3u24h",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 256,
+          "previewY": 64,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -1136,
+          "posY": 64,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic1.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic2.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic3.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic4.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic5.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic6.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic7.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic8.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic9.jpg"
+          ],
+          "gridColumnCount": 3,
+          "allowUserUpload": false,
+          "selectedImageUrl": "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic6.jpg",
+          "hidePreview": false
+        }
+      }
+    ]
+  }
+}

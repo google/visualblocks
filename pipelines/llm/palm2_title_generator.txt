@@ -1,1 +1,0 @@
-Create a pipeline to generate 10 awesome titles for user-customizable paragraph.

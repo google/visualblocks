@@ -1,1 +1,0 @@
-Summarize the weather in San Francisco into in one sentence.

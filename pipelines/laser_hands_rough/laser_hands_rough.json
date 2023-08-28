@@ -1,0 +1,198 @@
+ {
+  "project": {
+    "name": "Laser Hands (rough)",
+    "id": "new",
+    "creationTs": 1686288323314,
+    "lastModifiedTs": 1686376772927,
+    "userSetData": {
+      "description": "Generate laser rays from users' hands from a webcam stream.",
+      "tags": ["vision"]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "image_mixer_l85a0i",
+        "displayLabel": "final",
+        "nodeSpecId": "image_mixer",
+        "customData": {
+          "previewX": 1392,
+          "previewY": 320,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 1888,
+          "posY": 544,
+          "width": 224,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "source-over",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "topText": "",
+          "midText": "",
+          "bottomText": ""
+        },
+        "incomingEdges": {
+          "image1": [
+            {
+              "sourceNodeId": "live_camera_qeic0l",
+              "outputId": "image"
+            }
+          ],
+          "image2": [
+            {
+              "sourceNodeId": "shader_processing_xlkw9g",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "hand_pose_detection_35c5j8",
+        "nodeSpecId": "hand_pose_detection",
+        "customData": {
+          "previewX": 608,
+          "previewY": 384,
+          "previewWidth": 320,
+          "previewHeight": 128
+        },
+        "uiData": {
+          "posX": 880,
+          "posY": 272,
+          "width": 176,
+          "selected": false
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "live_camera_qeic0l",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "live_camera_qeic0l",
+        "nodeSpecId": "live_camera",
+        "customData": {
+          "runContinuously": true,
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 320,
+          "previewY": 64,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": 560,
+          "posY": 560,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "code_editor_ji3umz",
+        "displayLabel": "fx",
+        "nodeSpecId": "code_editor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 368,
+          "previewX": 576,
+          "previewY": 32,
+          "previewWidth": 704,
+          "previewHeight": 352
+        },
+        "uiData": {
+          "posX": 1104,
+          "posY": 128,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "curCode": "void mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n  vec2 uv = fragCoord.xy / iResolution.xy;\n  vec2 original_uv = uv;\n  //float zoom = (0.9 + 0.1 * sin(iTime * 20.));\n    fragColor = vec4(0.0, 0.0, 0.0, 0.0);\n  //vec2 scaleCenter = vec2(0.5);\n  //uv = (uv - scaleCenter) * zoom + scaleCenter;\n    float t_offset = sin(iTime);\n  //vec4 texel0 = texture(iChannel0, uv);\n//if (texel0.a == 0.0) {\n    vec4 texel0 = fragColor;\n    fragColor = vec4(0.0, 0.0, 0.0, 0.0);\n    for (float y = fragCoord.y; y >= 0.0; y -= 1.0) {\n\t\t float dy = original_uv.y - uv.y;\n\t\t uv.y = y / iResolution.y;\n         t_offset -= 0.5*sin((y) / iResolution.y);\n\t\t uv.x = original_uv.x + sin(t_offset  * ((y - fragCoord.y) / iResolution.y));\n\t\t uv = clamp(uv, vec2(0.1,0.1), vec2(0.9,0.9));\n\t\t texel0 = texture(iChannel0, uv);\n\t\t if (texel0.a != 0.0) {\n\t\t   fragColor = vec4(1.0, vec2(1.0) - vec2(dy), 1.0);\n           break;\n\t\t }\n\t   \n\t}\n}\n  \n  \n",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "initialCode": ""
+        }
+      },
+      {
+        "id": "landmark_visualizer_72jof4",
+        "nodeSpecId": "landmark_visualizer",
+        "customData": {
+          "previewX": 1296,
+          "previewY": 32,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 1104,
+          "posY": 272,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "keypointScale": 2.5576923076923075,
+          "color": "#fe3108",
+          "boundingBox": false,
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "landmarkResult": [
+            {
+              "sourceNodeId": "hand_pose_detection_35c5j8",
+              "outputId": "landmarkResult"
+            }
+          ]
+        }
+      },
+      {
+        "id": "shader_processing_xlkw9g",
+        "displayLabel": "red up",
+        "nodeSpecId": "shader_processing",
+        "customData": {
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "runContinuously": true,
+          "previewX": 1632,
+          "previewY": 32,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": 1520,
+          "posY": 272,
+          "width": 208,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        },
+        "inputValues": {
+          "shader": "vfx-mirror"
+        },
+        "incomingEdges": {
+          "shader": [
+            {
+              "sourceNodeId": "code_editor_ji3umz",
+              "outputId": "code"
+            }
+          ],
+          "channel0": [
+            {
+              "sourceNodeId": "landmark_visualizer_72jof4",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

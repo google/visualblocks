@@ -1,0 +1,186 @@
+ {
+  "project": {
+    "name": "Silhouette Style Photo Generator",
+    "id": "silgen",
+    "creationTs": 1685937637546,
+    "lastModifiedTs": 1686037063250,
+    "userSetData": {
+      "description": "Generate a photo in a Silhouette style from a given image.",
+      "tags": ["vision"]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "body_segmentation_im353m",
+        "nodeSpecId": "body_segmentation",
+        "customData": {
+          "previewX": 480,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 304,
+          "posY": 64,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "modelOption": "MediaPipeSelfieSegmentation"
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_00fwni",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_image_00fwni",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 464,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 80,
+          "posY": 48,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic1.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3pGCu5i2SoNAjUt2nm4FgV-FZwf4tpOB24W4JP143WnWGZG7sq71yNIB-YZhUeQaA1wg&usqp=CAU",
+            "https://s.yimg.com/ny/api/res/1.2/aZt3uCb4stS3GykzFqbAOA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://media.zenfs.com/en/southern_living_806/62a0f837fcd2256553a4d65fedab32d7",
+            "https://i0.wp.com/melissamontoyaphotography.com/wp-content/uploads/2019/07/MelissaMontoyaPhotography_FAMILY_2019_JULY_Basham_TableTops_2284.jpg?ssl=1/",
+            "https://media.istockphoto.com/id/836669700/photo/photographer-photographing-in-nature-on-winter-day.jpg?s=170667a&w=0&k=20&c=ZgHQE5NYRSws2WalBJIjkbXhppTzVRCZEc51n5mdSns=",
+            "https://blog.nasm.org/hubfs/running-101.jpg"
+          ],
+          "gridColumnCount": 2,
+          "allowUserUpload": false,
+          "selectedImageUrl": "https://i0.wp.com/melissamontoyaphotography.com/wp-content/uploads/2019/07/MelissaMontoyaPhotography_FAMILY_2019_JULY_Basham_TableTops_2284.jpg?ssl=1/",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "mask_visualizer_z8qjec",
+        "nodeSpecId": "mask_visualizer",
+        "customData": {
+          "previewX": 496,
+          "previewY": 16,
+          "previewWidth": 208,
+          "previewHeight": 272
+        },
+        "uiData": {
+          "posX": 528,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "fg-color",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "color": "#090909"
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_00fwni",
+              "outputId": "image"
+            }
+          ],
+          "segmentationResult": [
+            {
+              "sourceNodeId": "body_segmentation_im353m",
+              "outputId": "segmentationResult"
+            }
+          ]
+        }
+      },
+      {
+        "id": "image_mixer_dnxwbs",
+        "nodeSpecId": "image_mixer",
+        "customData": {
+          "previewX": 1216,
+          "previewY": 16,
+          "previewWidth": 352,
+          "previewHeight": 256
+        },
+        "uiData": {
+          "posX": 751.0383379900899,
+          "posY": 201.70296299332745,
+          "width": 224,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "destination-atop",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "topText": "",
+          "midText": "",
+          "bottomText": ""
+        },
+        "incomingEdges": {
+          "image1": [
+            {
+              "sourceNodeId": "mask_visualizer_z8qjec",
+              "outputId": "maskedImage"
+            }
+          ],
+          "image2": [
+            {
+              "sourceNodeId": "image_processor_dx688r",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "image_processor_dx688r",
+        "nodeSpecId": "image_processor",
+        "customData": {
+          "initialWidth": 480,
+          "initialHeight": 384,
+          "previewX": 720,
+          "previewY": 16,
+          "previewWidth": 480,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": 304.0165941034356,
+          "posY": 226.62965075693904,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false,
+          "resize": {
+            "width": -1,
+            "height": -1
+          },
+          "resize,,,width": -1,
+          "resize,,,height": -1
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_00fwni",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

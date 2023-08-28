@@ -1,0 +1,261 @@
+{
+  "project": {
+    "id": "oc33nd",
+    "name": "Low-light Enhancement",
+    "creationTs": 1681966311839,
+    "lastModifiedTs": 1681966327277,
+    "userSetData": {
+      "description": "Enhance an image captured in low-light environment with the Zero-DCE model model in TensorFlow Hub; then compare the result with the input image.",
+      "tags": ["vision"]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "preprocess_image_hest6n",
+        "nodeSpecId": "preprocess_image",
+        "customData": {
+          "previewX": 480,
+          "previewY": 272,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 160,
+          "posY": 176,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "expandDim": true,
+          "resize": {
+            "width": 600,
+            "height": 400
+          },
+          "resize,,,width": 600,
+          "resize,,,height": 400,
+          "normalize": {
+            "fromMin": 0,
+            "fromMax": 255,
+            "toMin": 0,
+            "toMax": 1
+          },
+          "normalize,,,fromMin": 0,
+          "normalize,,,fromMax": 255,
+          "normalize,,,toMin": 0,
+          "normalize,,,toMax": 1
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_nslkkp",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "tflite_model_runner_gkhdng",
+        "displayLabel": "zero dce",
+        "nodeSpecId": "tflite_model_runner",
+        "customData": {
+          "previewX": 480,
+          "previewY": 272,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 512,
+          "posY": 320,
+          "width": 250,
+          "selected": false
+        },
+        "inputValues": {
+          "tensors": [],
+          "modelUrl": "https://tfhub.dev/sayannath/lite-model/zero-dce/1"
+        },
+        "incomingEdges": {
+          "tensors": [
+            {
+              "sourceNodeId": "preprocess_image_hest6n",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "remap_value_range_0rpi67",
+        "nodeSpecId": "remap_value_range",
+        "customData": {
+          "previewX": 480,
+          "previewY": 272,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 928,
+          "posY": 320,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "autoFromRange": true,
+          "fromRange": {
+            "min": 0,
+            "max": 1
+          },
+          "fromRange,,,min": 0,
+          "fromRange,,,max": 1,
+          "toRange": {
+            "min": 0,
+            "max": 255
+          },
+          "toRange,,,min": 0,
+          "toRange,,,max": 255
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "tflite_model_runner_gkhdng",
+              "outputId": "firstTensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "crop_and_resize_jugfis",
+        "nodeSpecId": "crop_and_resize",
+        "customData": {
+          "previewX": 816,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 352
+        },
+        "uiData": {
+          "posX": 1248,
+          "posY": 320,
+          "width": 176,
+          "selected": false
+        },
+        "inputValues": {
+          "cropRect": {
+            "x1": -1,
+            "y1": -1,
+            "x2": -1,
+            "y2": -1
+          },
+          "cropRect,,,x1": -1,
+          "cropRect,,,y1": -1,
+          "cropRect,,,x2": -1,
+          "cropRect,,,y2": -1,
+          "resize": {
+            "width": 400,
+            "height": 400
+          },
+          "resize,,,width": 400,
+          "resize,,,height": 400
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "remap_value_range_0rpi67",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "tensor_to_image_fxqsbh",
+        "nodeSpecId": "tensor_to_image",
+        "customData": {
+          "previewX": 624,
+          "previewY": 16,
+          "previewWidth": 368,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": 1552,
+          "posY": 320,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "crop_and_resize_jugfis",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_image_nslkkp",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 592,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": -192,
+          "posY": 624,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/testpics/low_res.jpeg",
+            "https://storage.googleapis.com/tfweb/testpics/piano.jpeg"
+          ],
+          "gridColumnCount": 3,
+          "allowUserUpload": true,
+          "selectedImageUrl": "https://storage.googleapis.com/tfweb/testpics/low_res.jpeg",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "image_comparison_jjalbd",
+        "nodeSpecId": "image_comparison",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 336,
+          "previewX": 1008,
+          "previewY": 16,
+          "previewWidth": 624,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": 1856,
+          "posY": 624,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "columnLabels": "original, model",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "images": []
+        },
+        "incomingEdges": {
+          "images": [
+            {
+              "sourceNodeId": "input_image_nslkkp",
+              "outputId": "image"
+            },
+            {
+              "sourceNodeId": "tensor_to_image_fxqsbh",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

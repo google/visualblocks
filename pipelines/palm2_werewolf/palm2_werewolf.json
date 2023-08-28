@@ -1,0 +1,864 @@
+ {
+  "project": {
+    "name": "Werewolf Game Generator",
+    "id": "sb209q",
+    "creationTs": 1685652104764,
+    "lastModifiedTs": 1685654460679,
+    "userSetData": {
+      "description": "Generate a werewolf game conversation with 6 people.",
+      "tags": ["text"]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_text_b9pmab",
+        "displayLabel": "Name Prefix",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 1568,
+          "previewY": 272,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 208,
+          "posY": 384,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Denny: ",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "palm_textgen_tbi4rr",
+        "displayLabel": "Frank",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 976,
+          "previewY": 848,
+          "previewWidth": 320,
+          "previewHeight": 336
+        },
+        "uiData": {
+          "posX": -112,
+          "posY": 1328,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5000000000000001,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_auu9xm",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_1ntm8k",
+        "displayLabel": "Emily",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 336,
+          "previewY": 496,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -128,
+          "posY": 992,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_mbqgrj",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_7xjdec",
+        "displayLabel": "Denny",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 832,
+          "previewY": 256,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -128,
+          "posY": 544,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_o1ddy6",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_s5sk7a",
+        "displayLabel": "Carrie",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 1328,
+          "previewY": 32,
+          "previewWidth": 320,
+          "previewHeight": 224
+        },
+        "uiData": {
+          "posX": -160,
+          "posY": 176,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_qb6bho",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_qb6bho",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 16,
+          "previewY": 496,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": -480,
+          "posY": 208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_2k74i3",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_4ec817",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_p5xbpd",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "text_processor_0xxy9d",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_4ec817",
+        "displayLabel": "Carrie's Role",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 672,
+          "previewY": 496,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -480,
+          "posY": 16,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "You are a village. **Your name is Carrie**. \nPlease vote a werewolf other than yourself and explain why.\n\n",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_mave3n",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 448,
+          "previewY": 192,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": -464,
+          "posY": -208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_2k74i3",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_s8jh76",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_p5xbpd",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_s8jh76",
+        "displayLabel": "Ann's Role",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 528,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 160
+        },
+        "uiData": {
+          "posX": -464,
+          "posY": -384,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "**Your name is Ann**. You are a werewolf. The other werewolf is Frank, your teammate.\nPlease pretend to be a \"village\" and vote other real villages, and explain why.",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "palm_textgen_h45z6c",
+        "displayLabel": "Ann",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 928,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -128,
+          "posY": -224,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_mave3n",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_zp32af",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 1312,
+          "previewY": 704,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 224,
+          "posY": 208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "text_processor_0xxy9d",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_aaqpcn",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "palm_textgen_s5sk7a",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_7vhlso",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 16,
+          "previewY": 816,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 224,
+          "posY": 560,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "text_processor_zp32af",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_b9pmab",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "palm_textgen_7xjdec",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_akw6ur",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 16,
+          "previewY": 1120,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 240,
+          "posY": 1008,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "text_processor_7vhlso",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_tsny0v",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "palm_textgen_1ntm8k",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_tsny0v",
+        "displayLabel": "Name Prefix",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 1312,
+          "previewY": 1008,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 240,
+          "posY": 832,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Emily: ",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "html_viewer_0s5fgq",
+        "nodeSpecId": "html_viewer",
+        "customData": {
+          "previewX": 976,
+          "previewY": 1200,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 240,
+          "posY": 1328,
+          "width": 250,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false,
+          "hidePreviewFrame": false
+        },
+        "inputValues": {
+          "html": ""
+        },
+        "incomingEdges": {
+          "html": [
+            {
+              "sourceNodeId": "palm_textgen_tbi4rr",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "text_processor_auu9xm",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 656,
+          "previewY": 1120,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": -496,
+          "posY": 1360,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_2k74i3",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_x4uc7f",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_p5xbpd",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "text_processor_akw6ur",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_x4uc7f",
+        "displayLabel": "Frank's Role",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 1312,
+          "previewY": 1168,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -512,
+          "posY": 1184,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "**Your name is Frank**. You are a werewolf. The other werewolf is Ann, your teammate.\nPlease pretend to be a \"village\" and vote other real villages, and explain why.",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_mbqgrj",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 656,
+          "previewY": 816,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": -480,
+          "posY": 1024,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_2k74i3",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_ha1p8c",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_p5xbpd",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "text_processor_7vhlso",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_ha1p8c",
+        "displayLabel": "Emily's Role",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 336,
+          "previewY": 1056,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -496,
+          "posY": 848,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "You are villager. Your name is Emily. Please vote a werewolf other than yourself and explain why.",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_o1ddy6",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 992,
+          "previewY": 544,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": -480,
+          "posY": 576,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_2k74i3",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_zv1wss",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_p5xbpd",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "text_processor_zp32af",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_zv1wss",
+        "displayLabel": "Denny's Role",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 1312,
+          "previewY": 448,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -480,
+          "posY": 416,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "You are a village. **Your name is Denny**. \nPlease vote a werewolf other than yourself and explain why.",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "input_text_p5xbpd",
+        "displayLabel": "Guidance&History",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 16,
+          "previewY": 240,
+          "previewWidth": 352,
+          "previewHeight": 208
+        },
+        "uiData": {
+          "posX": -880,
+          "posY": 896,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "**This is your turn to speak**.\nThe following are what other people have said. If you find nothing below, it means you are the first speaker.\n",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "input_text_aaqpcn",
+        "displayLabel": "Name Prefix",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 1248,
+          "previewY": 288,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 224,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Carrie:",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "input_text_lobdgb",
+        "displayLabel": "Name Prefix",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 672,
+          "previewY": 656,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 176,
+          "posY": -400,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Ann: ",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_0xxy9d",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 336,
+          "previewY": 752,
+          "previewWidth": 304,
+          "previewHeight": 288
+        },
+        "uiData": {
+          "posX": 192,
+          "posY": -208,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_lobdgb",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "palm_textgen_h45z6c",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_2k74i3",
+        "displayLabel": "Intro",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 128,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 224
+        },
+        "uiData": {
+          "posX": -864,
+          "posY": 96,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "text": "You are playing The Werewolves of Millers Hollow. There are 6 people in total (Ann, Ben, Carrie, Denny, Emily, Frank). Four people are villagers, and the rest two are werewolves. \n\nIn the first night, Ben was killed.\n",
+          "hidePreview": false
+        }
+      }
+    ]
+  }
+}

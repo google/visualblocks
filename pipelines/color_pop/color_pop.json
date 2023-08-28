@@ -1,0 +1,215 @@
+ {
+  "project": {
+    "name": "Color Pop",
+    "id": "new",
+    "creationTs": 1689048012481,
+    "lastModifiedTs": 1689048990889,
+    "userSetData": {
+      "description": "Given a color image, modify the image so that only the person has color and the background is black and white",
+      "tags": ["vision"]
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_image_y7st1j",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -176,
+          "posY": 32,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic8.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic9.jpg"
+          ],
+          "gridColumnCount": 3,
+          "allowUserUpload": false,
+          "selectedImageUrl": "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic8.jpg",
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "body_segmentation_crjbg5",
+        "nodeSpecId": "body_segmentation",
+        "customData": {
+          "rightOfNode": "input_image_y7st1j",
+          "previewX": 480,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 64,
+          "posY": 112,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "modelOption": "MediaPipeSelfieSegmentation"
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_y7st1j",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "shader_processing_4x2e2p",
+        "nodeSpecId": "shader_processing",
+        "customData": {
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "runContinuously": true,
+          "rightOfNode": "input_image_y7st1j",
+          "previewX": 1200,
+          "previewY": 16,
+          "previewWidth": 432,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": 64,
+          "posY": 240,
+          "width": 208,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        },
+        "inputValues": {
+          "shader": "vfx-mirror"
+        },
+        "incomingEdges": {
+          "shader": [
+            {
+              "sourceNodeId": "code_editor_iwggek",
+              "outputId": "code"
+            }
+          ],
+          "channel0": [
+            {
+              "sourceNodeId": "input_image_y7st1j",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "code_editor_iwggek",
+        "nodeSpecId": "code_editor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 368,
+          "previewX": 848,
+          "previewY": 16,
+          "previewWidth": 336,
+          "previewHeight": 384
+        },
+        "uiData": {
+          "posX": -176,
+          "posY": 256,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "curCode": "float greyScale(in vec3 col) \n{\n    return dot(col, vec3(0.2126, 0.7152, 0.0722)); //sRGB\n}\n\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n\tvec2 q = fragCoord.xy / iResolution.xy;\n    vec3 col = texture(iChannel0, q).rgb;\n    vec3 res = vec3(greyScale(col));\n\tfragColor = vec4(res, 1.0); \n}\n",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "initialCode": ""
+        }
+      },
+      {
+        "id": "image_mixer_4glo2l",
+        "nodeSpecId": "image_mixer",
+        "customData": {
+          "rightOfNode": "mask_visualizer_iesgjm",
+          "previewX": 1664,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 432
+        },
+        "uiData": {
+          "posX": 560,
+          "posY": 80,
+          "width": 224,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "destination-over",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "topText": "",
+          "midText": "",
+          "bottomText": "color pop"
+        },
+        "incomingEdges": {
+          "image1": [
+            {
+              "sourceNodeId": "mask_visualizer_iesgjm",
+              "outputId": "maskedImage"
+            }
+          ],
+          "image2": [
+            {
+              "sourceNodeId": "shader_processing_4x2e2p",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "mask_visualizer_iesgjm",
+        "nodeSpecId": "mask_visualizer",
+        "customData": {
+          "rightOfNode": "body_segmentation_crjbg5",
+          "previewX": 496,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 288,
+          "posY": 16,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "fg-image",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "color": "#22e8dd"
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "input_image_y7st1j",
+              "outputId": "image"
+            }
+          ],
+          "segmentationResult": [
+            {
+              "sourceNodeId": "body_segmentation_crjbg5",
+              "outputId": "segmentationResult"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
