@@ -218,9 +218,9 @@ $ python3 -m pip install twine
 Steps:
 
 1. Update the version number in [pyproject.toml](python/pyproject.toml).
-2. Run `rm -rf build` to clean up previous builds.
-3. Run `scripts/package` to build the package.
-4. Run `scripts/upload` to upload the package. You need to have the username
+1. Run `rm -rf build` to clean up previous builds.
+1. Run `scripts/package` to build the package.
+1. Run `scripts/upload` to upload the package. You need to have the username
     and password ready.
 
 ## Contributions
