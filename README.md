@@ -1,10 +1,9 @@
-
 # Visual Blocks
 
 [Visual Blocks][] is a framework that allows any platform or application to
 easily integrate a visual and user-friendly interface for ML creation. Visual
 Blocks aims to help applications & platforms accelerate many stages of the ML
-product cycle including pipeline authoring, model evaluation, data pipelining,
+product cycles including pipeline authoring, model evaluation, data pipelining,
 model & pipeline experimentation, and more. Visual Blocks enables these
 behaviors through a JavaScript front-end library for low/no code editing and a
 separate JS library embedding the newly created experience.
@@ -28,6 +27,15 @@ If you use Visual Blocks in your research, please reference it as:
   series = {CHI},
   doi = {10.1145/3544548.3581338},
 }
+
+@inproceedings{Du2023Experiencing,
+  title = {{Experiencing Visual Blocks for ML: Visual Prototyping of AI Pipelines}},
+  author = {Du, Ruofei and Li, Na and Jin, Jing and Carney, Michelle and Yuan, Xiuxiu and Wright, Kristen and Sherwood, Mark and Mayes, Jason and Chen, Lin and Jiang, Jun and Zhou, Jingtao and Zhou, Zhongyi and Yu, Ping and Kowdle, Adarsh and Iyengar, Ram and Olwal, Alex},
+  booktitle = {Adjunct Proceedings of the 33rd Annual ACM Symposium on User Interface Software and Technology},
+  year = {2023},
+  publisher = {ACM},
+  series = {UIST},
+}
 ```
 
 ## Components
@@ -35,8 +43,8 @@ If you use Visual Blocks in your research, please reference it as:
 **Node Graph Editor**
 
 The node graph editor is a custom Angular component. It takes a JSON object as
-the specifications of nodes (i.e. their inputs, outputs, properties, etc), and
-output the graph structure on changes (e.g. node added, edge deleted, etc).
+the specifications of nodes (i.e., their inputs, outputs, properties, etc), and
+output the graph structure on changes (e.g., node added, edge deleted, etc).
 
 **Library of ML Nodes**
 
@@ -87,9 +95,9 @@ There are three types of inference functions supported by Visual Blocks:
 
 1. **generic**: Generic inference functions accept input tensors and return
     output tensors.
-1. **text_to_text**: Text to text inference functions accept strings and return
+2. **text_to_text**: Text to text inference functions accept strings and return
     output strings.
-1. **text_to_tensors**: Text to tensors inference functions accept strings and
+3. **text_to_tensors**: Text to tensors inference functions accept strings and
     return output tensors.
 
 When writing your inference function note the following:
@@ -189,13 +197,13 @@ other cells have finished running.
 ### For Developers
 
 `!pip install git+https://...` in a notebook will install the package straight
-from the latest, unreleased source in Github. The notebooks in the
+from the latest, unreleased source in GitHub. The notebooks in the
 [tests/](tests/) directory use this method.
 
 The directory [scripts/](scripts/) contains turnkey scripts for common developer
 tasks such as building and uploading the Python distribution package.
 
-#### Build and upload package to TestPyPI
+#### Build and Upload Package to TestPyPI
 
 One time setup:
 
@@ -210,9 +218,9 @@ $ python3 -m pip install twine
 Steps:
 
 1. Update the version number in [pyproject.toml](python/pyproject.toml).
-2. Run `rm -rf build` to clean up previous builds.
-3. Run `scripts/package` to build the package.
-4. Run `scripts/upload` to upload the package. You need to have the username
+1. Run `rm -rf build` to clean up previous builds.
+1. Run `scripts/package` to build the package.
+1. Run `scripts/upload` to upload the package. You need to have the username
     and password ready.
 
 ## Contributions
