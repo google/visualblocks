@@ -473,7 +473,7 @@ nodes.
 
 - Clear project.
 
-  The project edited in the Visual Blocks local dev server is stored in local
+  The project edited in the Visual Blocks demo page is stored in local
   storage, and it will be automatically restored when you refresh the page.
   However, there can be issues if the project has significant problems or bugs
   that prevent you from making edits. To resolve this, you can clear the project
