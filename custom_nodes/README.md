@@ -281,8 +281,8 @@ $ npx http-server --cors
 
 ### Add the custom node to Visual Blocks
 
-Visit [this url](https://staging-dot-rapsai-380921.appspot.com/#/edit/new) for a
-full-screen Visual Blocks editor.
+Visit the [demo page](https://visualblocks.withgoogle.com/#/demo) from our
+website and click on the "Demo: Create your own" tab.
 
 Click the black `+` button at the bottom left corner, enter the custom node
 bundle url from the local server, and click `Submit`:
