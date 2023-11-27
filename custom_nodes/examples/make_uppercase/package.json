@@ -1,0 +1,18 @@
+{
+  "name": "make_uppercase",
+  "type": "module",
+  "dependencies": {
+    "lit": "^2.7.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.26",
+    "npm-watch": "0.11.0"
+  },
+  "watch": {
+    "build": "src/*.js"
+  },
+  "scripts": {
+    "build": "esbuild --bundle src/make_uppercase.js --outdir=dist",
+    "watch": "npm-watch"
+  }
+}

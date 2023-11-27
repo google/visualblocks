@@ -1,0 +1,10 @@
+{
+  "name": "make_uppercase_vanilla",
+  "type": "module",
+  "devDependencies": {
+    "esbuild": "^0.12.26"
+  },
+  "scripts": {
+    "build": "esbuild --bundle src/make_uppercase_vanilla.js --outdir=dist"
+  }
+}
