@@ -1,0 +1,15 @@
+{
+  "name": "wikipedia_fetcher",
+  "type": "module",
+  "dependencies": {
+    "lit": "^2.7.5",
+    "@visualblocks/custom-node-types": "latest"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.26",
+    "typescript": "5.2.2"
+  },
+  "scripts": {
+    "build": "esbuild --bundle src/wikipedia_fetcher.ts --outdir=dist"
+  }
+}

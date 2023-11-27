@@ -1,0 +1,17 @@
+{
+  "name": "@visualblocks/custom-node-types",
+  "version": "0.0.2",
+  "description": "Visual blocks custom node types",
+  "main": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "mkdir -p dist && rm -rf dist/* && cp -f src/* dist/"
+  },
+  "files": [
+    "dist/**/**",
+    "!**/*.tsbuildinfo",
+    "LICENSE",
+    "README.md"
+  ]
+}
