@@ -480,14 +480,8 @@ nodes.
   from local storage: navigate to the "Application" tab in the developer
   console, right click the local storage host, and click "Clear".
 
-  <img src="./screenshots/clear_local_storage.png" width="845" />
+  <img src="./screenshots/clear_local_storage.png" width="834" />
 
-- Multiple projects
-
-  You can have multiple projects by specifying different url path names after
-  `/#/edit/`. The name should start with `new`. For example:
-  `/#/edit/new_project1`, `/#/edit/new_project1_final`, etc. These names will
-  be used as keys in local storage to store project JSON data.
 
 If you use Visual Blocks in your research, please reference it as:
 
