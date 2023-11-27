@@ -57,7 +57,7 @@ nodes.
 
 Check out the [`node_spec.d.ts`](./types/src/node_spec.d.ts) typescript file for the full
 documentation. Refer to the annotated screenshot below for a visual
-representation of how a node is contructed and where each part is specified in
+representation of how a node is constructed and where each part is specified in
 the `NodeSpec`.
 
 <img src="./screenshots/node_structure.png" width="536"/>
@@ -158,7 +158,7 @@ Blocks:
    in the node graph. This includes actions like connecting or disconnecting
    edges, adding or removing nodes, or updating inputs/properties through
    editors. It is your responsibility to make sure the implementation is
-   optimzed, such as caching results, de-duping inputs data, etc.
+   optimized, such as caching results, de-duping inputs data, etc.
 
 1. Send outputs.
 
@@ -180,7 +180,7 @@ Blocks:
 
    **ℹ️ Note:** The node will stay in the "running" state and block the downstream
    nodes from running until this event is dispatched. Make sure the node will
-   always dispatch the `outputs` event at certain point. To send empty outputs
+   always dispatch the `outputs` event at a certain point. To send empty outputs
    data (e.g. in the cases when the inputs data is not available), dispatch the
    custom event without the `detail` field.
 
@@ -197,7 +197,7 @@ Blocks:
    have the flexibility to dynamically update the preview panel UI by utilizing
    the inputs data received in the `runWithInputs` method. It is worth noting
    that certain nodes, specifically those dedicated to data processing, may not
-   hava a preview panel UI.
+   have a preview panel UI.
 
    <img src="./screenshots/preview_panel.png" width="919" />
 
@@ -213,7 +213,7 @@ export class MakeUppercase extends LitElement {
   }
 
   render() {
-    // This node doesn't have preview UI.
+    // This node doesn't have a preview UI.
   }
 
   runWithInputs(inputs) {
@@ -289,18 +289,18 @@ bundle url from the local server, and click `Submit`:
 
 <img src="./screenshots/add_custom_node.png" width="956" />
 
-The entry will turn to green if it is successfully added.
+The entry will turn green if it is successfully added.
 
 <img src="./screenshots/add_node_success.png" width="702" />
 
-Close the dialog, and it shoud appear under the specified category:
+Close the dialog, and it should appear under the specified category:
 
 <img src="./screenshots/find_node_in_category.png" width="327" />
 
 **ℹ️ Note:** You only need to add a custom node once to a project. The editor
 will store the project JSON in local storage, and will restore it when the page
 reloads. All custom node urls will be saved in this project JSON, and will be
-loaded when project is loaded.
+loaded when the project is loaded.
 
 ## Publish a custom node
 
@@ -311,9 +311,9 @@ accessible once the custom node system is launched.
 
 **ℹ️ Note:** Custom node URLs added through the dialog are stored within the
 project's JSON file (when exported). Visual Blocks will load these URLs when
-project is opened. As a result, any non-public custom node URLs in the project
-JSON file, such as the ones added in the local dev server, won't work on other
-machines.
+the project is opened. As a result, any non-public custom node URLs in the
+project JSON file, such as the ones added in the local dev server, won't work on
+other machines.
 
 ## Other topics
 
@@ -438,18 +438,18 @@ nodes.
   upper case. It doesn't have any preview UI.
 
 - [`make_uppercase_vanilla`](./examples/make_uppercase_vanilla/): same as the
-  `make_uppercase` example above expcet that it is implemented using vanilla
+  `make_uppercase` example above expect that it is implemented using vanilla
   Javascript without using Lit.
 
 - [`image_grid`](./examples/image_grid/): a custom node that takes an input
   image and renders it into a grid. The grid size can be set using number
   editors in the node, or from the dropdowns in the preview panel UI. It shows
   how to render and update preview panel UI, how images are handled in Visual
-  Blocks, and how to manually trigger pipeline re-run from the preview panel UI.
+  Blocks, and how to manually trigger pipeline rerun from the preview panel UI.
 
 - [`wikipedia_fetcher`](./examples/wikipedia_fetcher/): a custom node that
   fetches the wikipedia summary for the input title. It shows how to use
-  remote API call in a custom node, how to do simple inputs de-dup and result
+  remote API call in a custom node, how to do simple inputs dedup and result
   caching, and how to surface errors. It also shows how to develop custom nodes
   using Typescript and our custom node types package.
 
@@ -466,7 +466,7 @@ nodes.
 - Debug using the `Logger` node.
 
   You can connect the `Logger` node (under the `Advanced` category) to any
-  node's output socket to inpect its value. It will show the value in its
+  node's output socket to inspect its value. It will show the value in its
   preview panel UI as well as in developer console.
 
   <img src="./screenshots/logger.png" width="581" />
@@ -478,7 +478,7 @@ nodes.
   However, there can be issues if the project has significant problems or bugs
   that prevent you from making edits. To resolve this, you can clear the project
   from local storage: navigate to the "Application" tab in the developer
-  console, righ click the local storage host, and click "Clear".
+  console, right click the local storage host, and click "Clear".
 
   <img src="./screenshots/clear_local_storage.png" width="845" />
 
