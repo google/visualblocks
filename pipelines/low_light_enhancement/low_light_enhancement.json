@@ -72,7 +72,7 @@
         },
         "inputValues": {
           "tensors": [],
-          "modelUrl": "https://tfhub.dev/sayannath/lite-model/zero-dce/1"
+          "modelUrl": "https://storage.googleapis.com/tfweb/visualblocks-models/zero-dce.tflite"
         },
         "incomingEdges": {
           "tensors": [
