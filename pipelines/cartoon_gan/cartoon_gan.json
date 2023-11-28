@@ -71,7 +71,7 @@
         },
         "inputValues": {
           "tensors": [],
-          "modelUrl": "https://tfhub.dev/sayakpaul/lite-model/cartoongan/int8/1"
+          "modelUrl": "https://storage.googleapis.com/tfweb/visualblocks-models/cartoon_gan_int8.tflite"
         },
         "incomingEdges": {
           "tensors": [
