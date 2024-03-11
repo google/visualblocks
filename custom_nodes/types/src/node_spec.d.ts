@@ -379,6 +379,19 @@ export declare interface TextInputEditorSpec extends EditorSpecBase {
 /** Spec for text area editor. */
 export declare interface TextAreaEditorSpec extends EditorSpecBase {
   type: EditorType.TEXT_AREA;
+
+  /**
+   * Automatically resize its height based on its content as well as the
+   * max/min height (see below).
+   */
+  autoResize?: boolean;
+
+  /**
+   * The maximum height of the text area when autoResize is set to true.
+   *
+   * The minimum height is controlled by EditorSpecBase.height.
+   */
+  autoResizeMaxHeight?: number;
 }
 
 /** Spec for image resource editor. */
