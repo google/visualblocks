@@ -1,4 +1,4 @@
-# Visual Blocks
+# Visual Blocks: Visual Prototyping of AI Pipelines
 
 [Visual Blocks][] is a framework that allows any platform or application to
 easily integrate a visual and user-friendly interface for ML creation. Visual
@@ -222,6 +222,36 @@ Steps:
 1. Run `scripts/package` to build the package.
 1. Run `scripts/upload` to upload the package. You need to have the username
     and password ready.
+
+## Visual Blocks in Class
+
+In collaboration with universities, we offer open materials for students to
+learn visual blocks in class and accept forking and contributions here:
+
+* [Visual Blocks for ML | CS139: Human-Centered AI | Stanford Spring 2024](https://docs.google.com/presentation/d/1jtBF98Z5SsqPzS0_w0i0RDrHOkdlOr5hEdyzVDZ88Hg/edit?usp=sharing)
+
+## Related Publications
+
+```bibtex
+@misc{Zhou2023InstructPipe,
+  title = {{InstructPipe: Building Visual Programming Pipelines With Human Instructions}},
+  author = {Zhou, Zhongyi and Jin, Jing and Phadnis, Vrushank and Yuan, Xiuxiu and Jiang, Jun and Qian, Xun and Zhou, Jingtao and Huang, Yiyi and Xu, Zheng and Zhang, Yinda and Wright, Kristen and Mayes, Jason and Sherwood, Mark and Lee, Johnny and Olwal, Alex and Kim, David and Iyengar, Ram and Li, Na and Du, Ruofei},
+  year = {2023},
+  publisher = {arXiv},
+  numpages = {30},
+  doi = {10.48550/arXiv.2312.09672},
+}
+
+@inproceedings{Zhou2024Experiencing,
+  title = {{Experiencing InstructPipe: Building Multi-modal AI Pipelines Via Prompting LLMs and Visual Programming}},
+  author = {Zhou, Zhongyi and Jin, Jing and Phadnis, Vrushank and Yuan, Xiuxiu and Jiang, Jun and Qian, Xun and Zhou, Jingtao and Huang, Yiyi and Xu, Zheng and Zhang, Yinda and Wright, Kristen and Mayes, Jason and Sherwood, Mark and Lee, Johnny and Olwal, Alex and Kim, David and Iyengar, Ram and Li, Na and Du, Ruofei},
+  booktitle = {Extended Abstracts of the 2024 CHI Conference on Human Factors in Computing Systems},
+  year = {2024},
+  numpages = {5},
+  series = {CHI},
+  doi = {10.1145/3613905.3648656},
+}
+```
 
 ## Contributions
 
