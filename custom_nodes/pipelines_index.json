@@ -1,0 +1,20 @@
+{
+  "3dphoto_portrait_depth": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/3dphoto_portrait_depth/3dphoto_portrait_depth.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/3dphoto_portrait_depth/3dphoto_portrait_depth.gif"
+    ],
+    "metadata": {
+      "name": "3D Photo Portrait Depth",
+      "id": "new",
+      "creationTs": 1683652729656,
+      "lastModifiedTs": 1684857844055,
+      "userSetData": {
+        "description": "Generate a 3D photo from a given image.",
+        "tags": [
+          "vision"
+        ]
+      }
+    }
+  }
+}
