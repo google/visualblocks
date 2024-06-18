@@ -246,6 +246,95 @@ visualblocks.registerCustomNode({
 });
 ```
 
+### Registering Multiple Nodes
+
+If your library contains multiple nodes, you will need to tell VisualBlocks when you're done registering nodes.
+There are a few ways to do this.
+
+#### Use `registerCustomNodes`
+
+Instead of `visualblocks.registerCustomNode`, call `visualblocks.registerCustomNodes` with a list of all your nodes.
+```javascript
+visualblocks.registerCustomNodes(
+  [
+    {
+      nodeSpec: NODE_SPEC,
+      nodeImpl: MakeUppercase,
+    },
+    {
+      nodeSpec: ANOTHER_NODE_SPEC,
+      nodeImpl: AnotherNode,
+    },
+    ...
+  ]
+);
+```
+
+#### Use ESModules
+If you'd like to use the [ESModules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+format for your node library, you can expose one of the following exports
+at the top level of your node library. VisualBlocks will `await import(...)` your library at runtime and look for 
+the following exports, using whichever one you make available.
+
+If you use ESModules, you should *not* call any of the global `visualblocks.registerCustomNode` functions. Instead,
+use the function passed to your `registerCustomNodes` export to register your nodes.
+
+TypeScript is shown to illustrate how you can ensure your export satisfies the `CustomNodeLibrary` interface, but it's
+not requried.
+
+##### Option 1: `default` Export
+```typescript
+import { type CustomNodeLibrary } from '@visualblocks/custom-node-types'
+
+export default {
+  registerCustomNodes: (register) => {
+    // Call `register` here to register your nodes.
+    // `register` has the same type as `visualblocks.registerCustomNodes`.
+    // Do NOT call visualblocks.registerCustomNode or visualblocks.registerCustomNodes
+    // when using this approach.
+    // This function can optionally return a Promise, and VisualBlocks will wait for it to
+    // resolve before considering the custom nodes loaded.
+  }
+} satisfies CustomNodeLibrary;
+```
+
+##### Option 2: Named Exports
+```typescript
+import { type CustomNodeLibrary } from '@visualblocks/custom-node-types'
+
+export const registerCustomNodes: CustomNodeLibrary['registerCustomNodes'] = (register) => {
+  // Call `register` here to register your nodes.
+  // `register` has the same type as `visualblocks.registerCustomNodes`.
+  // Do NOT call visualblocks.registerCustomNode or visualblocks.registerCustomNodes
+  // when using this approach.
+  // This function can optionally return a Promise, and VisualBlocks will wait for it to
+  // resolve before considering the custom nodes loaded.
+};
+```
+
+#### Pass Another Argument to `registerCustomNode`
+
+`visualblocks.registerCustomNodes` is preferred over this approach, but you can still use `visualblocks.registerCustomNode`
+if you want. However, you will need to pass an additional arugment to it to tell VisualBlocks that you are not done
+registering nodes.
+
+```javascript
+// Register the first node
+visualblocks.registerCustomNode({
+  nodeSpec: NODE_SPEC,
+  nodeImpl: MakeUppercase,
+}, false /* this is not the last node */); // <-- Make sure you pass 'false' here until the last node.
+
+// ... More nodes
+
+// Register the last node
+visualblocks.registerCustomNode({
+   nodeSpec: LAST_NODE_SPEC,
+   nodeImpl: LastNodeImpl,
+}, true /* this is the last node */); // <-- You must pass 'true' here or VisualBlocks will
+                                      //     not know all the nodes are registered.
+```
+
 ## Use custom node in Visual Blocks
 
 Follow the steps below to try the custom node developed locally in Visual
