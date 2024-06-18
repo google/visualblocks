@@ -1,0 +1,204 @@
+{
+  "project": {
+    "id": "oh6uz9",
+    "name": "Teachable Machine Image",
+    "creationTs": 1718731402631,
+    "lastModifiedTs": 1718745063366,
+    "userSetData": {
+      "description": "A demo of running a teachable machine image model in VisualBlocks.",
+      "tags": [
+        "vision"
+      ],
+      "contactURL": "",
+      "tutorialYouTube": ""
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "live_camera_atbo44",
+        "nodeSpecId": "live_camera",
+        "customData": {
+          "runContinuously": true,
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": 50,
+          "posY": 104,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "preprocess_image_9nmuqe",
+        "nodeSpecId": "preprocess_image",
+        "customData": {
+          "previewX": 272,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 256,
+          "posY": 112,
+          "width": 189.361328125,
+          "height": 305,
+          "selected": false
+        },
+        "propValues": {
+          "expandDim": true,
+          "resize": {
+            "width": 224,
+            "height": 224
+          },
+          "resize,,,width": 224,
+          "resize,,,height": 224,
+          "normalize": {
+            "fromMin": 0,
+            "fromMax": 255,
+            "toMin": 0,
+            "toMax": 1
+          },
+          "normalize,,,fromMin": 0,
+          "normalize,,,fromMax": 255,
+          "normalize,,,toMin": 0,
+          "normalize,,,toMax": 1
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "live_camera_atbo44",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "tfjs_model_runner_cahq7y",
+        "nodeSpecId": "tfjs_model_runner",
+        "customData": {
+          "previewX": 272,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 480,
+          "posY": 96,
+          "width": 250,
+          "height": 167,
+          "selected": false
+        },
+        "inputValues": {
+          "tensors": [],
+          "modelUrl": "https://teachablemachine.withgoogle.com/models/q8ppKDpCA/model.json"
+        },
+        "incomingEdges": {
+          "tensors": [
+            {
+              "sourceNodeId": "preprocess_image_9nmuqe",
+              "outputId": "tensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "tensor_viewer_wjc1lm",
+        "nodeSpecId": "tensor_viewer",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 368,
+          "previewX": 272,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": 784,
+          "posY": 112,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "tensor": [
+            {
+              "sourceNodeId": "tfjs_model_runner_cahq7y",
+              "outputId": "firstTensor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_text_hkhifw",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "leftOfNode": "markdown_viewer_dp7xcs",
+          "previewX": 592,
+          "previewY": 272,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": 80,
+          "posY": 464,
+          "width": 176,
+          "height": 130,
+          "selected": false
+        },
+        "propValues": {
+          "text": "## Teachable Machine Image Demo\n\nThis demo runs a [Teachable Machine](https://teachablemachine.withgoogle.com/) model created from the \"Standard image model\" image project. By default, it runs a model that tries to recognize if you're holding a cellphone. To run it with your own model, follow these steps:\n1.  [Train an image model](https://teachablemachine.withgoogle.com/train/image)\n2. Export the model to Tensorflow.js. On the export page, click `Upload my model` and copy the sharable link \n3. Paste the link into the `TFJS model runner` VisualBlocks node below. You will also need to append `/model.json` to the URL so VisualBlocks can find the model file.\n\nThe probabilities your model predicts for your output classes should appear in the tensor viewer to the left.",
+          "passwordMode": false,
+          "hidePreview": true
+        }
+      },
+      {
+        "id": "markdown_viewer_dp7xcs",
+        "nodeSpecId": "markdown_viewer",
+        "customData": {
+          "previewX": 592,
+          "previewY": 16,
+          "previewWidth": 384,
+          "previewHeight": 400
+        },
+        "uiData": {
+          "posX": 288,
+          "posY": 464,
+          "width": 176,
+          "height": 130,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false,
+          "hidePreviewFrame": false
+        },
+        "inputValues": {
+          "markdownString": ""
+        },
+        "incomingEdges": {
+          "markdownString": [
+            {
+              "sourceNodeId": "input_text_hkhifw",
+              "outputId": "text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customNodeUrls": []
+}
