@@ -269,5 +269,25 @@
         ]
       }
     }
+  },
+  "teachable_machine_image": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/teachable_machine_image/teachable_machine_image.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/teachable_machine_image/teachable_machine_image.png"
+    ],
+    "metadata": {
+      "id": "oh6uz9",
+      "name": "Teachable Machine Image",
+      "creationTs": 1718731402631,
+      "lastModifiedTs": 1718745063366,
+      "userSetData": {
+        "description": "A demo of running a teachable machine image model in VisualBlocks.",
+        "tags": [
+          "vision"
+        ],
+        "contactURL": "",
+        "tutorialYouTube": ""
+      }
+    }
   }
 }
