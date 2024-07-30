@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    /* Type Checking */
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "moduleResolution": "Node",
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    /* Language and Environment */
+    "target": "ESNext",
+
+    /* Completeness */
+    "skipLibCheck": true,
+
+    /* This project builds with esbuild */
+    "noEmit": true,
+  },
+  "include": ["*.ts", "src/**/*.ts"],
+  "exclude": ["**/node_modules"]
+}

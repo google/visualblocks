@@ -1,0 +1,22 @@
+{
+  "name": "@visualblocks/gemini",
+  "version": "0.1.0",
+  "description": "Gemini nodes for Visual Blocks",
+  "module": "index.js",
+  "files": [
+    "dist/**"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "esbuild --bundle src/index.ts --outfile=dist/bundle.js --sourcemap",
+    "dev": "node scripts/serve.js",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@visualblocks/custom-node-types": "*",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.4"
+  }
+}
