@@ -1,6 +1,6 @@
 {
   "name": "@visualblocks/gemini",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Gemini nodes for Visual Blocks",
   "module": "index.js",
   "files": [
