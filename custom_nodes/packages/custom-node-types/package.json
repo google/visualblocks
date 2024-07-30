@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "mkdir -p dist && rm -rf dist/* && cp -f src/* dist/"
+    "build": "mkdir -p dist && rm -rf dist/* && cp -f src/* dist/",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "files": [
     "dist/**/**",
