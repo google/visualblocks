@@ -1,5 +1,5 @@
 import { Category, CustomNodeInfo, DataType, EditorType, InputType, NodeSpec, OutputType } from '@visualblocks/custom-node-types';
-import { PureFunctionNode } from './pure_function_node';
+import {PureFunctionNode} from '@visualblocks/node-utils';
 import { GenerativeModel, GoogleGenerativeAI } from '@google/generative-ai';
 
 
