@@ -67,47 +67,47 @@ The node `Make uppercase` shown in the screenshot above has the following
 
 ```javascript
 const NODE_SPEC = {
-  "id": "make-uppercase",
-  "name": "Make uppercase",
+  id: 'make-uppercase',
+  name: 'Make uppercase',
 
-  "category": "processor",
+  category: 'processor',
 
-  "outputSpecs": [
+  outputSpecs: [
     {
-      "name": "result",
-      "type": "string"
-    }
+      name: 'result',
+      type: 'string',
+    },
   ],
 
-  "inputSpecs": [
+  inputSpecs: [
     {
-      "name": "text",
-      "type": "string",
-      "editorSpec": {
-        "type": "text_input"
-      }
-    }
+      name: 'text',
+      type: 'string',
+      editorSpec: {
+        type: 'text_input',
+      },
+    },
   ],
 
-  "propertySpecs": [
+  propertySpecs: [
     {
-      "name": "option",
-      "type": "string",
-      "editorSpec": {
-        "type": "dropdown",
-        "options": [
+      name: 'option',
+      type: 'string',
+      editorSpec: {
+        type: 'dropdown',
+        options: [
           {
-            "value": "first-letter",
-            "label": "First letter only"
+            value: 'first-letter',
+            label: 'First letter only',
           },
           {
-            "value": "all-letters",
-            "label": "All letters"
-          }
-        ]
-      }
-    }
-  ]
+            value: 'all-letters',
+            label: 'All letters',
+          },
+        ],
+      },
+    },
+  ],
 };
 ```
 
@@ -118,7 +118,7 @@ Notes:
   `output`, `model`, `tensor`, `search`, `processor`, and `advanced`.
 - `outputSpecs`, `inputSpecs`, and `propertySpecs` are all optional.
 - Outputs don't have editors.
-- *Properties* and *inputs* are very similar, except that you cannot connect an edge to a *property*.
+- _Properties_ and _inputs_ are very similar, except that you cannot connect an edge to a _property_.
 - Each property or input can optionally have an associated editor.
   For an input, its editor will be hidden if it is connected by an edge,
   meaning the data is coming from the other end of the edge instead of the
@@ -168,14 +168,14 @@ Blocks:
    fields specified in node spec's `outputSpecs`.
 
    ```javascript
-    this.dispatchEvent(
-      new CustomEvent('outputs', {
-        detail: {
-          // `result` is the `name` field of its first (and only) output spec.
-          result: 'my result',
-        },
-      })
-    );
+   this.dispatchEvent(
+     new CustomEvent('outputs', {
+       detail: {
+         // `result` is the `name` field of its first (and only) output spec.
+         result: 'my result',
+       },
+     })
+   );
    ```
 
    **ℹ️ Note:** The node will stay in the "running" state and block the downstream
@@ -205,7 +205,7 @@ The following is the implementation of the `Make uppercase` node shown in the
 screenshot above using Lit.
 
 ```javascript
-import { LitElement } from 'lit';
+import {LitElement} from 'lit';
 
 export class MakeUppercase extends LitElement {
   constructor() {
@@ -222,9 +222,10 @@ export class MakeUppercase extends LitElement {
     const {text, option} = inputs;
 
     // Process text.
-    const result = option === 'first-letter' ?
-        (text.charAt(0).toUpperCase() + text.slice(1)) :
-        text.toUpperCase();
+    const result =
+      option === 'first-letter'
+        ? text.charAt(0).toUpperCase() + text.slice(1)
+        : text.toUpperCase();
 
     // Output.
     //
@@ -242,7 +243,7 @@ Call the following API to register your custom node:
 // Use the node spec and the implementation class to register.
 visualblocks.registerCustomNode({
   nodeSpec: NODE_SPEC,
-  nodeImpl: MakeUppercase
+  nodeImpl: MakeUppercase,
 });
 ```
 
@@ -254,6 +255,7 @@ There are a few ways to do this.
 #### Use `registerCustomNodes`
 
 Instead of `visualblocks.registerCustomNode`, call `visualblocks.registerCustomNodes` with a list of all your nodes.
+
 ```javascript
 visualblocks.registerCustomNodes(
   [
@@ -271,45 +273,49 @@ visualblocks.registerCustomNodes(
 ```
 
 #### Use ESModules
+
 If you'd like to use the [ESModules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 format for your node library, you can expose one of the following exports
-at the top level of your node library. VisualBlocks will `await import(...)` your library at runtime and look for 
+at the top level of your node library. VisualBlocks will `await import(...)` your library at runtime and look for
 the following exports, using whichever one you make available.
 
-If you use ESModules, you should *not* call any of the global `visualblocks.registerCustomNode` functions. Instead,
+If you use ESModules, you should _not_ call any of the global `visualblocks.registerCustomNode` functions. Instead,
 use the function passed to your `registerCustomNodes` export to register your nodes.
 
 TypeScript is shown to illustrate how you can ensure your export satisfies the `CustomNodeLibrary` interface, but it's
 not requried.
 
 ##### Option 1: `default` Export
+
 ```typescript
-import { type CustomNodeLibrary } from '@visualblocks/custom-node-types'
+import {type CustomNodeLibrary} from '@visualblocks/custom-node-types';
 
 export default {
-  registerCustomNodes: (register) => {
+  registerCustomNodes: register => {
     // Call `register` here to register your nodes.
     // `register` has the same type as `visualblocks.registerCustomNodes`.
     // Do NOT call visualblocks.registerCustomNode or visualblocks.registerCustomNodes
     // when using this approach.
     // This function can optionally return a Promise, and VisualBlocks will wait for it to
     // resolve before considering the custom nodes loaded.
-  }
+  },
 } satisfies CustomNodeLibrary;
 ```
 
 ##### Option 2: Named Exports
-```typescript
-import { type CustomNodeLibrary } from '@visualblocks/custom-node-types'
 
-export const registerCustomNodes: CustomNodeLibrary['registerCustomNodes'] = (register) => {
-  // Call `register` here to register your nodes.
-  // `register` has the same type as `visualblocks.registerCustomNodes`.
-  // Do NOT call visualblocks.registerCustomNode or visualblocks.registerCustomNodes
-  // when using this approach.
-  // This function can optionally return a Promise, and VisualBlocks will wait for it to
-  // resolve before considering the custom nodes loaded.
-};
+```typescript
+import {type CustomNodeLibrary} from '@visualblocks/custom-node-types';
+
+export const registerCustomNodes: CustomNodeLibrary['registerCustomNodes'] =
+  register => {
+    // Call `register` here to register your nodes.
+    // `register` has the same type as `visualblocks.registerCustomNodes`.
+    // Do NOT call visualblocks.registerCustomNode or visualblocks.registerCustomNodes
+    // when using this approach.
+    // This function can optionally return a Promise, and VisualBlocks will wait for it to
+    // resolve before considering the custom nodes loaded.
+  };
 ```
 
 #### Pass Another Argument to `registerCustomNode`
@@ -320,19 +326,25 @@ registering nodes.
 
 ```javascript
 // Register the first node
-visualblocks.registerCustomNode({
-  nodeSpec: NODE_SPEC,
-  nodeImpl: MakeUppercase,
-}, false /* this is not the last node */); // <-- Make sure you pass 'false' here until the last node.
+visualblocks.registerCustomNode(
+  {
+    nodeSpec: NODE_SPEC,
+    nodeImpl: MakeUppercase,
+  },
+  false /* this is not the last node */
+); // <-- Make sure you pass 'false' here until the last node.
 
 // ... More nodes
 
 // Register the last node
-visualblocks.registerCustomNode({
-   nodeSpec: LAST_NODE_SPEC,
-   nodeImpl: LastNodeImpl,
-}, true /* this is the last node */); // <-- You must pass 'true' here or VisualBlocks will
-                                      //     not know all the nodes are registered.
+visualblocks.registerCustomNode(
+  {
+    nodeSpec: LAST_NODE_SPEC,
+    nodeImpl: LastNodeImpl,
+  },
+  true /* this is the last node */
+); // <-- You must pass 'true' here or VisualBlocks will
+//     not know all the nodes are registered.
 ```
 
 ## Use custom node in Visual Blocks
@@ -446,14 +458,16 @@ You can surface errors from the node implementation to the node graph UI by
 sending a error object through the `outputs` custom event:
 
 ```javascript
-this.dispatchEvent(new CustomEvent('outputs', {
-  detail: {
-    error: {
-      title: 'Error',
-      message: 'Something was wrong...',
-    }
-  }
-}));
+this.dispatchEvent(
+  new CustomEvent('outputs', {
+    detail: {
+      error: {
+        title: 'Error',
+        message: 'Something was wrong...',
+      },
+    },
+  })
+);
 ```
 
 The corresponding node will show a red exclamation mark. When hovered, the error
@@ -570,7 +584,6 @@ nodes.
   console, right click the local storage host, and click "Clear".
 
   <img src="./screenshots/clear_local_storage.png" width="834" />
-
 
 If you use Visual Blocks in your research, please reference it as:
 

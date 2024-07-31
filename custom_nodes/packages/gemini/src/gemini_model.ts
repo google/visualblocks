@@ -15,15 +15,22 @@
  * =============================================================================
  */
 
-import { Category, CustomNodeInfo, DataType, EditorType, InputType, NodeSpec, OutputType } from '@visualblocks/custom-node-types';
+import {
+  Category,
+  CustomNodeInfo,
+  DataType,
+  EditorType,
+  InputType,
+  NodeSpec,
+  OutputType,
+} from '@visualblocks/custom-node-types';
 import {PureFunctionNode} from '@visualblocks/node-utils';
-import { GenerativeModel, GoogleGenerativeAI } from '@google/generative-ai';
-
+import {GenerativeModel, GoogleGenerativeAI} from '@google/generative-ai';
 
 const NODE_SPEC = {
   id: 'gemini-model',
   name: 'Gemini Language Model',
-  description: 'Send queries and fetch responses from Google\'s Gemini models.',
+  description: "Send queries and fetch responses from Google's Gemini models.",
   category: Category.MODEL,
   inputSpecs: [
     {
@@ -42,9 +49,7 @@ const NODE_SPEC = {
       type: DataType.STRING,
       editorSpec: {
         type: EditorType.DROPDOWN,
-        options: [
-          'gemini-1.5-flash',
-        ].map(l => ({ label: l, value: l })),
+        options: ['gemini-1.5-flash'].map(l => ({label: l, value: l})),
       },
     },
     {
@@ -62,7 +67,7 @@ const NODE_SPEC = {
     {
       name: 'response',
       type: DataType.STRING,
-    }
+    },
   ] as const,
 } satisfies NodeSpec;
 
@@ -97,8 +102,8 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
 
     if (!inputs.prompt) {
       return {}; // Nothing to generate yet
-    };
-        
+    }
+
     const {response} = await this.model.generateContent(inputs.prompt);
 
     return {

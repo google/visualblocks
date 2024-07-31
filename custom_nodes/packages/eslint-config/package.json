@@ -1,0 +1,15 @@
+{
+  "name": "@visualblocks/eslint-config",
+  "private": "true",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "eslint.config.js",
+  "files": [
+    "eslint.config.js"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}

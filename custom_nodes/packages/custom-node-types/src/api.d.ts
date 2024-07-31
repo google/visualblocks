@@ -52,7 +52,9 @@ export interface VisualBlocksApi {
  * ```
  */
 export interface CustomNodeLibrary {
-  registerCustomNodes(register: VisualBlocksApi['registerCustomNodes']): void | Promise<void>
+  registerCustomNodes(
+    register: VisualBlocksApi['registerCustomNodes']
+  ): void | Promise<void>;
 }
 
 /** Info for a custom node. */
@@ -79,9 +81,9 @@ export declare interface Services {
 
 /** A service that manages resources. */
 export declare interface ResourceService {
-  put: (resource: any, id?: string|symbol) => string;
+  put: (resource: any, id?: string | symbol) => string;
 
-  get<T>(id: string|symbol): T;
+  get<T>(id: string | symbol): T;
 
   delete(id: string): any;
 
