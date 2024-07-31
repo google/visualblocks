@@ -42,7 +42,7 @@ export declare interface NodeSpec {
   minWidth?: number;
 
   /** The outputs of the node. */
-  outputSpecs?: OutputSpec[];
+  outputSpecs?: readonly OutputSpec[];
 
   /**
    * The properties of the node.
@@ -53,7 +53,7 @@ export declare interface NodeSpec {
    * users can select "add", "substract", etc, to tell the node which operator
    * to use.
    */
-  propertySpecs?: InputSpec[];
+  propertySpecs?: readonly InputSpec[];
 
   /**
    * The inputs of the node.
@@ -65,7 +65,7 @@ export declare interface NodeSpec {
    * editor. An input can also have no editors, meaning that its data can only
    * come from the connected edge.
    */
-  inputSpecs?: InputSpec[];
+  inputSpecs?: readonly InputSpec[];
 
   /**
    * A custom function that takes the input values and generates a list input
