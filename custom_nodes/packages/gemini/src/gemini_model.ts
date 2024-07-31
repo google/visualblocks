@@ -23,9 +23,15 @@ import {
   InputType,
   NodeSpec,
   OutputType,
+  Services,
 } from '@visualblocks/custom-node-types';
 import {PureFunctionNode} from '@visualblocks/node-utils';
-import {GenerativeModel, GoogleGenerativeAI} from '@google/generative-ai';
+import {
+  GenerativeModel,
+  GoogleGenerativeAI,
+  InlineDataPart,
+  Part,
+} from '@google/generative-ai';
 
 const NODE_SPEC = {
   id: 'gemini-model',
@@ -36,7 +42,7 @@ const NODE_SPEC = {
     {
       name: 'prompt',
       displayLabel: 'Prompt',
-      type: DataType.STRING, // TODO: Accept a custom Prompt type incl. image
+      type: DataType.ANY, // TODO: Better types. Union(DataType.STRING, DataType.IMAGE).
       multiple: true,
       editorSpec: {
         type: EditorType.TEXT_AREA,
@@ -82,7 +88,7 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
     super();
   }
 
-  override async run(inputs: Inputs): Promise<Outputs> {
+  override async run(inputs: Inputs, services: Services): Promise<Outputs> {
     if (!inputs.apiKey) {
       throw new Error('Please set your API key');
     }
@@ -104,7 +110,45 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
       return {}; // Nothing to generate yet
     }
 
-    const {response} = await this.model.generateContent(inputs.prompt);
+    const parts = (inputs.prompt as unknown[]).map((prompt, i): Part => {
+      if (typeof prompt === 'string') {
+        return {
+          text: prompt,
+        };
+      }
+
+      if (typeof prompt !== 'object') {
+        throw new Error(`Prompt input at index ${i} is not a valid type`);
+      }
+
+      if (prompt === null) {
+        throw new Error(`Prompt input at index ${i} is null`);
+      }
+
+      if ('canvasId' in prompt && typeof prompt.canvasId === 'string') {
+        // TODO: This can use the image to base64 node when subgraphs work.
+        const canvas = services.resourceService.get<HTMLCanvasElement>(
+          prompt.canvasId
+        );
+        const data = canvas.toDataURL().split(';base64,')[1];
+        if (data === undefined) {
+          throw new Error(
+            `Failed to get data for input ${i} from canvas ${prompt.canvasId}`
+          );
+        }
+
+        return {
+          inlineData: {
+            mimeType: 'image/png',
+            data,
+          },
+        } satisfies InlineDataPart;
+      }
+
+      throw new Error(`Prompt input at index ${i} is not a valid type`);
+    });
+
+    const {response} = await this.model.generateContent(parts);
 
     return {
       response: response.text(),
