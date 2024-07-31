@@ -3,27 +3,30 @@
   "version": "0.1.0",
   "description": "Gemini nodes for Visual Blocks",
   "module": "index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "files": [
     "dist/**"
   ],
   "author": "",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "esbuild --bundle src/index.ts --outfile=dist/bundle.js --sourcemap",
-    "dev": "node scripts/serve.js",
+    "build": "tsup src/index.ts --format esm --dts --sourcemap && npm run bundle",
+    "bundle": "esbuild --bundle src/index.ts --outfile=dist/bundle.js --format=esm --sourcemap",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "typecheck": "tsc"
   },
   "devDependencies": {
     "@visualblocks/custom-node-types": "*",
+    "@visualblocks/node-utils": "*",
     "@visualblocks/tsconfig": "*",
     "esbuild": "^0.23.0",
     "express": "^4.19.2",
+    "tsup": "^8.2.3",
     "typescript": "^5.5.4"
   },
   "dependencies": {
     "@google/generative-ai": "^0.16.0",
-    "fast-deep-equal": "^3.1.3",
     "lit": "^3.1.4"
   }
 }

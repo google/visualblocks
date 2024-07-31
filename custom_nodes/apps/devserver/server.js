@@ -15,11 +15,25 @@
  * =============================================================================
  */
 
-import {CustomNodeLibrary} from '@visualblocks/custom-node-types';
-import {GeminiModelInfo} from './gemini_model';
+const path = require('path');
+const express = require('express');
+const app = express();
+const port = 8080;
 
-export default {
-  registerCustomNodes: (register) => {
-    register([GeminiModelInfo]);
-  }
-} satisfies CustomNodeLibrary;
+app.use((req, res, next) => {
+  const allowedOrigin = req.headers.origin;
+  res.header('Access-Control-Allow-Origin', allowedOrigin);
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
+
+app.use(express.static(path.normalize(path.join(__dirname, '../../'))));
+
+app.options('*', (req, res) => {
+    res.setHeader('Access-Control-Allow-Private-Network', 'true');
+    res.sendStatus(200);
+});
+
+app.listen(port, () => {
+    console.log(`Dev server running on http://localhost:${port}`);
+});
