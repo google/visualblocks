@@ -1,4 +1,4 @@
 {
   "extends": "@visualblocks/tsconfig/tsconfig.json",
-  "include": ["*.ts", "src/**/*.ts"]
+  "include": ["src/**/*.ts"]
 }

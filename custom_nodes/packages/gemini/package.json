@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@visualblocks/custom-node-types": "*",
+    "@visualblocks/tsconfig": "*",
     "esbuild": "^0.23.0",
     "express": "^4.19.2",
     "typescript": "^5.5.4"
