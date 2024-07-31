@@ -1,4 +1,3 @@
-
 # Make uppercase
 
 This example custom node is the same as [make_uppercase](../make_uppercase)

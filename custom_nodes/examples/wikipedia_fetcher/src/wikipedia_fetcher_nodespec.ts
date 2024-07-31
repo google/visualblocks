@@ -7,14 +7,18 @@ export const NODE_SPEC: NodeSpec = {
   category: Category.SEARCH,
 
   // Inputs.
-  inputSpecs: [{
-    name: 'title',
-    type: DataType.STRING,
-  }],
+  inputSpecs: [
+    {
+      name: 'title',
+      type: DataType.STRING,
+    },
+  ],
 
   // Outputs.
-  outputSpecs: [{
-    'name': 'summary',
-    'type': DataType.STRING,
-  }],
+  outputSpecs: [
+    {
+      name: 'summary',
+      type: DataType.STRING,
+    },
+  ],
 };

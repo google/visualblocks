@@ -16,35 +16,49 @@
  */
 
 import {LitElement} from 'lit';
-import {VisualBlocksNodeRunner, Services} from '@visualblocks/custom-node-types';
+import {
+  VisualBlocksNodeRunner,
+  Services,
+} from '@visualblocks/custom-node-types';
 import deepEqual from 'fast-deep-equal';
 
 /**
  * A VisualBlocks node that reruns whenever any input changes. The node itself
  * uses a promise instead of a callback to return its result.
  */
-export abstract class PureFunctionNode<Inputs extends Record<string, unknown>,
-Outputs extends Record<string, unknown>> extends LitElement implements VisualBlocksNodeRunner {
-
+export abstract class PureFunctionNode<
+    Inputs extends Record<string, unknown>,
+    Outputs extends Record<string, unknown>,
+  >
+  extends LitElement
+  implements VisualBlocksNodeRunner
+{
   protected lastInputs: Inputs | undefined;
   private cachedOutputs: Outputs | undefined;
 
   runWithInputs(inputs: Inputs, services: Services) {
-    this.runWithInputsAsync(inputs, services).then(result => {
-      this.dispatchEvent(new CustomEvent('outputs', {detail: result}));
-    }).catch(error => {
-      this.dispatchEvent(new CustomEvent('outputs', {
-        detail: {
-          error: {
-            title: error.message,
-            message: error,
-          }
-        }
-      }));
-    });
+    this.runWithInputsAsync(inputs, services)
+      .then(result => {
+        this.dispatchEvent(new CustomEvent('outputs', {detail: result}));
+      })
+      .catch(error => {
+        this.dispatchEvent(
+          new CustomEvent('outputs', {
+            detail: {
+              error: {
+                title: error.message,
+                message: error,
+              },
+            },
+          })
+        );
+      });
   }
 
-  private async runWithInputsAsync(inputs: Inputs, services: Services): Promise<Outputs> {
+  private async runWithInputsAsync(
+    inputs: Inputs,
+    services: Services
+  ): Promise<Outputs> {
     if (!this.lastInputs || !this.cachedOutputs) {
       return this.forcedRun(inputs, services);
     }
@@ -82,6 +96,5 @@ Outputs extends Record<string, unknown>> extends LitElement implements VisualBlo
     return deepEqual(a, b); // TODO: Maybe types should provide an equality fn?
   }
 
-  abstract run(inputs: Inputs, services: Services): Promise<Outputs>
-
+  abstract run(inputs: Inputs, services: Services): Promise<Outputs>;
 }

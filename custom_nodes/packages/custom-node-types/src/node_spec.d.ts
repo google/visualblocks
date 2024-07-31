@@ -74,8 +74,9 @@ export declare interface NodeSpec {
    * These generated specs will be rendered on the node in additional to the
    * static input and output specs specified above.
    */
-  dynamicIoGeneratorFn?:
-      (inputValues: Record<string, JsonValue>) => DynamicIoSpecs;
+  dynamicIoGeneratorFn?: (
+    inputValues: Record<string, JsonValue>
+  ) => DynamicIoSpecs;
 }
 
 /** NodeSpec with typed custom data. */
@@ -107,7 +108,7 @@ export declare interface OutputSpec {
    * TODO(jingjin): Complex types (e.g. inheritance, union, etc) will be
    * supported in the future.
    */
-  type: IOTypeSpec|string;
+  type: IOTypeSpec | string;
 
   /**
    * One special and commonly used data type is a Json object (e.g. {r, g, b}
@@ -144,7 +145,7 @@ export declare interface InputSpec {
    * The data type of the input. See comments in `OutputSpec` above for more
    * details.
    */
-  type: IOTypeSpec|string;
+  type: IOTypeSpec | string;
 
   /**
    * Whether to allow multiple incoming edges connecting to this input.
@@ -238,7 +239,7 @@ export declare interface IOTypeUiSpec {
    * Which side to apply the custom socket element to. If unset, the custom
    * element will be applied to BOTH input and output socket.
    */
-  side?: 'input'|'output';
+  side?: 'input' | 'output';
 }
 
 /**
@@ -295,9 +296,15 @@ export declare interface DynamicIoSpecs {
  * TODO(jingjin): add more built-in editors, e.g. color picker, boolean
  * switches, etc.
  */
-export declare type EditorSpec = NumberEditorSpec | DropDownEditorSpec |
-    SlideToggleEditorSpec | ColorPickerEditorSpec | TextInputEditorSpec |
-    TextAreaEditorSpec | ImageResourceEditorSpec | CustomEditorSpec;
+export declare type EditorSpec =
+  | NumberEditorSpec
+  | DropDownEditorSpec
+  | SlideToggleEditorSpec
+  | ColorPickerEditorSpec
+  | TextInputEditorSpec
+  | TextAreaEditorSpec
+  | ImageResourceEditorSpec
+  | CustomEditorSpec;
 
 /** The base of editor spec shared by all editor specs. */
 export declare interface EditorSpecBase {
@@ -412,7 +419,12 @@ export declare interface CustomEditorSpec extends EditorSpecBase {
 
 /** The types of serializable values supported by editors. */
 export declare type JsonValue =
-    string | number | boolean | Json | object | JsonValueArray;
+  | string
+  | number
+  | boolean
+  | Json
+  | object
+  | JsonValueArray;
 
 /** A Json object. */
 export declare interface Json {

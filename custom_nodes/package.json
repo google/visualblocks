@@ -9,6 +9,7 @@
     "build": "turbo build",
     "dev": "turbo watch dev",
     "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,md}\"",
     "clean": "turbo clean && turbo daemon clean",
     "changeset": "changeset",
     "version-packages": "changeset version",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
+    "prettier": "^3.3.3",
     "turbo": "^2.0.10"
   }
 }

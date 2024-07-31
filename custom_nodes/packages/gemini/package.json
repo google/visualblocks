@@ -14,14 +14,18 @@
     "build": "tsup src/index.ts --format esm --dts --sourcemap && npm run bundle",
     "bundle": "esbuild --bundle src/index.ts --outfile=dist/bundle.js --format=esm --sourcemap",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint .",
     "typecheck": "tsc"
   },
   "devDependencies": {
     "@visualblocks/custom-node-types": "*",
     "@visualblocks/node-utils": "*",
     "@visualblocks/tsconfig": "*",
+    "@visualblocks/eslint-config": "*",
     "esbuild": "^0.23.0",
+    "eslint": "^9.8.0",
     "express": "^4.19.2",
+    "globals": "^15.8.0",
     "tsup": "^8.2.3",
     "typescript": "^5.5.4"
   },

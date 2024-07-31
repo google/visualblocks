@@ -1,4 +1,4 @@
-import {IOTypeSpec, NodeSpec} from "./node_spec";
+import {IOTypeSpec, NodeSpec} from './node_spec';
 
 /** All built-in data types. */
 export enum DataType {
@@ -72,8 +72,8 @@ export interface VisualBlocksSize {
 /** The classification result from a mobilenet model. */
 export interface VisualBlocksClassificationResult {
   classes: Array<{
-    className: string,
-    probability: number,
+    className: string;
+    probability: number;
   }>;
 }
 
@@ -86,12 +86,12 @@ export interface VisualBlocksLandmarkResult {
 /** The bounding box and landmarks for a body part. */
 export interface VisualBlocksLandmark {
   box?: {
-    xMin?: number,
-    xMax?: number,
-    yMin?: number,
-    yMax?: number,
+    xMin?: number;
+    xMax?: number;
+    yMin?: number;
+    yMax?: number;
   };
-  keypoints?: Array<{x: number, y: number, z?: number}>;
+  keypoints?: Array<{x: number; y: number; z?: number}>;
 }
 
 /** The source of the landmark result. */
@@ -100,7 +100,7 @@ export enum VisualBlocksLandmarkSource {
   FACE_DETECTION = 'face_detection',
   POSE_LANDMARK = 'pose_landmark',
   HAND_POSE_DETECTION = 'hand_pose_detection',
-  GESTURE_RECOGNITION = 'gesture_recognition'
+  GESTURE_RECOGNITION = 'gesture_recognition',
 }
 
 /** A prompt example type that used to instruct the language model. */
@@ -118,10 +118,10 @@ export interface VisualBlocksObjectDetectionResult {
 export interface VisualBlocksDetectedObject {
   box?: {
     /** Take the top left corner as the origin. */
-    left: number,  // same as xMin
-    top: number,   // same as yMin
-    width: number,
-    height: number,
+    left: number; // same as xMin
+    top: number; // same as yMin
+    width: number;
+    height: number;
   };
   label?: string;
   score?: number;
