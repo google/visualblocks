@@ -63,10 +63,6 @@ export abstract class PureFunctionNode<
       return this.forcedRun(inputs, services);
     }
 
-    if (inputs === this.lastInputs) {
-      return this.cachedOutputs;
-    }
-
     for (const key of Object.keys(this.lastInputs)) {
       if (!(key in inputs)) {
         return this.forcedRun(inputs, services);
@@ -87,7 +83,7 @@ export abstract class PureFunctionNode<
   }
 
   async forcedRun(inputs: Inputs, services: Services): Promise<Outputs> {
-    this.lastInputs = inputs;
+    this.lastInputs = structuredClone(inputs);
     this.cachedOutputs = await this.run(inputs, services);
     return this.cachedOutputs;
   }
