@@ -13,14 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Change directory to Custom Nodes
-        run: cd custom_nodes/
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: 'npm'
+          working-directory: ./custom_nodes/
+
+      - name: Change directory to Custom Nodes
+        run: cd custom_nodes/
 
       - name: Install dependencies
         run: npm install
