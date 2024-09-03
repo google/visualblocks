@@ -1,9 +1,11 @@
 {
   "name": "@visualblocks/node-utils",
   "version": "0.0.0",
-  "module": "./dist/index.js",
+  "description": "Utilities for writing custom Visual Blocks nodes",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "license": "Apache-2.0",
   "files": [
     "dist/**"
   ],
