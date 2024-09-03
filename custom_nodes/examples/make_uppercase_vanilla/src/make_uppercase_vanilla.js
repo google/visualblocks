@@ -1,6 +1,5 @@
 import {NODE_SPEC} from './make_uppercase_vanilla_nodespec';
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Implement node.
 
@@ -19,9 +18,10 @@ export class MakeUppercaseVanilla extends HTMLElement {
     const {text, option} = inputs;
 
     // Process text.
-    const result = option === 'first-letter' ?
-        (text.charAt(0).toUpperCase() + text.slice(1)) :
-        text.toUpperCase();
+    const result =
+      option === 'first-letter'
+        ? text.charAt(0).toUpperCase() + text.slice(1)
+        : text.toUpperCase();
 
     // Output.
     //
@@ -30,9 +30,10 @@ export class MakeUppercaseVanilla extends HTMLElement {
   }
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Register custom node with visual blocks.
 
-visualblocks.registerCustomNode(
-    {nodeSpec: NODE_SPEC, nodeImpl: MakeUppercaseVanilla});
+visualblocks.registerCustomNode({
+  nodeSpec: NODE_SPEC,
+  nodeImpl: MakeUppercaseVanilla,
+});

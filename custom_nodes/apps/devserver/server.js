@@ -30,10 +30,10 @@ app.use((req, res, next) => {
 app.use(express.static(path.normalize(path.join(__dirname, '../../'))));
 
 app.options('*', (req, res) => {
-    res.setHeader('Access-Control-Allow-Private-Network', 'true');
-    res.sendStatus(200);
+  res.setHeader('Access-Control-Allow-Private-Network', 'true');
+  res.sendStatus(200);
 });
 
 app.listen(port, () => {
-    console.log(`Dev server running on http://localhost:${port}`);
+  console.log(`Dev server running on http://localhost:${port}`);
 });

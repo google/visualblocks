@@ -1,43 +1,43 @@
 export const NODE_SPEC = {
-  'id': 'image-grid',
-  'name': 'Image grid',
-  'description': 'Render the input image in a grid.',
-  'category': 'output',
+  id: 'image-grid',
+  name: 'Image grid',
+  description: 'Render the input image in a grid.',
+  category: 'output',
 
-  'propertySpecs': [
+  propertySpecs: [
     {
-      'name': 'gridSizeX',
-      'displayLabel': 'Grid size X',
-      'defaultValue': 3,
-      'editorSpec': {
-        'type': 'number',
-        'min': 1,
-        'max': 8,
-        'integers': true,
+      name: 'gridSizeX',
+      displayLabel: 'Grid size X',
+      defaultValue: 3,
+      editorSpec: {
+        type: 'number',
+        min: 1,
+        max: 8,
+        integers: true,
       },
     },
     {
-      'name': 'gridSizeY',
-      'displayLabel': 'Grid size Y',
-      'defaultValue': 3,
-      'editorSpec': {
-        'type': 'number',
-        'min': 1,
-        'max': 8,
-        'integers': true,
-      }
+      name: 'gridSizeY',
+      displayLabel: 'Grid size Y',
+      defaultValue: 3,
+      editorSpec: {
+        type: 'number',
+        min: 1,
+        max: 8,
+        integers: true,
+      },
     },
   ],
-  'inputSpecs': [
+  inputSpecs: [
     {
-      'name': 'original',
-      'type': 'image',
+      name: 'original',
+      type: 'image',
     },
   ],
-  'outputSpecs': [
+  outputSpecs: [
     {
-      'name': 'result',
-      'type': 'image',
+      name: 'result',
+      type: 'image',
     },
-  ]
+  ],
 };

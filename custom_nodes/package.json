@@ -9,7 +9,7 @@
     "build": "turbo build",
     "dev": "turbo watch dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,md}\"",
+    "format": "prettier --write .",
     "clean": "turbo clean && turbo daemon clean",
     "changeset": "changeset",
     "version-packages": "changeset version",
