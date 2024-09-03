@@ -1,1 +1,1 @@
-export {default} from '@visualblocks/eslint-config'
+export {default} from '@visualblocks/eslint-config';

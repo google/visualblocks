@@ -21,7 +21,7 @@
     "skipLibCheck": true,
 
     /* This project builds with esbuild */
-    "noEmit": true,
+    "noEmit": true
   },
   "exclude": ["**/node_modules"]
 }

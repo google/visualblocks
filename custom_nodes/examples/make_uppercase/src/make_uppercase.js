@@ -2,7 +2,6 @@ import {LitElement} from 'lit';
 
 import {NODE_SPEC} from './make_uppercase_nodespec';
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Implement node.
 
@@ -25,9 +24,10 @@ export class MakeUppercase extends LitElement {
     const {text, option} = inputs;
 
     // Process text.
-    const result = option === 'first-letter' ?
-        (text.charAt(0).toUpperCase() + text.slice(1)) :
-        text.toUpperCase();
+    const result =
+      option === 'first-letter'
+        ? text.charAt(0).toUpperCase() + text.slice(1)
+        : text.toUpperCase();
 
     // Output.
     //
@@ -35,7 +35,6 @@ export class MakeUppercase extends LitElement {
     this.dispatchEvent(new CustomEvent('outputs', {detail: {result}}));
   }
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Register custom node with visual blocks.

@@ -35,23 +35,22 @@ export class ImageGrid extends LitElement {
 
   render() {
     // The UI rendered here will be projected into its preview panel UI.
-    return html`
-      <div class="container">
-        <div class="title-container">
-            X:
-            <select class="x-select" @change="${this._handleGridSizeXChanged}">
-              ${this.options}
-            </select>
-            Y:
-            <select class="y-select" @change="${this._handleGridSizeYChanged}">
-              ${this.options}
-              </select>
-        </div>
-        <canvas id="output-image"></canvas>
-          ${
-        this.hasInputImage ? html`` :
-                             html`<div class="no-input">No input</div>`}
-      </div>`;
+    return html` <div class="container">
+      <div class="title-container">
+        X:
+        <select class="x-select" @change="${this._handleGridSizeXChanged}">
+          ${this.options}
+        </select>
+        Y:
+        <select class="y-select" @change="${this._handleGridSizeYChanged}">
+          ${this.options}
+        </select>
+      </div>
+      <canvas id="output-image"></canvas>
+      ${this.hasInputImage
+        ? html``
+        : html`<div class="no-input">No input</div>`}
+    </div>`;
   }
 
   runWithInputs(input, services) {
@@ -79,16 +78,15 @@ export class ImageGrid extends LitElement {
     if (!original) {
       this.dispatchEvent(new CustomEvent('outputs'));
       return;
-    };
-
+    }
 
     // Render the source canvas in a grid.
     //
     // Get the source canvas from the ResourceService using the canvasId stored
     // in the input image `original`.
-    const sourceCanvas = resourceService.get(original.canvasId)
+    const sourceCanvas = resourceService.get(original.canvasId);
     const {width: sourceWidth, height: sourceHeight} = sourceCanvas;
-    const outputCanvas = this.shadowRoot.getElementById('output-image')
+    const outputCanvas = this.shadowRoot.getElementById('output-image');
     const ctx = outputCanvas.getContext('2d');
     this._resizeCanvas(outputCanvas, {
       width: sourceWidth * this.curGridSizeX,
@@ -98,13 +96,21 @@ export class ImageGrid extends LitElement {
     ctx.clearRect(0, 0, width, height);
     for (let x = 0; x < gridSizeX; x++) {
       for (let y = 0; y < gridSizeY; y++) {
-        let startX = width / gridSizeX * x;
-        let startY = height / gridSizeY * y;
+        let startX = (width / gridSizeX) * x;
+        let startY = (height / gridSizeY) * y;
         let w = width / gridSizeX;
         let h = height / gridSizeY;
         ctx.drawImage(
-            sourceCanvas, 0, 0, sourceWidth, sourceHeight, startX, startY, w,
-            h);
+          sourceCanvas,
+          0,
+          0,
+          sourceWidth,
+          sourceHeight,
+          startX,
+          startY,
+          w,
+          h
+        );
       }
     }
 
@@ -121,7 +127,8 @@ export class ImageGrid extends LitElement {
     };
     // `result` should match the `name` of this node's outputSpec.
     this.dispatchEvent(
-        new CustomEvent('outputs', {detail: {result: outputImage}}));
+      new CustomEvent('outputs', {detail: {result: outputImage}})
+    );
   }
 
   _resizeCanvas(canvas, size) {
@@ -146,7 +153,8 @@ export class ImageGrid extends LitElement {
     // Here, we pass `gridSizeX` to the event, meaning we want to update the
     // gridSizeX property in the node before the pipeline re-runs.
     this.dispatchEvent(
-        new CustomEvent('pipelineRerunTrigger', {detail: {gridSizeX}}));
+      new CustomEvent('pipelineRerunTrigger', {detail: {gridSizeX}})
+    );
   }
 
   _handleGridSizeYChanged(e) {
@@ -154,7 +162,8 @@ export class ImageGrid extends LitElement {
 
     // See comments above in _handleGridSizeXChanged.
     this.dispatchEvent(
-        new CustomEvent('pipelineRerunTrigger', {detail: {gridSizeY}}));
+      new CustomEvent('pipelineRerunTrigger', {detail: {gridSizeY}})
+    );
   }
 
   get _xSizeSelector() {
@@ -165,8 +174,6 @@ export class ImageGrid extends LitElement {
     return this.renderRoot?.querySelector('.y-select') ?? null;
   }
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Register custom node with visual blocks.
