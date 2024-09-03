@@ -15,7 +15,8 @@
     "bundle": "esbuild --bundle src/index.ts --outfile=dist/bundle.js --format=esm --sourcemap",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "lint": "eslint .",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "upload-to-gcp": "node scripts/upload_to_gcp.js"
   },
   "devDependencies": {
     "@visualblocks/custom-node-types": "*",
