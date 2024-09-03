@@ -2,7 +2,7 @@
   "name": "@visualblocks/gemini",
   "version": "0.1.0",
   "description": "Gemini nodes for Visual Blocks",
-  "module": "index.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "files": [
