@@ -13,7 +13,8 @@
     "clean": "turbo clean && turbo daemon clean",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo build && changeset publish"
+    "publish-to-npm": "turbo build lint && changeset publish",
+    "publish-bundles-to-gcp": "turbo upload-to-gcp"
   },
   "packageManager": "npm@10.7.0",
   "engines": {
