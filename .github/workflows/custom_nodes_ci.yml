@@ -1,10 +1,10 @@
-name: CI
+name: Custom Node CI
 
 on:
   push:
-    branches: [main],
+    branches: [main]
   pull_request:
-    branches: [main],
+    branches: [main]
 
 jobs:
   build:
@@ -19,6 +19,9 @@ jobs:
           node-version: 20
           cache: 'npm'
 
+      - name: Change directory to Custom Nodes
+        run: cd custom_nodes/
+          
       - name: Install dependencies
         run: npm install
 
