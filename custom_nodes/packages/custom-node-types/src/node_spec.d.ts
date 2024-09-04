@@ -76,7 +76,7 @@ export declare interface NodeSpec {
    */
   dynamicIoGeneratorFn?: (
     inputValues: Record<string, JsonValue>
-  ) => DynamicIoSpecs;
+  ) => DynamicIoSpecs | Promise<DynamicIoSpecs>;
 }
 
 /** NodeSpec with typed custom data. */
@@ -116,7 +116,7 @@ export declare interface OutputSpec {
    * Json object has, and they will be displayed in the node UI as separated
    * output rows so users can easily connect edges to individual fields.
    */
-  fieldSpecs?: OutputSpec[];
+  fieldSpecs?: readonly OutputSpec[];
 
   /**
    * A list of nodes that are recommended to be connected to this output.
@@ -125,7 +125,7 @@ export declare interface OutputSpec {
    * show the list of candidates when hovered over. Clicking a candidate will
    * automatically add the node to the graph and connect it to the output.
    */
-  recommendedNodes?: RecommendedNode[];
+  recommendedNodes?: readonly RecommendedNode[];
 }
 
 /**
@@ -208,7 +208,7 @@ export declare interface InputSpec {
   hideCondition?: HideCondition;
 
   /** See comments in `OutputSpec` above for more details. */
-  fieldSpecs?: InputSpec[];
+  fieldSpecs?: readonly InputSpec[];
 }
 
 /**
@@ -286,8 +286,8 @@ export declare interface RecommendedNode {
 
 /** The object returned by the `dynamicIoGeneratorFn`. */
 export declare interface DynamicIoSpecs {
-  inputSpecs?: InputSpec[];
-  outputSpecs?: OutputSpec[];
+  inputSpecs?: readonly InputSpec[];
+  outputSpecs?: readonly OutputSpec[];
 }
 
 /**

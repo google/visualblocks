@@ -17,9 +17,10 @@
 
 import {CustomNodeLibrary} from '@visualblocks/custom-node-types';
 import {GeminiModelInfo} from './gemini_model';
+import {PromptTemplateNodeInfo} from './prompt_template';
 
 export default {
   registerCustomNodes: register => {
-    register([GeminiModelInfo]);
+    register([GeminiModelInfo, PromptTemplateNodeInfo]);
   },
 } satisfies CustomNodeLibrary;

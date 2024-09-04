@@ -80,12 +80,27 @@ const NODE_SPEC = {
 type Inputs = InputType<typeof NODE_SPEC>;
 type Outputs = OutputType<typeof NODE_SPEC>;
 
+// In this case, it's fine to use 'any', since it's supposed to match any
+// Array type. 'any' never ends up in the actual type itself.
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+type NestedArray<T> = T extends Array<any> ? never : Array<T | NestedArray<T>>;
+
 export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
   private genAI?: GoogleGenerativeAI;
   private model?: GenerativeModel;
 
   constructor() {
     super();
+  }
+
+  static *flattenArray<T>(array: NestedArray<T>): Iterable<T> {
+    for (const val of array) {
+      if (val instanceof Array) {
+        yield* this.flattenArray(val);
+      } else {
+        yield val;
+      }
+    }
   }
 
   override async run(inputs: Inputs, services: Services): Promise<Outputs> {
@@ -110,7 +125,9 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
       return {}; // Nothing to generate yet
     }
 
-    const parts = (inputs.prompt as unknown[]).map((prompt, i): Part => {
+    const flattened = GeminiModel.flattenArray(inputs.prompt as unknown[]);
+
+    const parts = [...flattened].map((prompt, i): Part => {
       if (typeof prompt === 'string') {
         return {
           text: prompt,
@@ -156,7 +173,7 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
   }
 }
 
-export const GeminiModelInfo: CustomNodeInfo = {
+export const GeminiModelInfo = {
   nodeSpec: NODE_SPEC,
   nodeImpl: GeminiModel,
-};
+} satisfies CustomNodeInfo;
