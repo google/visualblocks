@@ -1,6 +1,6 @@
 {
   "name": "@visualblocks/custom-node-types",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Visual blocks custom node types",
   "main": "dist/index.d.ts",
   "types": "dist/index.d.ts",
