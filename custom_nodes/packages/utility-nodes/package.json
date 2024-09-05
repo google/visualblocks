@@ -1,0 +1,35 @@
+{
+  "name": "@visualblocks/utility-nodes",
+  "version": "0.0.0",
+  "description": "Utility nodes for Visual Blocks",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist/**"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --sourcemap --metafile && npm run bundle",
+    "bundle": "esbuild --bundle src/index.ts --outfile=dist/bundle.js --format=esm --sourcemap --metafile=dist/bundle-metafile.json",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "upload-to-gcp": "upload-to-gcp"
+  },
+  "devDependencies": {
+    "@visualblocks/custom-node-types": "*",
+    "@visualblocks/node-utils": "*",
+    "@visualblocks/tsconfig": "*",
+    "@visualblocks/eslint-config": "*",
+    "@visualblocks/scripts": "*",
+    "esbuild": "^0.23.0",
+    "eslint": "^9.8.0",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "lit": "^3.1.4"
+  }
+}
