@@ -1,5 +1,11 @@
 # @visualblocks/gemini
 
+## 0.2.1
+
+### Patch Changes
+
+- 8add1df: Add markdown as a recommended node for gemini output
+
 ## 0.2.0
 
 ### Minor Changes
