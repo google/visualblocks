@@ -1,0 +1,8 @@
+{
+  "extends": "@visualblocks/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist"
+  },
+  "include": ["*.ts", "src/**/*.ts", "src/upload-to-gcp.ts~"]
+}
