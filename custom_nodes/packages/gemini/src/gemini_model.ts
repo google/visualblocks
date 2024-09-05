@@ -73,6 +73,12 @@ const NODE_SPEC = {
     {
       name: 'response',
       type: DataType.STRING,
+      recommendedNodes: [
+        {
+          nodeSpecId: 'markdown_viewer',
+          inputId: 'markdownString',
+        },
+      ],
     },
   ] as const,
 } satisfies NodeSpec;
