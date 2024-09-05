@@ -6,10 +6,8 @@
     "dev": "node server.js"
   },
   "dependencies": {
-    "@visualblocks/custom-node-types": "*",
     "@visualblocks/gemini": "*",
-    "@visualblocks/node-utils": "*",
-    "@visualblocks/tsconfig": "*"
+    "@visualblocks/utility-nodes": "*"
   },
   "devDependencies": {
     "express": "^4.19.2"
