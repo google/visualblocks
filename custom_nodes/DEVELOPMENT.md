@@ -4,7 +4,7 @@ VisualBlocks maintains a monorepo of custom node packages that can be directly l
 The monorepo is orchestrated by [Turborepo](https://turbo.build/repo/docs) with [Changesets](https://github.com/changesets/changesets) for versioning. Packages bundle with 
 [`tsup`](https://github.com/egoist/tsup) and / or [`esbuild`](https://esbuild.github.io/) and are distributed in the 
 [ESModules format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) with `.js` extensions. We use [`eslint`](https://eslint.org/) and 
-[`prettier`](https://prettier.io/) for linting and formatting. Packages 
+[`prettier`](https://prettier.io/) for linting and formatting.
 
 ## Development Commands
 
@@ -35,6 +35,9 @@ There's also a command for formatting with Prettier:
 # custom_nodes/
 npm run format
 ```
+
+### Devserver
+Run `turbo dev` to run an auto-updating devserver on port 8080. See [the devserver readme](custom_nodes/apps/devserver/README.md) for more.
 
 ## Updating a Package
 1. Make your changes as you normally would, but don't commit yet.
