@@ -1,6 +1,6 @@
 {
   "name": "@visualblocks/utility-nodes",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Utility nodes for Visual Blocks",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
