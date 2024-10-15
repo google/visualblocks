@@ -1,16 +1,12 @@
-{
+ {
   "project": {
     "name": "Awesome Title Generator",
-    "id": "__oyylkk",
+    "id": "mgl1nj",
     "creationTs": 1689050831536,
-    "lastModifiedTs": 1726531978826,
+    "lastModifiedTs": 1689050879030,
     "userSetData": {
       "description": "Generate 10 awesome titles for user-customizable paragraph.",
-      "tags": [
-        "text"
-      ],
-      "contactURL": "",
-      "tutorialYouTube": ""
+      "tags": ["text"]
     }
   },
   "graph": {
@@ -23,7 +19,7 @@
           "initialWidth": 304,
           "initialHeight": 144,
           "previewX": 32,
-          "previewY": 192,
+          "previewY": 272,
           "previewWidth": 304,
           "previewHeight": 144
         },
@@ -31,7 +27,6 @@
           "posX": 240,
           "posY": 224,
           "width": 176,
-          "height": 130,
           "selected": false
         },
         "propValues": {
@@ -55,7 +50,6 @@
           "posX": 464,
           "posY": 80,
           "width": 176,
-          "height": 105,
           "selected": false
         },
         "propValues": {
@@ -96,34 +90,38 @@
           "posX": 240,
           "posY": 80,
           "width": 176,
-          "height": 130,
           "selected": false
         },
         "propValues": {
-          "text": "Generate ten awesome titles for the following paragraph. Use markdown:",
+          "text": "Generate ten awesome titles for the following paragraph:",
           "passwordMode": false,
           "hidePreview": false
         }
       },
       {
-        "id": "gemini-model_7xxogv",
-        "nodeSpecId": "gemini-model",
+        "id": "palm_textgen_clgwr9",
+        "displayLabel": "PaLM Text Generator",
+        "nodeSpecId": "palm_textgen",
         "customData": {
-          "previewX": 1600,
-          "previewY": 16,
+          "previewX": 720,
+          "previewY": 32,
           "previewWidth": 320,
-          "previewHeight": 240
+          "previewHeight": 400
         },
         "uiData": {
           "posX": 672,
-          "posY": 64,
-          "width": 210.232421875,
-          "height": 142,
-          "selected": false
+          "posY": 80,
+          "width": 176,
+          "selected": true
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
         },
         "inputValues": {
-          "prompt": [],
-          "modelId": "gemini-1.5-flash"
+          "prompt": "",
+          "apiKey": ""
         },
         "incomingEdges": {
           "prompt": [
@@ -131,76 +129,44 @@
               "sourceNodeId": "text_processor_yq6dko",
               "outputId": "text"
             }
-          ],
-          "apiKey": [
-            {
-              "sourceNodeId": "input_text_q04imr",
-              "outputId": "text"
-            }
           ]
         }
       },
       {
-        "id": "input_text_q04imr",
-        "displayLabel": "Gemini API Key",
-        "nodeSpecId": "input_text",
+        "id": "text_processor_6n3jis",
+        "nodeSpecId": "text_processor",
         "customData": {
           "initialWidth": 304,
-          "initialHeight": 144,
-          "leftOfNode": "gemini-model_7xxogv",
-          "previewX": 32,
-          "previewY": 352,
-          "previewWidth": 304,
-          "previewHeight": 144
-        },
-        "uiData": {
-          "posX": 464,
-          "posY": 224,
-          "width": 176,
-          "height": 130,
-          "selected": false
-        },
-        "propValues": {
-          "passwordMode": true,
-          "hidePreview": false
-        }
-      },
-      {
-        "id": "markdown_viewer_pms8da",
-        "nodeSpecId": "markdown_viewer",
-        "customData": {
-          "rightOfNode": "gemini-model_7xxogv",
-          "previewX": 688,
+          "initialHeight": 288,
+          "previewX": 1056,
           "previewY": 32,
-          "previewWidth": 448,
-          "previewHeight": 480
+          "previewWidth": 528,
+          "previewHeight": 368
         },
         "uiData": {
-          "posX": 896,
-          "posY": 64,
+          "posX": 912,
+          "posY": 80,
           "width": 176,
-          "height": 130,
           "selected": false
         },
         "propValues": {
-          "hidePreview": false,
-          "hidePreviewFrame": false
+          "mode": "join",
+          "separator": "\\n",
+          "formatString": "",
+          "hidePreview": false
         },
         "inputValues": {
-          "markdownString": ""
+          "texts": []
         },
         "incomingEdges": {
-          "markdownString": [
+          "texts": [
             {
-              "sourceNodeId": "gemini-model_7xxogv",
-              "outputId": "response"
+              "sourceNodeId": "palm_textgen_clgwr9",
+              "outputId": "answer"
             }
           ]
         }
       }
     ]
-  },
-  "customNodeUrls": [
-    "https://storage.googleapis.com/tfweb/visualblocks-github-bundles/@visualblocks/gemini@latest/dist/bundle.js"
-  ]
+  }
 }
