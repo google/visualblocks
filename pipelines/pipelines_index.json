@@ -71,9 +71,11 @@
       }
     }
   },
-  "gemini_email_generation_and_review": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_and_review.json",
-    "screenshots": [],
+  "gemini_email_generation_review": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_review.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_review.png"
+    ],
     "metadata": {
       "name": "Gemini Email Generation and Review",
       "id": "__y0yrfo",
@@ -87,15 +89,6 @@
         "contactURL": "",
         "tutorialYouTube": ""
       }
-    }
-  },
-  "gemini_email_generation_review": {
-    "json": "",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_review.png"
-    ],
-    "metadata": {
-      "userSetData": {}
     }
   },
   "gemini_manuscript_helper": {
