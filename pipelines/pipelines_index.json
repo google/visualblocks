@@ -71,6 +71,73 @@
       }
     }
   },
+  "gemini_email_generation_and_review": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_and_review.json",
+    "screenshots": [],
+    "metadata": {
+      "name": "Gemini Email Generation and Review",
+      "id": "__y0yrfo",
+      "creationTs": 1685487890322,
+      "lastModifiedTs": 1726531213470,
+      "userSetData": {
+        "description": "Generate three emails according to user specifications then choose the best out of the three.",
+        "tags": [
+          "text"
+        ],
+        "contactURL": "",
+        "tutorialYouTube": ""
+      }
+    }
+  },
+  "gemini_email_generation_review": {
+    "json": "",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_review.png"
+    ],
+    "metadata": {
+      "userSetData": {}
+    }
+  },
+  "gemini_manuscript_helper": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_manuscript_helper/gemini_manuscript_helper.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_manuscript_helper/gemini_manuscript_helper.png"
+    ],
+    "metadata": {
+      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
+      "id": "__aryofc",
+      "creationTs": 1686084152526,
+      "lastModifiedTs": 1726531655493,
+      "userSetData": {
+        "description": "Write code for a figure in LaTeX containing four sub-figures, with captions for each and also an overall caption.",
+        "tags": [
+          "text"
+        ],
+        "contactURL": "",
+        "tutorialYouTube": ""
+      }
+    }
+  },
+  "gemini_title_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_title_generator/gemini_title_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_title_generator/gemini_title_generator.png"
+    ],
+    "metadata": {
+      "name": "Awesome Title Generator",
+      "id": "__oyylkk",
+      "creationTs": 1689050831536,
+      "lastModifiedTs": 1726531978826,
+      "userSetData": {
+        "description": "Generate 10 awesome titles for user-customizable paragraph.",
+        "tags": [
+          "text"
+        ],
+        "contactURL": "",
+        "tutorialYouTube": ""
+      }
+    }
+  },
   "laser_hands_rough": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/laser_hands_rough/laser_hands_rough.json",
     "screenshots": [
@@ -121,78 +188,6 @@
         "description": "Detect and recognize objects in an image.",
         "tags": [
           "vision"
-        ]
-      }
-    }
-  },
-  "palm2_email_generation_review": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_generation_review/palm2_email_generation_review.jpg"
-    ],
-    "metadata": {
-      "name": "PaLM 2 Email Generation and Review",
-      "id": "3irlat",
-      "creationTs": 1685487890322,
-      "lastModifiedTs": 1686011448835,
-      "userSetData": {
-        "description": "Generate three emails according to user specifications then choose the best out of the three.",
-        "tags": [
-          "text"
-        ]
-      }
-    }
-  },
-  "palm2_email_tones_explorer": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_email_tones_explorer/palm2_email_tones_explorer.png"
-    ],
-    "metadata": {
-      "id": "emtoex",
-      "name": "Email Tones Explorer",
-      "creationTs": 1684866947213,
-      "lastModifiedTs": 1685773777862,
-      "userSetData": {
-        "description": "Write an appropriate, professional email in three ways: regular way, use strong words, and use short sentences.",
-        "tags": [
-          "text"
-        ]
-      }
-    }
-  },
-  "palm2_manuscript_helper": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_manuscript_helper/palm2_manuscript_helper.png"
-    ],
-    "metadata": {
-      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
-      "id": "new",
-      "creationTs": 1686084152526,
-      "lastModifiedTs": 1686084414722,
-      "userSetData": {
-        "description": "Write code for a figure in LaTeX containing four sub-figures, with captions for each and also an overall caption.",
-        "tags": [
-          "text"
-        ]
-      }
-    }
-  },
-  "palm2_title_generator": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_title_generator/palm2_title_generator.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/palm2_title_generator/palm2_title_generator.jpg"
-    ],
-    "metadata": {
-      "name": "Awesome Title Generator",
-      "id": "mgl1nj",
-      "creationTs": 1689050831536,
-      "lastModifiedTs": 1689050879030,
-      "userSetData": {
-        "description": "Generate 10 awesome titles for user-customizable paragraph.",
-        "tags": [
-          "text"
         ]
       }
     }
