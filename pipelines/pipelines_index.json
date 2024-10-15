@@ -71,6 +71,73 @@
       }
     }
   },
+  "gemini_email_generation_and_review": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_and_review.json",
+    "screenshots": [],
+    "metadata": {
+      "name": "Gemini Email Generation and Review",
+      "id": "__y0yrfo",
+      "creationTs": 1685487890322,
+      "lastModifiedTs": 1726531213470,
+      "userSetData": {
+        "description": "Generate three emails according to user specifications then choose the best out of the three.",
+        "tags": [
+          "text"
+        ],
+        "contactURL": "",
+        "tutorialYouTube": ""
+      }
+    }
+  },
+  "gemini_email_generation_review": {
+    "json": "",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_email_generation_review/gemini_email_generation_review.png"
+    ],
+    "metadata": {
+      "userSetData": {}
+    }
+  },
+  "gemini_manuscript_helper": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_manuscript_helper/gemini_manuscript_helper.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_manuscript_helper/gemini_manuscript_helper.png"
+    ],
+    "metadata": {
+      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
+      "id": "__aryofc",
+      "creationTs": 1686084152526,
+      "lastModifiedTs": 1726531655493,
+      "userSetData": {
+        "description": "Write code for a figure in LaTeX containing four sub-figures, with captions for each and also an overall caption.",
+        "tags": [
+          "text"
+        ],
+        "contactURL": "",
+        "tutorialYouTube": ""
+      }
+    }
+  },
+  "gemini_title_generator": {
+    "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_title_generator/gemini_title_generator.json",
+    "screenshots": [
+      "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/gemini_title_generator/gemini_title_generator.png"
+    ],
+    "metadata": {
+      "name": "Awesome Title Generator",
+      "id": "__oyylkk",
+      "creationTs": 1689050831536,
+      "lastModifiedTs": 1726531978826,
+      "userSetData": {
+        "description": "Generate 10 awesome titles for user-customizable paragraph.",
+        "tags": [
+          "text"
+        ],
+        "contactURL": "",
+        "tutorialYouTube": ""
+      }
+    }
+  },
   "laser_hands_rough": {
     "json": "https://raw.githubusercontent.com/google/visualblocks/main/pipelines/laser_hands_rough/laser_hands_rough.json",
     "screenshots": [
@@ -121,62 +188,6 @@
         "description": "Detect and recognize objects in an image.",
         "tags": [
           "vision"
-        ]
-      }
-    }
-  },
-  "gemini_email_generation_review": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/refs/heads/main/pipelines/gemini_email_generation_review/gemini_email_generation_and_review.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/refs/heads/main/pipelines/gemini_email_generation_review/gemini_email_generation_review.png"
-    ],
-    "metadata": {
-      "name": "Gemini Email Generation and Review",
-      "id": "__y0yrfo",
-      "creationTs": 1685487890322,
-      "lastModifiedTs": 1726531213470
-      "userSetData": {
-        "description": "Generate three emails according to user specifications then choose the best out of the three.",
-        "tags": [
-          "text"
-        ]
-      }
-    }
-  },
-  "gemini_manuscript_helper": {
-    "json": "https://raw.githubusercontent.com/google/visualblocks/refs/heads/main/pipelines/gemini_manuscript_helper/gemini_manuscript_helper.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/refs/heads/main/pipelines/gemini_email_generation_review/gemini_email_generation_review.png"
-    ],
-    "metadata": {
-      "name": "ManuscriptHelper: LLMs to help with complex LaTeX tasks",
-      "id": "new",
-      "id": "__aryofc",
-      "creationTs": 1686084152526,
-      "lastModifiedTs": 1686084414722,
-      "lastModifiedTs": 1726531655493,
-      "userSetData": {
-        "description": "Write code for a figure in LaTeX containing four sub-figures, with captions for each and also an overall caption.",
-        "tags": [
-          "text"
-        ]
-      }
-    }
-  },
-  "gemini_title_generator": {
-    "json": "https://github.com/google/visualblocks/blob/main/pipelines/gemini_title_generator/gemini_title_generator.json",
-    "screenshots": [
-      "https://raw.githubusercontent.com/google/visualblocks/refs/heads/main/pipelines/gemini_title_generator/gemini_title_generator.png"
-    ],
-    "metadata": {
-      "name": "Awesome Title Generator",
-      "id": "__oyylkk",
-      "creationTs": 1689050831536,
-      "lastModifiedTs": 1726531978826,
-      "userSetData": {
-        "description": "Generate 10 awesome titles for user-customizable paragraph.",
-        "tags": [
-          "text"
         ]
       }
     }
