@@ -1,16 +1,12 @@
-{
+ {
   "project": {
-    "name": "Gemini Email Generation and Review",
-    "id": "__y0yrfo",
+    "name": "PaLM 2 Email Generation and Review",
+    "id": "3irlat",
     "creationTs": 1685487890322,
-    "lastModifiedTs": 1726531213470,
+    "lastModifiedTs": 1686011448835,
     "userSetData": {
       "description": "Generate three emails according to user specifications then choose the best out of the three.",
-      "tags": [
-        "text"
-      ],
-      "contactURL": "",
-      "tutorialYouTube": ""
+      "tags": ["text"]
     }
   },
   "graph": {
@@ -30,7 +26,6 @@
           "posX": 448,
           "posY": -80,
           "width": 176,
-          "height": 105,
           "selected": false
         },
         "propValues": {
@@ -66,7 +61,6 @@
           "posX": 448,
           "posY": 32,
           "width": 176,
-          "height": 105,
           "selected": false
         },
         "propValues": {
@@ -102,7 +96,6 @@
           "posX": 448,
           "posY": 144,
           "width": 176,
-          "height": 105,
           "selected": false
         },
         "propValues": {
@@ -124,12 +117,51 @@
         }
       },
       {
+        "id": "palm_textgen_i8zpzu",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 864,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 160
+        },
+        "uiData": {
+          "posX": 704,
+          "posY": -112,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": "",
+          "apiKey": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_e3tv4m",
+              "outputId": "text"
+            }
+          ],
+          "apiKey": [
+            {
+              "sourceNodeId": "input_text_fu0myq",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
         "id": "text_processor_05oq8q",
         "nodeSpecId": "text_processor",
         "customData": {
           "initialWidth": 304,
           "initialHeight": 288,
-          "previewX": 864,
+          "previewX": 1200,
           "previewY": 16,
           "previewWidth": 304,
           "previewHeight": 480
@@ -138,7 +170,6 @@
           "posX": 944,
           "posY": 48,
           "width": 176,
-          "height": 105,
           "selected": false
         },
         "propValues": {
@@ -153,16 +184,55 @@
         "incomingEdges": {
           "texts": [
             {
-              "sourceNodeId": "gemini-model_szm3gh",
-              "outputId": "response"
+              "sourceNodeId": "palm_textgen_i8zpzu",
+              "outputId": "answer"
             },
             {
-              "sourceNodeId": "gemini-model_c78qv9",
-              "outputId": "response"
+              "sourceNodeId": "palm_textgen_7q8hi5",
+              "outputId": "answer"
             },
             {
-              "sourceNodeId": "gemini-model_jl19xb",
-              "outputId": "response"
+              "sourceNodeId": "palm_textgen_0nrbp4",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_6wqkvt",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 1520,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 432
+        },
+        "uiData": {
+          "posX": 1200,
+          "posY": 48,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": "",
+          "apiKey": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_05oq8q",
+              "outputId": "text"
+            }
+          ],
+          "apiKey": [
+            {
+              "sourceNodeId": "input_text_fu0myq",
+              "outputId": "text"
             }
           ]
         }
@@ -182,7 +252,6 @@
           "posX": 0,
           "posY": 64,
           "width": 176,
-          "height": 130,
           "selected": false
         },
         "propValues": {
@@ -206,7 +275,6 @@
           "posX": 224,
           "posY": 32,
           "width": 176,
-          "height": 105,
           "selected": false
         },
         "propValues": {
@@ -236,6 +304,84 @@
         }
       },
       {
+        "id": "palm_textgen_0nrbp4",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 864,
+          "previewY": 336,
+          "previewWidth": 320,
+          "previewHeight": 176
+        },
+        "uiData": {
+          "posX": 704,
+          "posY": 272,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": "",
+          "apiKey": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_iasnpr",
+              "outputId": "text"
+            }
+          ],
+          "apiKey": [
+            {
+              "sourceNodeId": "input_text_fu0myq",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "palm_textgen_7q8hi5",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 864,
+          "previewY": 176,
+          "previewWidth": 320,
+          "previewHeight": 160
+        },
+        "uiData": {
+          "posX": 704,
+          "posY": 80,
+          "width": 176,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 256,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": "",
+          "apiKey": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "text_processor_8m0416",
+              "outputId": "text"
+            }
+          ],
+          "apiKey": [
+            {
+              "sourceNodeId": "input_text_fu0myq",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
         "id": "input_text_uoblte",
         "nodeSpecId": "input_text",
         "customData": {
@@ -250,7 +396,6 @@
           "posX": 0,
           "posY": -80,
           "width": 176,
-          "height": 130,
           "selected": false
         },
         "propValues": {
@@ -274,7 +419,6 @@
           "posX": 0,
           "posY": 208,
           "width": 176,
-          "height": 130,
           "selected": false
         },
         "propValues": {
@@ -299,190 +443,14 @@
           "posX": 448,
           "posY": 272,
           "width": 176,
-          "height": 130,
           "selected": false
         },
         "propValues": {
+          "text": "",
           "passwordMode": true,
           "hidePreview": false
         }
-      },
-      {
-        "id": "gemini-model_c78qv9",
-        "nodeSpecId": "gemini-model",
-        "customData": {
-          "previewX": 1856,
-          "previewY": 272,
-          "previewWidth": 320,
-          "previewHeight": 240
-        },
-        "uiData": {
-          "posX": 672,
-          "posY": 48,
-          "width": 210.232421875,
-          "height": 142,
-          "selected": false
-        },
-        "inputValues": {
-          "prompt": [],
-          "modelId": "gemini-1.5-flash"
-        },
-        "incomingEdges": {
-          "prompt": [
-            {
-              "sourceNodeId": "text_processor_8m0416",
-              "outputId": "text"
-            }
-          ],
-          "apiKey": [
-            {
-              "sourceNodeId": "input_text_fu0myq",
-              "outputId": "text"
-            }
-          ]
-        }
-      },
-      {
-        "id": "gemini-model_jl19xb",
-        "nodeSpecId": "gemini-model",
-        "customData": {
-          "previewX": 1856,
-          "previewY": 528,
-          "previewWidth": 320,
-          "previewHeight": 240
-        },
-        "uiData": {
-          "posX": 672,
-          "posY": 208,
-          "width": 210.232421875,
-          "height": 142,
-          "selected": false
-        },
-        "inputValues": {
-          "prompt": [],
-          "modelId": "gemini-1.5-flash"
-        },
-        "incomingEdges": {
-          "prompt": [
-            {
-              "sourceNodeId": "text_processor_iasnpr",
-              "outputId": "text"
-            }
-          ],
-          "apiKey": [
-            {
-              "sourceNodeId": "input_text_fu0myq",
-              "outputId": "text"
-            }
-          ]
-        }
-      },
-      {
-        "id": "gemini-model_szm3gh",
-        "nodeSpecId": "gemini-model",
-        "customData": {
-          "previewX": 1856,
-          "previewY": 16,
-          "previewWidth": 320,
-          "previewHeight": 240
-        },
-        "uiData": {
-          "posX": 672,
-          "posY": -112,
-          "width": 210.232421875,
-          "height": 142,
-          "selected": false
-        },
-        "inputValues": {
-          "prompt": [],
-          "modelId": "gemini-1.5-flash"
-        },
-        "incomingEdges": {
-          "prompt": [
-            {
-              "sourceNodeId": "text_processor_e3tv4m",
-              "outputId": "text"
-            }
-          ],
-          "apiKey": [
-            {
-              "sourceNodeId": "input_text_fu0myq",
-              "outputId": "text"
-            }
-          ]
-        }
-      },
-      {
-        "id": "gemini-model_29ba2j",
-        "nodeSpecId": "gemini-model",
-        "customData": {
-          "previewX": 1856,
-          "previewY": 272,
-          "previewWidth": 320,
-          "previewHeight": 240
-        },
-        "uiData": {
-          "posX": 1168,
-          "posY": 32,
-          "width": 210.232421875,
-          "height": 142,
-          "selected": false
-        },
-        "inputValues": {
-          "prompt": [],
-          "modelId": "gemini-1.5-flash"
-        },
-        "incomingEdges": {
-          "prompt": [
-            {
-              "sourceNodeId": "text_processor_05oq8q",
-              "outputId": "text"
-            }
-          ],
-          "apiKey": [
-            {
-              "sourceNodeId": "input_text_fu0myq",
-              "outputId": "text"
-            }
-          ]
-        }
-      },
-      {
-        "id": "markdown_viewer_lt5lq7",
-        "nodeSpecId": "markdown_viewer",
-        "customData": {
-          "rightOfNode": "gemini-model_29ba2j",
-          "previewX": 1184,
-          "previewY": 16,
-          "previewWidth": 320,
-          "previewHeight": 240
-        },
-        "uiData": {
-          "posX": 1408,
-          "posY": 32,
-          "width": 176,
-          "height": 130,
-          "selected": false
-        },
-        "propValues": {
-          "hidePreview": false,
-          "hidePreviewFrame": false
-        },
-        "inputValues": {
-          "markdownString": ""
-        },
-        "incomingEdges": {
-          "markdownString": [
-            {
-              "sourceNodeId": "gemini-model_29ba2j",
-              "outputId": "response"
-            }
-          ]
-        }
       }
     ]
-  },
-  "customNodeUrls": [
-    "https://storage.googleapis.com/tfweb/visualblocks-github-bundles/@visualblocks/gemini@latest/dist/bundle.js"
-  ]
+  }
 }
