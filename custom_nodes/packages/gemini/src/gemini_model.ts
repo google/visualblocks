@@ -26,12 +26,7 @@ import {
   Services,
 } from '@visualblocks/custom-node-types';
 import {PureFunctionNode} from '@visualblocks/node-utils';
-import {
-  GenerativeModel,
-  GoogleGenerativeAI,
-  InlineDataPart,
-  Part,
-} from '@google/generative-ai';
+import {GoogleGenAI, Part} from '@google/genai';
 
 const NODE_SPEC = {
   id: 'gemini-model',
@@ -55,7 +50,9 @@ const NODE_SPEC = {
       type: DataType.STRING,
       editorSpec: {
         type: EditorType.DROPDOWN,
-        options: ['gemini-1.5-flash'].map(l => ({label: l, value: l})),
+        options: ['gemini-2.0-flash-001', 'gemini-2.5-flash-preview-05-20'].map(
+          l => ({label: l, value: l})
+        ),
       },
     },
     {
@@ -92,8 +89,8 @@ type Outputs = OutputType<typeof NODE_SPEC>;
 type NestedArray<T> = T extends Array<any> ? never : Array<T | NestedArray<T>>;
 
 export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
-  private genAI?: GoogleGenerativeAI;
-  private model?: GenerativeModel;
+  private genAI?: GoogleGenAI;
+  private model?: string;
 
   constructor() {
     super();
@@ -116,7 +113,9 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
 
     // Rebuild if api key is different.
     if (inputs.apiKey !== this.lastInputs?.apiKey || !this.genAI) {
-      this.genAI = new GoogleGenerativeAI(inputs.apiKey);
+      this.genAI = new GoogleGenAI({
+        apiKey: inputs.apiKey,
+      });
     }
 
     // Get the selected model.
@@ -124,7 +123,7 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
       throw new Error('Please select a model');
     }
     if (inputs.modelId !== this.lastInputs?.modelId || !this.model) {
-      this.model = this.genAI.getGenerativeModel({model: inputs.modelId});
+      this.model = inputs.modelId;
     }
 
     if (!inputs.prompt) {
@@ -165,16 +164,19 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
             mimeType: 'image/png',
             data,
           },
-        } satisfies InlineDataPart;
+        };
       }
 
       throw new Error(`Prompt input at index ${i} is not a valid type`);
     });
 
-    const {response} = await this.model.generateContent(parts);
+    const response = await this.genAI.models.generateContent({
+      model: this.model,
+      contents: parts,
+    });
 
     return {
-      response: response.text(),
+      response: response.text ?? '',
     };
   }
 }
