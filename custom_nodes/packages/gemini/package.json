@@ -24,7 +24,7 @@
     "@visualblocks/tsconfig": "*",
     "@visualblocks/eslint-config": "*",
     "@visualblocks/scripts": "*",
-    "esbuild": "^0.23.0",
+    "esbuild": "^0.25.0",
     "eslint": "^9.8.0",
     "express": "^4.20.0",
     "globals": "^15.8.0",
