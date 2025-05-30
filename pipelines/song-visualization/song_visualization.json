@@ -1,0 +1,312 @@
+{
+  "project": {
+    "id": "2q8ocg",
+    "name": "song-visualization",
+    "creationTs": 1748562629412,
+    "lastModifiedTs": 1748565270053,
+    "userSetData": {
+      "description": "",
+      "tags": [],
+      "contactURL": "",
+      "tutorialYouTube": ""
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "input_text_en7b81",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 16,
+          "previewY": 176,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -1008,
+          "posY": 0,
+          "width": 176,
+          "height": 130,
+          "selected": false
+        },
+        "propValues": {
+          "text": "Dom Dolla",
+          "passwordMode": false,
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "input_text_frlp5n",
+        "nodeSpecId": "input_text",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 144,
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 144
+        },
+        "uiData": {
+          "posX": -1008,
+          "posY": -160,
+          "width": 176,
+          "height": 130,
+          "selected": false
+        },
+        "propValues": {
+          "text": "girl$",
+          "passwordMode": false,
+          "hidePreview": false
+        }
+      },
+      {
+        "id": "text_processor_252aug",
+        "nodeSpecId": "text_processor",
+        "customData": {
+          "initialWidth": 304,
+          "initialHeight": 288,
+          "previewX": 352,
+          "previewY": 16,
+          "previewWidth": 304,
+          "previewHeight": 160
+        },
+        "uiData": {
+          "posX": -768,
+          "posY": -96,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "mode": "join",
+          "separator": " by ",
+          "formatString": "",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "texts": []
+        },
+        "incomingEdges": {
+          "texts": [
+            {
+              "sourceNodeId": "input_text_frlp5n",
+              "outputId": "text"
+            },
+            {
+              "sourceNodeId": "input_text_en7b81",
+              "outputId": "text"
+            }
+          ]
+        }
+      },
+      {
+        "id": "prompt-template_i2p3at",
+        "source": {
+          "url": "https://storage.googleapis.com/tfweb/visualblocks-github-bundles/@visualblocks/gemini@latest/dist/bundle.js"
+        },
+        "nodeSpecId": "prompt-template",
+        "customData": {
+          "previewX": 16,
+          "previewY": 352,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -496,
+          "posY": -48,
+          "width": 176,
+          "height": 296,
+          "selected": false
+        },
+        "inputValues": {
+          "template": "Describe a visual scene inspired by the song: {{ song }}  — focus on neon, pulse, motion, and EDM vibes. Limit to 20 words. Use visual keywords only.",
+          "values": {},
+          "values,,,song": ""
+        },
+        "incomingEdges": {
+          "values,,,song": [
+            {
+              "sourceNodeId": "text_processor_252aug",
+              "outputId": "text"
+            }
+          ]
+        },
+        "nodeDynamicSpec": {
+          "inputSpecs": [
+            {
+              "name": "template",
+              "displayLabel": "Template",
+              "type": "string",
+              "defaultValue": "Use {{ variableName }} to define variables to replace in the prompt.",
+              "editorSpec": {
+                "type": "text_area",
+                "autoResize": true
+              }
+            },
+            {
+              "name": "values",
+              "type": "unknown",
+              "fieldSpecs": [
+                {
+                  "name": "song",
+                  "type": "string",
+                  "editorSpec": {
+                    "type": "text_input"
+                  }
+                }
+              ]
+            }
+          ],
+          "outputSpecs": [
+            {
+              "name": "prompt",
+              "type": "string",
+              "recommendedNodes": [
+                {
+                  "nodeSpecId": "gemini-model",
+                  "inputId": "prompt"
+                }
+              ]
+            }
+          ],
+          "propertySpecs": []
+        }
+      },
+      {
+        "id": "palm_textgen_bnumkr",
+        "nodeSpecId": "palm_textgen",
+        "customData": {
+          "previewX": 336,
+          "previewY": 192,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": -272,
+          "posY": -64,
+          "width": 340.65234375,
+          "height": 205,
+          "selected": false
+        },
+        "propValues": {
+          "temperature": 0.5,
+          "maxOutputTokens": 30,
+          "immediateMode": false,
+          "hidePreview": false
+        },
+        "inputValues": {
+          "prompt": "",
+          "apiKey": ""
+        },
+        "incomingEdges": {
+          "prompt": [
+            {
+              "sourceNodeId": "prompt-template_i2p3at",
+              "outputId": "prompt"
+            }
+          ]
+        }
+      },
+      {
+        "id": "keywords_to_image_zdjyoa",
+        "nodeSpecId": "keywords_to_image",
+        "customData": {
+          "previewX": 672,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 208
+        },
+        "uiData": {
+          "posX": 128,
+          "posY": -16,
+          "width": 197.56982421875,
+          "height": 69,
+          "selected": false
+        },
+        "inputValues": {
+          "keywords": ""
+        },
+        "incomingEdges": {
+          "keywords": [
+            {
+              "sourceNodeId": "palm_textgen_bnumkr",
+              "outputId": "answer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "shader_processing_2f3uul",
+        "nodeSpecId": "shader_processing",
+        "customData": {
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "runContinuously": true,
+          "previewX": 1024,
+          "previewY": 16,
+          "previewWidth": 240,
+          "previewHeight": 192
+        },
+        "uiData": {
+          "posX": 368,
+          "posY": -96,
+          "width": 208,
+          "height": 229,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": false
+        },
+        "inputValues": {
+          "shader": "vfx-kaleidoscope"
+        },
+        "incomingEdges": {
+          "channel0": [
+            {
+              "sourceNodeId": "keywords_to_image_zdjyoa",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "image_viewer_5r69jh",
+        "nodeSpecId": "image_viewer",
+        "customData": {
+          "previewX": 672,
+          "previewY": 224,
+          "previewWidth": 640,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 656,
+          "posY": -80,
+          "width": 176,
+          "height": 185,
+          "selected": false
+        },
+        "propValues": {
+          "columnCount": "2",
+          "hidePreview": false
+        },
+        "inputValues": {
+          "images": [],
+          "urls": []
+        },
+        "incomingEdges": {
+          "images": [
+            {
+              "sourceNodeId": "shader_processing_2f3uul",
+              "outputId": "image"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customNodeUrls": [
+    "https://storage.googleapis.com/tfweb/visualblocks-github-bundles/@visualblocks/gemini@latest/dist/bundle.js"
+  ]
+}
