@@ -5,7 +5,7 @@
     "lit": "^2.7.5"
   },
   "devDependencies": {
-    "esbuild": "^0.12.26",
+    "esbuild": "^0.25.0",
     "npm-watch": "0.11.0"
   },
   "watch": {
