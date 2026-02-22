@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create new branch and run script
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           ref: main
       - run: |
