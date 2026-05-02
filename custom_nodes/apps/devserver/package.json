@@ -10,7 +10,7 @@
     "@visualblocks/utility-nodes": "*"
   },
   "devDependencies": {
-    "express": "^4.20.0"
+    "express": "^4.22.1"
   },
   "files": [
     "server.js"
