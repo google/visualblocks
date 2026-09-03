@@ -91,6 +91,11 @@ type NestedArray<T> = T extends Array<any> ? never : Array<T | NestedArray<T>>;
 export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
   private genAI?: GoogleGenAI;
   private model?: string;
+  // The API key the current genAI client was built with. The client pins the
+  // key at construction time, so we need to remember it separately: by the
+  // time run() fires, PureFunctionNode has already overwritten lastInputs
+  // with the new inputs, so it can't be used to detect a key change here.
+  private genAIKey?: string;
 
   constructor() {
     super();
@@ -111,18 +116,20 @@ export class GeminiModel extends PureFunctionNode<Inputs, Outputs> {
       throw new Error('Please set your API key');
     }
 
-    // Rebuild if api key is different.
-    if (inputs.apiKey !== this.lastInputs?.apiKey || !this.genAI) {
+    // Rebuild the client when the api key changes. GoogleGenAI keeps using
+    // the key it was constructed with, so a new key needs a new client.
+    if (inputs.apiKey !== this.genAIKey || !this.genAI) {
       this.genAI = new GoogleGenAI({
         apiKey: inputs.apiKey,
       });
+      this.genAIKey = inputs.apiKey;
     }
 
     // Get the selected model.
     if (!inputs.modelId) {
       throw new Error('Please select a model');
     }
-    if (inputs.modelId !== this.lastInputs?.modelId || !this.model) {
+    if (inputs.modelId !== this.model) {
       this.model = inputs.modelId;
     }
 
